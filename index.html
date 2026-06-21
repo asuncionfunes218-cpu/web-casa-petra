@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Casa Petra — Restaurante artesanal con alma. Cocina honesta, ingredientes de temporada y una atmósfera única en el corazón de la ciudad." />
+  <title>Casa Petra · Restaurante</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       NAV
+  ══════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#inicio" class="nav__logo">
+        <span class="nav__logo-script">Casa</span>
+        <span class="nav__logo-serif">PETRA</span>
+      </a>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <a href="#reservas" class="btn btn--outline nav__cta">Reservar mesa</a>
+
+      <button class="nav__burger" id="navBurger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       HERO
+  ══════════════════════════════════════ -->
+  <section class="hero" id="inicio">
+    <div class="hero__slides">
+      <div class="hero__slide hero__slide--1 active"></div>
+      <div class="hero__slide hero__slide--2"></div>
+      <div class="hero__slide hero__slide--3"></div>
+    </div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content reveal">
+      <p class="hero__eyebrow">Bienvenidos a</p>
+      <h1 class="hero__title">
+        <span class="hero__title-script">Casa</span>
+        <span class="hero__title-serif">PETRA</span>
+      </h1>
+      <p class="hero__subtitle">Cocina con alma · Ingredientes de temporada · Experiencias que perduran</p>
+      <div class="hero__actions">
+        <a href="#menu" class="btn btn--primary">Ver menú</a>
+        <a href="#reservas" class="btn btn--ghost">Reservar</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll" onclick="document.getElementById('nosotros').scrollIntoView({behavior:'smooth'})">
+      <span>Descubrir</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       RIBBON
+  ══════════════════════════════════════ -->
+  <div class="ribbon">
+    <div class="ribbon__track">
+      <span>Cocina Artesanal</span><span class="ribbon__dot">✦</span>
+      <span>Productos de Temporada</span><span class="ribbon__dot">✦</span>
+      <span>Ambiente Familiar</span><span class="ribbon__dot">✦</span>
+      <span>Recetas de Tradición</span><span class="ribbon__dot">✦</span>
+      <span>Vinos Seleccionados</span><span class="ribbon__dot">✦</span>
+      <span>Cocina Artesanal</span><span class="ribbon__dot">✦</span>
+      <span>Productos de Temporada</span><span class="ribbon__dot">✦</span>
+      <span>Ambiente Familiar</span><span class="ribbon__dot">✦</span>
+      <span>Recetas de Tradición</span><span class="ribbon__dot">✦</span>
+      <span>Vinos Seleccionados</span><span class="ribbon__dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       NOSOTROS
+  ══════════════════════════════════════ -->
+  <section class="about section" id="nosotros">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__images reveal-left">
+          <div class="about__img-main">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Interior Casa Petra" loading="lazy" />
+          </div>
+          <div class="about__img-accent">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&q=80" alt="Detalle culinario" loading="lazy" />
+          </div>
+          <div class="about__badge">
+            <span class="about__badge-num">+15</span>
+            <span class="about__badge-text">años de<br>tradición</span>
+          </div>
+        </div>
+
+        <div class="about__text reveal-right">
+          <p class="section__eyebrow">Nuestra historia</p>
+          <h2 class="section__title">Más que un restaurante,<br><em>un hogar</em></h2>
+          <p class="about__lead">Casa Petra nació de una pasión profunda: reunir a las personas alrededor de una mesa con comida honesta, hecha con las manos y el corazón.</p>
+          <p>Cada plato es un homenaje a la cocina de siempre, reinterpretada con técnica moderna y respeto por el producto. Trabajamos con productores locales, ingredientes de temporada y recetas que cuentan historias.</p>
+          <p>Nuestro espacio fue diseñado para que te sientas como en casa: cálido, auténtico, sin artificios. Ven a descubrir por qué Casa Petra se ha convertido en el rincón favorito de quienes buscan algo real.</p>
+
+          <div class="about__values">
+            <div class="about__value">
+              <i class="fa-solid fa-leaf"></i>
+              <div>
+                <strong>Producto local</strong>
+                <span>Colaboramos con agricultores y productores de la región</span>
+              </div>
+            </div>
+            <div class="about__value">
+              <i class="fa-solid fa-fire-burner"></i>
+              <div>
+                <strong>Cocina viva</strong>
+                <span>Elaboración artesanal, sin atajos ni conservantes</span>
+              </div>
+            </div>
+            <div class="about__value">
+              <i class="fa-solid fa-heart"></i>
+              <div>
+                <strong>Con alma</strong>
+                <span>Cada detalle está pensado para que vivas una experiencia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       STATS
+  ══════════════════════════════════════ -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stats__item reveal">
+          <span class="stats__num" data-target="15">0</span><span class="stats__suffix">+</span>
+          <span class="stats__label">Años de experiencia</span>
+        </div>
+        <div class="stats__item reveal">
+          <span class="stats__num" data-target="48">0</span>
+          <span class="stats__label">Platos en carta</span>
+        </div>
+        <div class="stats__item reveal">
+          <span class="stats__num" data-target="200">0</span><span class="stats__suffix">+</span>
+          <span class="stats__label">Comensales al día</span>
+        </div>
+        <div class="stats__item reveal">
+          <span class="stats__num" data-target="98">0</span><span class="stats__suffix">%</span>
+          <span class="stats__label">Clientes satisfechos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       MENÚ
+  ══════════════════════════════════════ -->
+  <section class="menu section" id="menu">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__eyebrow">Lo que ofrecemos</p>
+        <h2 class="section__title">Nuestra <em>Carta</em></h2>
+        <p class="section__desc">Una selección cuidada donde cada plato tiene su razón de ser. Aquí la temporada manda.</p>
+      </div>
+
+      <div class="menu__tabs reveal">
+        <button class="menu__tab active" data-cat="entrantes">Entrantes</button>
+        <button class="menu__tab" data-cat="principales">Principales</button>
+        <button class="menu__tab" data-cat="postres">Postres</button>
+        <button class="menu__tab" data-cat="bebidas">Bebidas</button>
+      </div>
+
+      <div class="menu__grid" id="menuGrid">
+        <!-- Entrantes -->
+        <div class="menu__card" data-cat="entrantes">
+          <div class="menu__card-img">
+            <img src="https://images.unsplash.com/photo-1572441713132-c542fc4fe282?w=500&q=80" alt="Croquetas artesanales" loading="lazy" />
+          </div>
+          <div class="menu__card-body">
+            <div class="menu__card-top">
+              <h3>Croquetas de la abuela</h3>
+              <span class="menu__price">8,50 €</span>
+            </div>
+            <p>Bechamel cremosa con jamón ibérico, rebozado crujiente. Receta familiar de toda la vida.</p>
+            <span class="menu__tag">Favorito</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="entrantes">
+          <div class="menu__card-img">
+            <img src="https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=500&q=80" alt="Ensalada de temporada" loading="lazy" />
+          </div>
+          <div class="menu__card-body">
+            <div class="menu__card-top">
+              <h3>Ensalada de temporada</h3>
+              <span class="menu__price">9,00 €</span>
+            </div>
+            <p>Hojas frescas, queso de cabra, nueces tostadas y vinagreta de miel artesanal.</p>
+            <span class="menu__tag menu__tag--green">Vegetal</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="entrantes">
+          <div class="menu__card-img">
+            <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=500&q=80" alt="Tabla de ibéricos" loading="lazy" />
+          </div>
+          <div class="menu__card-body">
+            <div class="menu__card-top">
+              <h3>Tabla de ibéricos</h3>
+              <span class="menu__price">18,00 €</span>
+            </div>
+            <p>Selección de embutidos ibéricos de bellota con pan tostado y aceite virgen extra.</p>
+          </div>
+        </div>
+
+        <!-- Principales -->
+        <div class="menu__card" data-cat="principales" style="display:none">
+          <div class="menu__card-img">
+            <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=500&q=80" alt="Solomillo a la brasa" loading="lazy" />
+          </div>
+          <div class="menu__card-body">
+            <div class="menu__card-top">
+              <h3>Solomillo a la brasa</h3>
+              <span class="menu__price">24,00 €</span>
+            </div>
+            <p>Solomillo de ternera gallega, salsa de vino tinto reducido y patatas rústicas.</p>
+            <span class="menu__tag">Estrella</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="principales" style="display:none">
+          <div class="menu__card-img">
+            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500&q=80" alt="Merluza al vapor" loading="lazy" />
+          </div>
+          <div class="menu__card-body">
+            <div class="menu__card-top">
+              <h3>Merluza al vapor</h3>
+              <span class="menu__price">19,50 €</span>
+            </div>
+            <p>Merluza fresca al vapor con verduras de temporada y salsa de almejas al albariño.</p>
+            <span class="menu__tag menu__tag--blue">Fresco</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="principales" style="display:none">
+          <div class="menu__card-img">
+            <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=500&q=80" alt="Arroz de montaña" loading="lazy" />
+          </div>
+          <div class="menu__card-body">
+            <div class="menu__card-top">
+              <h3>Arroz de montaña</h3>
+              <span class="menu__price">16,00 €</span>
+            </div>
+            <p>Arroz meloso con setas silvestres, conejo de corral y trufa negra rallada al momento.</p>
+          </div>
+        </div>
+
+        <!-- Postres -->
+        <div class="menu__card" data-cat="postres" style="display:none">
+          <div class="menu__card-img">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&q=80" alt="Tarta de queso" loading="lazy" />
+          </div>
+          <div class="menu__card-body">
+            <div class="menu__card-top">
+              <h3>Tarta de queso de la casa</h3>
+              <span class="menu__price">7,00 €</span>
+            </div>
+            <p>Cremosa, sin base, con coulis de frutos rojos. La más pedida desde que abrimos.</p>
+            <span class="menu__tag">Favorito</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="postres" style="display:none">
+          <div class="menu__card-img">
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&q=80" alt="Crema catalana" loading="lazy" />
+          </div>
+          <div class="menu__card-body">
+            <div class="menu__card-top">
+              <h3>Crema catalana</h3>
+              <span class="menu__price">6,00 €</span>
+            </div>
+            <p>La receta clásica con vainilla natural, naranja y canela. Caramelizada al momento.</p>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="postres" style="display:none">
+          <div class="menu__card-img">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&q=80" alt="Coulant de chocolate" loading="lazy" />
+          </div>
+          <div class="menu__card-body">
+            <div class="menu__card-top">
+              <h3>Coulant de chocolate</h3>
+              <span class="menu__price">7,50 €</span>
+            </div>
+            <p>Bizcocho templado con corazón líquido de chocolate 70% y helado de vainilla.</p>
+          </div>
+        </div>
+
+        <!-- Bebidas -->
+        <div class="menu__card" data-cat="bebidas" style="display:none">
+          <div class="menu__card-img">
+            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&q=80" alt="Vinos seleccionados" loading="lazy" />
+          </div>
+          <div class="menu__card-body">
+            <div class="menu__card-top">
+              <h3>Vinos de la casa</h3>
+              <span class="menu__price">desde 4,00 €</span>
+            </div>
+            <p>Selección de blancos, tintos y rosados de pequeñas bodegas. Pregunta al sommelier.</p>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="bebidas" style="display:none">
+          <div class="menu__card-img">
+            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500&q=80" alt="Cócteles artesanales" loading="lazy" />
+          </div>
+          <div class="menu__card-body">
+            <div class="menu__card-top">
+              <h3>Cócteles artesanales</h3>
+              <span class="menu__price">desde 9,00 €</span>
+            </div>
+            <p>Creaciones propias con destilados locales, frutas frescas y hierbas del jardín.</p>
+            <span class="menu__tag">Novedad</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="bebidas" style="display:none">
+          <div class="menu__card-img">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&q=80" alt="Cafés especiales" loading="lazy" />
+          </div>
+          <div class="menu__card-body">
+            <div class="menu__card-top">
+              <h3>Cafés de especialidad</h3>
+              <span class="menu__price">desde 2,50 €</span>
+            </div>
+            <p>Granos de origen único, tostado artesanal. El mejor broche para cerrar una gran comida.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu__cta reveal">
+        <p>¿Quieres ver la carta completa?</p>
+        <a href="#reservas" class="btn btn--primary">Reserva y consulta con nosotros</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       EXPERIENCIA (full-bleed parallax)
+  ══════════════════════════════════════ -->
+  <section class="experience">
+    <div class="experience__overlay"></div>
+    <div class="experience__content reveal">
+      <p class="section__eyebrow" style="color:#c9a96e">La experiencia</p>
+      <h2 class="experience__title">Cada visita<br><em>es un recuerdo</em></h2>
+      <p>En Casa Petra cuidamos cada detalle: la luz, la música, el servicio. Porque una buena comida es mucho más que la comida.</p>
+      <a href="#reservas" class="btn btn--primary">Vivirlo</a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       GALERÍA
+  ══════════════════════════════════════ -->
+  <section class="gallery section" id="galeria">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__eyebrow">Un vistazo</p>
+        <h2 class="section__title">Nuestra <em>Galería</em></h2>
+      </div>
+    </div>
+
+    <div class="gallery__masonry reveal">
+      <div class="gallery__item gallery__item--tall">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=700&q=80" alt="Ambiente restaurante" loading="lazy" />
+        <div class="gallery__overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="gallery__item">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&q=80" alt="Plato principal" loading="lazy" />
+        <div class="gallery__overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="gallery__item">
+        <img src="https://images.unsplash.com/photo-1481931098730-318b6f776db0?w=700&q=80" alt="Detalle mesa" loading="lazy" />
+        <div class="gallery__overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="gallery__item gallery__item--wide">
+        <img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=900&q=80" alt="Terraza exterior" loading="lazy" />
+        <div class="gallery__overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="gallery__item">
+        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=700&q=80" alt="Cocina" loading="lazy" />
+        <div class="gallery__overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="gallery__item gallery__item--tall">
+        <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=700&q=80" alt="Barra de vinos" loading="lazy" />
+        <div class="gallery__overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox__close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
+      <button class="lightbox__prev" id="lightboxPrev"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="lightbox__next" id="lightboxNext"><i class="fa-solid fa-chevron-right"></i></button>
+      <img id="lightboxImg" src="" alt="" />
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       TESTIMONIOS
+  ══════════════════════════════════════ -->
+  <section class="testimonials section">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__eyebrow">Lo que dicen</p>
+        <h2 class="section__title">Opiniones de nuestros <em>comensales</em></h2>
+      </div>
+
+      <div class="testimonials__slider reveal">
+        <div class="testimonials__track" id="testimonialsTrack">
+
+          <div class="testimonial__card">
+            <div class="testimonial__stars">★★★★★</div>
+            <p class="testimonial__text">"Una experiencia memorable. La tarta de queso es la mejor que he probado en años. El ambiente cálido y el servicio impecable. Ya tenemos reserva para el mes que viene."</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">MG</div>
+              <div>
+                <strong>María García</strong>
+                <span>Google Reviews</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial__card">
+            <div class="testimonial__stars">★★★★★</div>
+            <p class="testimonial__text">"Casa Petra es ese lugar que buscas toda la vida. Cocina de verdad, sin postureo. El solomillo a la brasa y el arroz de montaña son absolutamente extraordinarios."</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">JM</div>
+              <div>
+                <strong>Javier Martínez</strong>
+                <span>TripAdvisor</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial__card">
+            <div class="testimonial__stars">★★★★★</div>
+            <p class="testimonial__text">"Vinimos a celebrar un aniversario y superaron todas nuestras expectativas. Atención personalizada, rincón decorado, menú especial. Una noche que no olvidaremos."</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">AL</div>
+              <div>
+                <strong>Ana López</strong>
+                <span>Google Reviews</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial__card">
+            <div class="testimonial__stars">★★★★★</div>
+            <p class="testimonial__text">"El mejor restaurante de la zona sin duda. Repito cada mes. Los cócteles artesanales son una revelación y la selección de vinos es perfecta para cada plato."</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">CR</div>
+              <div>
+                <strong>Carlos Ruiz</strong>
+                <span>TripAdvisor</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="testimonials__dots" id="testimonialsDots"></div>
+        <div class="testimonials__controls">
+          <button class="testimonials__btn" id="testimonialPrev"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="testimonials__btn" id="testimonialNext"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       RESERVAS
+  ══════════════════════════════════════ -->
+  <section class="reservas section" id="reservas">
+    <div class="container">
+      <div class="reservas__grid">
+        <div class="reservas__info reveal-left">
+          <p class="section__eyebrow">¿Quieres venir?</p>
+          <h2 class="section__title">Reserva tu <em>mesa</em></h2>
+          <p>Asegura tu lugar y déjanos preparar algo especial para ti. Celebraciones, eventos privados y menús personalizados bajo petición.</p>
+
+          <div class="reservas__horarios">
+            <h3>Horarios</h3>
+            <div class="horario__row">
+              <span>Lunes — Viernes</span>
+              <span>13:00 – 16:00 · 20:00 – 23:30</span>
+            </div>
+            <div class="horario__row">
+              <span>Sábado</span>
+              <span>13:00 – 17:00 · 20:00 – 00:00</span>
+            </div>
+            <div class="horario__row">
+              <span>Domingo</span>
+              <span>13:00 – 17:00</span>
+            </div>
+          </div>
+
+          <div class="reservas__contact-quick">
+            <a href="tel:+34600000000" class="quick__link">
+              <i class="fa-solid fa-phone"></i>
+              <span>+34 600 000 000</span>
+            </a>
+            <a href="https://wa.me/34600000000" target="_blank" class="quick__link quick__link--wa">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>WhatsApp directo</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="reservas__form-wrap reveal-right">
+          <form class="reservas__form" id="reservaForm" novalidate>
+            <div class="form__row">
+              <div class="form__group">
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+              </div>
+              <div class="form__group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" />
+              </div>
+              <div class="form__group">
+                <label for="personas">Número de personas *</label>
+                <select id="personas" name="personas" required>
+                  <option value="">Seleccionar</option>
+                  <option>1 persona</option>
+                  <option>2 personas</option>
+                  <option>3 personas</option>
+                  <option>4 personas</option>
+                  <option>5 – 8 personas</option>
+                  <option>Más de 8 (evento)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__group">
+                <label for="fecha">Fecha *</label>
+                <input type="date" id="fecha" name="fecha" required />
+              </div>
+              <div class="form__group">
+                <label for="hora">Hora *</label>
+                <select id="hora" name="hora" required>
+                  <option value="">Seleccionar turno</option>
+                  <optgroup label="Mediodía">
+                    <option>13:00</option>
+                    <option>13:30</option>
+                    <option>14:00</option>
+                    <option>14:30</option>
+                    <option>15:00</option>
+                  </optgroup>
+                  <optgroup label="Noche">
+                    <option>20:00</option>
+                    <option>20:30</option>
+                    <option>21:00</option>
+                    <option>21:30</option>
+                    <option>22:00</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+            <div class="form__group">
+              <label for="mensaje">Mensaje / Ocasión especial</label>
+              <textarea id="mensaje" name="mensaje" rows="3" placeholder="Cumpleaños, aniversario, alergias… cuéntanos"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              <i class="fa-solid fa-calendar-check"></i>
+              Solicitar reserva
+            </button>
+            <div class="form__success" id="formSuccess">
+              <i class="fa-solid fa-circle-check"></i>
+              ¡Reserva recibida! Te confirmaremos en breve.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CONTACTO & MAPA
+  ══════════════════════════════════════ -->
+  <section class="contacto section" id="contacto">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__eyebrow">Encuéntranos</p>
+        <h2 class="section__title">Cómo <em>llegar</em></h2>
+      </div>
+
+      <div class="contacto__grid">
+        <div class="contacto__info reveal-left">
+          <div class="contacto__item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Dirección</strong>
+              <p>Restaurante Casa Petra<br>Tu dirección aquí, Ciudad</p>
+            </div>
+          </div>
+          <div class="contacto__item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Teléfono</strong>
+              <p><a href="tel:+34600000000">+34 600 000 000</a></p>
+            </div>
+          </div>
+          <div class="contacto__item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:info@casapetra.es">info@casapetra.es</a></p>
+            </div>
+          </div>
+          <div class="contacto__item">
+            <i class="fa-brands fa-instagram"></i>
+            <div>
+              <strong>Instagram</strong>
+              <p><a href="https://instagram.com" target="_blank">@casapetra.restaurante</a></p>
+            </div>
+          </div>
+
+          <div class="contacto__social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="TripAdvisor"><i class="fa-brands fa-tripadvisor"></i></a>
+            <a href="#" aria-label="Google"><i class="fa-brands fa-google"></i></a>
+          </div>
+        </div>
+
+        <div class="contacto__map reveal-right">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.6!2d-3.7!3d40.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCasa+Petra+Restaurante!5e0!3m2!1ses!2ses!4v1699000000000!5m2!1ses!2ses"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación Casa Petra">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <div class="nav__logo" style="margin-bottom:1rem">
+              <span class="nav__logo-script">Casa</span>
+              <span class="nav__logo-serif">PETRA</span>
+            </div>
+            <p>Cocina con alma, ingredientes de temporada y una experiencia que permanece. Desde hace más de 15 años.</p>
+          </div>
+
+          <div class="footer__col">
+            <h4>Navegación</h4>
+            <ul>
+              <li><a href="#nosotros">Nosotros</a></li>
+              <li><a href="#menu">Menú</a></li>
+              <li><a href="#galeria">Galería</a></li>
+              <li><a href="#reservas">Reservas</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h4>Horarios</h4>
+            <ul class="footer__hours">
+              <li><span>Lun – Vie</span><span>13–16 · 20–23:30</span></li>
+              <li><span>Sábado</span><span>13–17 · 20–00:00</span></li>
+              <li><span>Domingo</span><span>13–17</span></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h4>Contacto</h4>
+            <ul>
+              <li><a href="tel:+34600000000">+34 600 000 000</a></li>
+              <li><a href="mailto:info@casapetra.es">info@casapetra.es</a></li>
+            </ul>
+            <div class="footer__social">
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="TripAdvisor"><i class="fa-brands fa-tripadvisor"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2025 Casa Petra · Todos los derechos reservados</p>
+        <p>Diseñado con <i class="fa-solid fa-heart" style="color:#c9a96e"></i> para una experiencia única</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/34600000000" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Back to top -->
+  <button class="back-top" id="backTop" aria-label="Volver arriba">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

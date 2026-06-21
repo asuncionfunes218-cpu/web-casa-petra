@@ -643,6 +643,15 @@ ul { list-style: none; }
 .menu__tag--green { background: #d4edda; color: var(--green); }
 .menu__tag--blue  { background: #d0e8f4; color: var(--blue); }
 
+.menu__legend {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: .85rem;
+  color: var(--text-light);
+  letter-spacing: .06em;
+}
+.menu__legend strong { color: var(--gold-dark); }
+
 .menu__cta {
   text-align: center;
   margin-top: 3rem;

@@ -184,178 +184,372 @@
       </div>
 
       <div class="menu__tabs reveal">
-        <button class="menu__tab active" data-cat="entrantes">Entrantes</button>
-        <button class="menu__tab" data-cat="principales">Principales</button>
+        <button class="menu__tab active" data-cat="empezar">Para Empezar</button>
+        <button class="menu__tab" data-cat="carnes">Carnes</button>
+        <button class="menu__tab" data-cat="pescado">Pescado</button>
+        <button class="menu__tab" data-cat="vegetariano">Vegetariano</button>
         <button class="menu__tab" data-cat="postres">Postres</button>
         <button class="menu__tab" data-cat="bebidas">Bebidas</button>
       </div>
 
+      <div class="menu__legend reveal">
+        <span><strong>T</strong> = Tapa &nbsp;·&nbsp; <strong>P</strong> = Plato</span>
+      </div>
+
       <div class="menu__grid" id="menuGrid">
-        <!-- Entrantes -->
-        <div class="menu__card" data-cat="entrantes">
-          <div class="menu__card-img">
-            <img src="https://images.unsplash.com/photo-1572441713132-c542fc4fe282?w=500&q=80" alt="Croquetas artesanales" loading="lazy" />
-          </div>
+
+        <!-- ── PARA EMPEZAR ── -->
+        <div class="menu__card" data-cat="empezar">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1572441713132-c542fc4fe282?w=500&q=80" alt="Croquetas del Chef" loading="lazy" /></div>
           <div class="menu__card-body">
-            <div class="menu__card-top">
-              <h3>Croquetas de la abuela</h3>
-              <span class="menu__price">8,50 €</span>
-            </div>
-            <p>Bechamel cremosa con jamón ibérico, rebozado crujiente. Receta familiar de toda la vida.</p>
+            <div class="menu__card-top"><h3>Croquetas del Chef</h3><span class="menu__price">6,00 / 10,00 €</span></div>
+            <p>Variadas, con salsa ali-oli artesanal. Elaboración propia cada día.</p>
             <span class="menu__tag">Favorito</span>
           </div>
         </div>
 
-        <div class="menu__card" data-cat="entrantes">
-          <div class="menu__card-img">
-            <img src="https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=500&q=80" alt="Ensalada de temporada" loading="lazy" />
-          </div>
+        <div class="menu__card" data-cat="empezar">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&q=80" alt="Ensalada César" loading="lazy" /></div>
           <div class="menu__card-body">
-            <div class="menu__card-top">
-              <h3>Ensalada de temporada</h3>
-              <span class="menu__price">9,00 €</span>
-            </div>
-            <p>Hojas frescas, queso de cabra, nueces tostadas y vinagreta de miel artesanal.</p>
-            <span class="menu__tag menu__tag--green">Vegetal</span>
+            <div class="menu__card-top"><h3>Ensalada César</h3><span class="menu__price">12,00 €</span></div>
+            <p>Mix de lechuga, pollo, parmesano, salsa césar, pepinos y pan de ajo tostado.</p>
           </div>
         </div>
 
-        <div class="menu__card" data-cat="entrantes">
-          <div class="menu__card-img">
-            <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=500&q=80" alt="Tabla de ibéricos" loading="lazy" />
-          </div>
+        <div class="menu__card" data-cat="empezar">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&q=80" alt="Ensalada Fatoush" loading="lazy" /></div>
           <div class="menu__card-body">
-            <div class="menu__card-top">
-              <h3>Tabla de ibéricos</h3>
-              <span class="menu__price">18,00 €</span>
-            </div>
-            <p>Selección de embutidos ibéricos de bellota con pan tostado y aceite virgen extra.</p>
+            <div class="menu__card-top"><h3>Ensalada Fatoush</h3><span class="menu__price">10,00 €</span></div>
+            <p>Ensalada libanesa con tomates, pepino, menta y pan crujiente. Aderezo de limón.</p>
+            <span class="menu__tag menu__tag--green">Árabe</span>
           </div>
         </div>
 
-        <!-- Principales -->
-        <div class="menu__card" data-cat="principales" style="display:none">
-          <div class="menu__card-img">
-            <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=500&q=80" alt="Solomillo a la brasa" loading="lazy" />
-          </div>
+        <div class="menu__card" data-cat="empezar">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?w=500&q=80" alt="Falafel" loading="lazy" /></div>
           <div class="menu__card-body">
-            <div class="menu__card-top">
-              <h3>Solomillo a la brasa</h3>
-              <span class="menu__price">24,00 €</span>
-            </div>
-            <p>Solomillo de ternera gallega, salsa de vino tinto reducido y patatas rústicas.</p>
+            <div class="menu__card-top"><h3>Falafel</h3><span class="menu__price">5,50 / 11,00 €</span></div>
+            <p>Croquetas de garbanzos, verduras y especias orientales. Crujientes y tiernos.</p>
+            <span class="menu__tag menu__tag--green">Vegano</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="empezar">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1622205313162-be1d5712a43f?w=500&q=80" alt="Kebe Chamieh" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Kebe Chamieh</h3><span class="menu__price">6,50 / 13,00 €</span></div>
+            <p>Croquetas de trigo rellenas de carne y piñones. Especialidad árabe de la casa.</p>
+            <span class="menu__tag menu__tag--green">Árabe</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="empezar">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=500&q=80" alt="Dolma de Verduras" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Dolma de Verduras</h3><span class="menu__price">5,50 / 11,00 €</span></div>
+            <p>Hojas de parra rellenas de arroz y verduras. Receta tradicional de Oriente Medio.</p>
+            <span class="menu__tag menu__tag--green">Vegano</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="empezar">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1529059997568-3d847b1154f0?w=500&q=80" alt="Mutabal" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Mutabal</h3><span class="menu__price">— €</span></div>
+            <p>Berenjenas asadas con tahini, yogurt y limón. Dip árabe ahumado y cremoso.</p>
+            <span class="menu__tag menu__tag--green">Árabe</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="empezar">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=500&q=80" alt="Humus" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Humus</h3><span class="menu__price">— €</span></div>
+            <p>Crema de garbanzos con aceite de oliva, sésamo y limón. Servido con pan de pita.</p>
+            <span class="menu__tag menu__tag--green">Árabe</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="empezar">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&q=80" alt="Burrata con Tomate" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Burrata con Tomate</h3><span class="menu__price">10,00 €</span></div>
+            <p>Burrata fresca con tomate cherry, albahaca y aceite de oliva virgen extra.</p>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="empezar">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=500&q=80" alt="Conos de Langostino" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Conos de Langostino</h3><span class="menu__price">4,50 / 8,50 €</span></div>
+            <p>Crujientes conos rellenos de langostino. Bocado elegante para compartir.</p>
+            <span class="menu__tag">Favorito</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="empezar">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=500&q=80" alt="Queso Frito" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Queso Frito</h3><span class="menu__price">5,50 / 11,00 €</span></div>
+            <p>Queso brie rebozado con mermelada de tomate. Contraste perfecto de texturas.</p>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="empezar">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1540189549336-e6e99eb4b951?w=500&q=80" alt="Papas Bravas" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Papas Bravas</h3><span class="menu__price">4,50 / 8,50 €</span></div>
+            <p>Patatas fritas crujientes con salsa brava picante y ali-oli casero.</p>
+          </div>
+        </div>
+
+        <!-- ── CARNES ── -->
+        <div class="menu__card" data-cat="carnes" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1558030006-450675393462?w=500&q=80" alt="Solomillo al Whisky" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Solomillo al Whisky</h3><span class="menu__price">6,50 / 13,00 €</span></div>
+            <p>Solomillo salteado con cebolla y salsa de whisky. El clásico de Casa Petra.</p>
             <span class="menu__tag">Estrella</span>
           </div>
         </div>
 
-        <div class="menu__card" data-cat="principales" style="display:none">
-          <div class="menu__card-img">
-            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500&q=80" alt="Merluza al vapor" loading="lazy" />
-          </div>
+        <div class="menu__card" data-cat="carnes" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&q=80" alt="Presa Ibérica" loading="lazy" /></div>
           <div class="menu__card-body">
-            <div class="menu__card-top">
-              <h3>Merluza al vapor</h3>
-              <span class="menu__price">19,50 €</span>
-            </div>
-            <p>Merluza fresca al vapor con verduras de temporada y salsa de almejas al albariño.</p>
-            <span class="menu__tag menu__tag--blue">Fresco</span>
+            <div class="menu__card-top"><h3>Presa Ibérica</h3><span class="menu__price">5,50 / 11,50 €</span></div>
+            <p>Presa de cerdo ibérico a la plancha. Jugosa, con la grasa justa y sabor profundo.</p>
           </div>
         </div>
 
-        <div class="menu__card" data-cat="principales" style="display:none">
-          <div class="menu__card-img">
-            <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=500&q=80" alt="Arroz de montaña" loading="lazy" />
-          </div>
+        <div class="menu__card" data-cat="carnes" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=500&q=80" alt="Carrillada Ibérica" loading="lazy" /></div>
           <div class="menu__card-body">
-            <div class="menu__card-top">
-              <h3>Arroz de montaña</h3>
-              <span class="menu__price">16,00 €</span>
-            </div>
-            <p>Arroz meloso con setas silvestres, conejo de corral y trufa negra rallada al momento.</p>
-          </div>
-        </div>
-
-        <!-- Postres -->
-        <div class="menu__card" data-cat="postres" style="display:none">
-          <div class="menu__card-img">
-            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&q=80" alt="Tarta de queso" loading="lazy" />
-          </div>
-          <div class="menu__card-body">
-            <div class="menu__card-top">
-              <h3>Tarta de queso de la casa</h3>
-              <span class="menu__price">7,00 €</span>
-            </div>
-            <p>Cremosa, sin base, con coulis de frutos rojos. La más pedida desde que abrimos.</p>
+            <div class="menu__card-top"><h3>Carrillada Ibérica</h3><span class="menu__price">5,00 / 10,00 €</span></div>
+            <p>Carrillada de cerdo ibérico guisada a fuego lento hasta que se deshace en la boca.</p>
             <span class="menu__tag">Favorito</span>
           </div>
         </div>
 
+        <div class="menu__card" data-cat="carnes" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=500&q=80" alt="Mansaf Beduino" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Mansaf Beduino</h3><span class="menu__price">14,00 / 16,00 €</span></div>
+            <p>Cordero en salsa de yogurt con arroz y frutos secos. El rey de la cocina árabe.</p>
+            <span class="menu__tag menu__tag--green">Árabe</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="carnes" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500&q=80" alt="Pinchos de Cordero" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Pinchos de Cordero</h3><span class="menu__price">14,00 / 15,00 €</span></div>
+            <p>Brochetas de cordero tierno marinado con especias árabes. Con arroz.</p>
+            <span class="menu__tag menu__tag--green">Árabe</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="carnes" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=80" alt="Pinchos de Pollo Steam Tawook" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Pinchos Pollo Steam Tawook</h3><span class="menu__price">6,50 / 13,00 €</span></div>
+            <p>4 pinchos de pollo al vapor con especias libanesas. Tiernos y aromáticos.</p>
+            <span class="menu__tag menu__tag--green">Árabe</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="carnes" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1606728035253-49e8a23146de?w=500&q=80" alt="Tajin de Kefta" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Tajin de Kefta</h3><span class="menu__price">10,00 / 12,00 €</span></div>
+            <p>Carne picada, salsa de tomate, huevos y especias. Cocinado en tajín marroquí.</p>
+            <span class="menu__tag menu__tag--green">Árabe</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="carnes" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=500&q=80" alt="Couscus de Pollo" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Couscus de Pollo</h3><span class="menu__price">10,00 / 12,00 €</span></div>
+            <p>Sémola de trigo con pollo tierno y verduras. Receta norteafricana auténtica.</p>
+            <span class="menu__tag menu__tag--green">Árabe</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="carnes" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&q=80" alt="Briani" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Briani</h3><span class="menu__price">10,00 / 12,00 €</span></div>
+            <p>Arroz, pollo, frutos secos y especias árabes. Plato festivo y muy aromático.</p>
+            <span class="menu__tag menu__tag--green">Árabe</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="carnes" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80" alt="Hamburguesa de Ternera" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Hamburguesa Ternera 200g</h3><span class="menu__price">11,00 / 12,00 €</span></div>
+            <p>Ternera con cheddar y cebolla, hecha a la plancha con pan artesanal.</p>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="carnes" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=80" alt="Arayes de Ternera" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Arayes de Ternera</h3><span class="menu__price">10,00 / 12,00 €</span></div>
+            <p>Pan de pita relleno de ternera picada con perejil. Con arroz y patatas.</p>
+            <span class="menu__tag menu__tag--green">Árabe</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="carnes" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=500&q=80" alt="Moussaka" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Moussaka</h3><span class="menu__price">11,00 €</span></div>
+            <p>Capas de berenjena, carne picada y bechamel gratinada. Receta mediterránea.</p>
+          </div>
+        </div>
+
+        <!-- ── PESCADO ── -->
+        <div class="menu__card" data-cat="pescado" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=500&q=80" alt="Salmón Barbacoa" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Salmón Barbacoa</h3><span class="menu__price">10,00 / 12,00 €</span></div>
+            <p>Salmón fresco a la plancha con salsa de barbacoa casera. Jugoso y ahumado.</p>
+            <span class="menu__tag menu__tag--blue">Fresco</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="pescado" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500&q=80" alt="Bacalao Confitado" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Bacalao Confitado</h3><span class="menu__price">9,00 €</span></div>
+            <p>Bacalao confitado a baja temperatura con aceite de oliva virgen y ajo.</p>
+            <span class="menu__tag menu__tag--blue">Fresco</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="pescado" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=500&q=80" alt="Dorada" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Dorada</h3><span class="menu__price">15,00 €</span></div>
+            <p>Dorada entera a la sal o a la plancha. Fresca del día con guarnición de temporada.</p>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="pescado" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&q=80" alt="Pulpo" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Pulpo</h3><span class="menu__price">18,00 €</span></div>
+            <p>Pulpo de roca cocido y a la plancha con pimentón y aceite de oliva.</p>
+            <span class="menu__tag">Estrella</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="pescado" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" alt="Choco Frito" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Choco Frito</h3><span class="menu__price">6,00 / 12,00 €</span></div>
+            <p>Sepia frita en aceite de oliva, crujiente, con limón y ali-oli de la casa.</p>
+          </div>
+        </div>
+
+        <!-- ── VEGETARIANO ── -->
+        <div class="menu__card" data-cat="vegetariano" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500&q=80" alt="Arayes de Queso" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Arayes de Queso</h3><span class="menu__price">8,00 €</span></div>
+            <p>Pan de pita de hojaldre relleno de queso, pimientos y ajo. Crujiente y sabroso.</p>
+            <span class="menu__tag menu__tag--green">Vegetariano</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="vegetariano" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&q=80" alt="Couscous Vegetariano" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Couscous Vegetariano</h3><span class="menu__price">7,50 €</span></div>
+            <p>Sémola de trigo con calabacín, zanahoria y especias norteafricanas.</p>
+            <span class="menu__tag menu__tag--green">Vegano</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="vegetariano" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?w=500&q=80" alt="Falafel" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Falafel</h3><span class="menu__price">5,50 / 11,00 €</span></div>
+            <p>Croquetas de garbanzos y especias orientales. Crujientes por fuera, tiernos por dentro.</p>
+            <span class="menu__tag menu__tag--green">Vegano</span>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="vegetariano" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=500&q=80" alt="Dolma de Verduras" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Dolma de Verduras</h3><span class="menu__price">5,50 / 11,00 €</span></div>
+            <p>Hojas de parra rellenas de arroz y verduras al estilo árabe tradicional.</p>
+            <span class="menu__tag menu__tag--green">Vegano</span>
+          </div>
+        </div>
+
+        <!-- ── POSTRES ── -->
         <div class="menu__card" data-cat="postres" style="display:none">
-          <div class="menu__card-img">
-            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&q=80" alt="Crema catalana" loading="lazy" />
-          </div>
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&q=80" alt="Tarta Petra" loading="lazy" /></div>
           <div class="menu__card-body">
-            <div class="menu__card-top">
-              <h3>Crema catalana</h3>
-              <span class="menu__price">6,00 €</span>
-            </div>
-            <p>La receta clásica con vainilla natural, naranja y canela. Caramelizada al momento.</p>
+            <div class="menu__card-top"><h3>Tarta Petra</h3><span class="menu__price">5,00 €</span></div>
+            <p>La tarta de la casa. Receta secreta que enamora desde el primer bocado.</p>
+            <span class="menu__tag">Exclusivo</span>
           </div>
         </div>
 
         <div class="menu__card" data-cat="postres" style="display:none">
-          <div class="menu__card-img">
-            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&q=80" alt="Coulant de chocolate" loading="lazy" />
-          </div>
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&q=80" alt="Dulce Árabe" loading="lazy" /></div>
           <div class="menu__card-body">
-            <div class="menu__card-top">
-              <h3>Coulant de chocolate</h3>
-              <span class="menu__price">7,50 €</span>
-            </div>
-            <p>Bizcocho templado con corazón líquido de chocolate 70% y helado de vainilla.</p>
+            <div class="menu__card-top"><h3>Dulce Árabe</h3><span class="menu__price">2,00 €</span></div>
+            <p>Pastelito árabe tradicional. El broche dulce perfecto para cerrar la comida.</p>
+            <span class="menu__tag menu__tag--green">Árabe</span>
           </div>
         </div>
 
-        <!-- Bebidas -->
-        <div class="menu__card" data-cat="bebidas" style="display:none">
-          <div class="menu__card-img">
-            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&q=80" alt="Vinos seleccionados" loading="lazy" />
-          </div>
+        <div class="menu__card" data-cat="postres" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&q=80" alt="Torrija con Helado" loading="lazy" /></div>
           <div class="menu__card-body">
-            <div class="menu__card-top">
-              <h3>Vinos de la casa</h3>
-              <span class="menu__price">desde 4,00 €</span>
-            </div>
-            <p>Selección de blancos, tintos y rosados de pequeñas bodegas. Pregunta al sommelier.</p>
+            <div class="menu__card-top"><h3>Torrija con Helado Vainilla</h3><span class="menu__price">— €</span></div>
+            <p>Torrija casera templada con bola de helado de vainilla artesanal.</p>
           </div>
         </div>
 
+        <!-- ── BEBIDAS ── -->
         <div class="menu__card" data-cat="bebidas" style="display:none">
-          <div class="menu__card-img">
-            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500&q=80" alt="Cócteles artesanales" loading="lazy" />
-          </div>
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&q=80" alt="Vino Tinto" loading="lazy" /></div>
           <div class="menu__card-body">
-            <div class="menu__card-top">
-              <h3>Cócteles artesanales</h3>
-              <span class="menu__price">desde 9,00 €</span>
-            </div>
-            <p>Creaciones propias con destilados locales, frutas frescas y hierbas del jardín.</p>
-            <span class="menu__tag">Novedad</span>
+            <div class="menu__card-top"><h3>Vino Tinto</h3><span class="menu__price">Copa 3,50 € · Bot. 18 €</span></div>
+            <p>Ribera del Duero o Rioja. Selección cuidada para cada plato.</p>
           </div>
         </div>
 
         <div class="menu__card" data-cat="bebidas" style="display:none">
-          <div class="menu__card-img">
-            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&q=80" alt="Cafés especiales" loading="lazy" />
-          </div>
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Vino Blanco" loading="lazy" /></div>
           <div class="menu__card-body">
-            <div class="menu__card-top">
-              <h3>Cafés de especialidad</h3>
-              <span class="menu__price">desde 2,50 €</span>
-            </div>
-            <p>Granos de origen único, tostado artesanal. El mejor broche para cerrar una gran comida.</p>
+            <div class="menu__card-top"><h3>Vino Blanco</h3><span class="menu__price">Copa 3,50 € · Bot. desde 15 €</span></div>
+            <p>Seco o dulce. Ideal para pescados y entrantes árabes.</p>
           </div>
         </div>
+
+        <div class="menu__card" data-cat="bebidas" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=500&q=80" alt="Cervezas" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Cervezas</h3><span class="menu__price">Caña 1,60 € · Tercio 2,50 €</span></div>
+            <p>Caña, grande, certada o tercio. Siempre fresquita para tus tapas.</p>
+          </div>
+        </div>
+
+        <div class="menu__card" data-cat="bebidas" style="display:none">
+          <div class="menu__card-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&q=80" alt="Cafés y Refrescos" loading="lazy" /></div>
+          <div class="menu__card-body">
+            <div class="menu__card-top"><h3>Cafés &amp; Refrescos</h3><span class="menu__price">desde 1,50 €</span></div>
+            <p>Café, café bombón, tinto de verano, refrescos y agua. El cierre perfecto.</p>
+          </div>
+        </div>
+
       </div>
 
       <div class="menu__cta reveal">

@@ -270,9 +270,7 @@ ul { list-style: none; }
 }
 .hero__slide.active { opacity: 1; }
 
-.hero__slide--1 { background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=85'); }
-.hero__slide--2 { background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1600&q=85'); }
-.hero__slide--3 { background-image: url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=1600&q=85'); }
+/* Hero slides — imágenes definidas inline en el HTML */
 
 @keyframes kenBurns {
   from { transform: scale(1); }
@@ -661,7 +659,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   background-attachment: fixed;
-  background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=85');
+  background-image: url('../images/terraza-clientes.jpg');
   background-size: cover;
   background-position: center;
 }

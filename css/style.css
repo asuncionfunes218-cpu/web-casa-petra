@@ -287,8 +287,23 @@ img { max-width: 100%; display: block; }
   margin-bottom: 14px;
 }
 .showcase-x {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
   color: var(--black);
-  background: linear-gradient(180deg, transparent 58%, var(--yellow) 58%);
+  z-index: 0;
+}
+.showcase-x::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -0.06em;
+  right: -0.06em;
+  bottom: 0.02em;
+  height: 0.52em;
+  background: var(--yellow);
+  transform: skewX(-8deg);
+  border-radius: 2px;
 }
 .showcase-head p { max-width: 560px; font-size: 1.08rem; }
 

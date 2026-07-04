@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Casa Petra — Restaurante con alma. Cocina mediterránea y árabe en el corazón de la ciudad. Reserva tu mesa." />
+  <title>Casa Petra · Restaurante</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#inicio" class="nav__logo">
+      <span class="logo-script">Casa</span>
+      <span class="logo-serif">PETRA</span>
+    </a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#menu">Carta</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#reservas">Reservas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#reservas" class="btn btn--gold nav__cta">Reservar mesa</a>
+    <button class="burger" id="burger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="hero__bg">
+    <div class="hero__slide active" style="background-image:url('images/terraza-clientes.jpg')"></div>
+    <div class="hero__slide" style="background-image:url('images/terraza-mesas.jpg')"></div>
+    <div class="hero__slide" style="background-image:url('images/interior.jpg')"></div>
+  </div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <p class="eyebrow">Bienvenidos a</p>
+    <h1><span class="h1-script">Casa</span><span class="h1-serif">PETRA</span></h1>
+    <p class="hero__sub">Cocina mediterránea &amp; árabe · Terraza · Ambiente familiar</p>
+    <div class="hero__btns">
+      <a href="#menu" class="btn btn--gold">Ver la carta</a>
+      <a href="#reservas" class="btn btn--outline-w">Reservar</a>
+    </div>
+  </div>
+  <button class="hero__down" onclick="document.getElementById('nosotros').scrollIntoView({behavior:'smooth'})">
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+</section>
+
+<!-- ══ RIBBON ════════════════════════════════════ -->
+<div class="ribbon">
+  <div class="ribbon__inner">
+    <span>Cocina Árabe &amp; Mediterránea</span><span class="sep">✦</span>
+    <span>Terraza Exterior</span><span class="sep">✦</span>
+    <span>Menú Diario</span><span class="sep">✦</span>
+    <span>Tapas y Platos</span><span class="sep">✦</span>
+    <span>Ambiente Familiar</span><span class="sep">✦</span>
+    <span>Cocina Árabe &amp; Mediterránea</span><span class="sep">✦</span>
+    <span>Terraza Exterior</span><span class="sep">✦</span>
+    <span>Menú Diario</span><span class="sep">✦</span>
+    <span>Tapas y Platos</span><span class="sep">✦</span>
+    <span>Ambiente Familiar</span><span class="sep">✦</span>
+  </div>
+</div>
+
+<!-- ══ NOSOTROS ══════════════════════════════════ -->
+<section class="about section" id="nosotros">
+  <div class="container">
+    <div class="about__grid">
+      <div class="about__imgs reveal-left">
+        <div class="about__img-main">
+          <img src="images/interior.jpg" alt="Interior Casa Petra" />
+        </div>
+        <div class="about__img-float">
+          <img src="images/barra.jpg" alt="Barra de Casa Petra" />
+        </div>
+      </div>
+      <div class="about__text reveal-right">
+        <p class="eyebrow">Nuestra historia</p>
+        <h2 class="sec-title">Más que un restaurante,<br><em>un hogar</em></h2>
+        <p class="about__lead">Casa Petra es un lugar donde la cocina árabe y mediterránea se encuentran en una misma mesa, con productos frescos y recetas que cuentan historias.</p>
+        <p>Desde nuestras croquetas artesanales hasta el Mansaf Beduino, cada plato se prepara con respeto al producto y pasión por el sabor. Nuestra terraza, nuestro salón y nuestra barra son el escenario perfecto para compartir momentos especiales.</p>
+        <div class="about__pills">
+          <span><i class="fa-solid fa-leaf"></i> Producto fresco</span>
+          <span><i class="fa-solid fa-fire-burner"></i> Cocina artesanal</span>
+          <span><i class="fa-solid fa-sun"></i> Terraza</span>
+          <span><i class="fa-solid fa-utensils"></i> Menú diario</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CARTA ══════════════════════════════════════ -->
+<section class="menu section" id="menu">
+  <div class="container">
+    <div class="sec-header reveal">
+      <p class="eyebrow">Lo que ofrecemos</p>
+      <h2 class="sec-title">Nuestra <em>Carta</em></h2>
+      <p class="sec-desc">Leyenda: <strong>T</strong> = Tapa &nbsp;·&nbsp; <strong>P</strong> = Plato</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs reveal">
+      <button class="tab active" data-cat="empezar">Para Empezar</button>
+      <button class="tab" data-cat="carnes">Carnes</button>
+      <button class="tab" data-cat="pescado">Pescado</button>
+      <button class="tab" data-cat="vegetariano">Vegetariano</button>
+      <button class="tab" data-cat="postres">Postres</button>
+      <button class="tab" data-cat="bebidas">Bebidas</button>
+    </div>
+
+    <div class="carta" id="carta">
+
+      <!-- ══ PARA EMPEZAR ══ -->
+      <!-- Con foto -->
+      <div class="dish-card" data-cat="empezar">
+        <div class="dish-img"><img src="images/croquetas.jpg" alt="Croquetas del Chef" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Croquetas del Chef</h3><span class="price">6 / 10 €</span></div>
+          <p>Variadas, con salsa ali-oli artesanal.</p>
+          <span class="tag">Favorito</span>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="empezar">
+        <div class="dish-img"><img src="images/humus.jpg" alt="Humus" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Humus</h3><span class="price">— €</span></div>
+          <p>Crema de garbanzos con aceite, sésamo y limón. Con pan de pita.</p>
+          <span class="tag tag--arab">Árabe</span>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="empezar">
+        <div class="dish-img"><img src="images/falafel.jpg" alt="Falafel" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Falafel</h3><span class="price">5,50 / 11 €</span></div>
+          <p>Croquetas de garbanzos y especias orientales. Crujientes por fuera, tiernos por dentro.</p>
+          <span class="tag tag--arab">Árabe</span>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="empezar">
+        <div class="dish-img"><img src="images/kebe-chamieh.jpg" alt="Kebe Chamieh" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Kebe Chamieh</h3><span class="price">6,50 / 13 €</span></div>
+          <p>Croquetas de trigo rellenas de carne y piñones. Especialidad árabe de la casa.</p>
+          <span class="tag tag--arab">Árabe</span>
+        </div>
+      </div>
+
+      <!-- Sin foto — lista de texto -->
+      <div class="dish-list" data-cat="empezar">
+        <div class="list-item"><span class="list-name">Ensalada César</span><span class="list-price">12 €</span></div>
+        <div class="list-item"><span class="list-name">Ensalada Fatoush</span><span class="list-price">10 €</span></div>
+        <div class="list-item"><span class="list-name">Ensaladilla de Pollo</span><span class="list-price">7 / 14 €</span></div>
+        <div class="list-item"><span class="list-name">Ensaladilla de Langostino</span><span class="list-price">4,50 / 13,50 €</span></div>
+        <div class="list-item"><span class="list-name">Burrata con Tomate</span><span class="list-price">10 €</span></div>
+        <div class="list-item"><span class="list-name">Queso Frito <small>con mermelada de tomate</small></span><span class="list-price">5,50 / 11 €</span></div>
+        <div class="list-item"><span class="list-name">Papas Bravas</span><span class="list-price">4,50 / 8,50 €</span></div>
+        <div class="list-item"><span class="list-name">Mutabal <small>berenjenas asadas con tahini</small></span><span class="list-price">— €</span></div>
+        <div class="list-item"><span class="list-name">Conos de Langostino</span><span class="list-price">4,50 / 8,50 €</span></div>
+        <div class="list-item"><span class="list-name">Bolitas de Espinaca con Huevo</span><span class="list-price">5,50 / 11 €</span></div>
+        <div class="list-item"><span class="list-name">Dolma de Verduras</span><span class="list-price">5,50 / 11 €</span></div>
+        <div class="list-item"><span class="list-name">Lasaña de Berenjena</span><span class="list-price">11 €</span></div>
+        <div class="list-item"><span class="list-name">Berenjena Frita</span><span class="list-price">13 €</span></div>
+        <div class="list-item"><span class="list-name">Pan y Picos</span><span class="list-price">1 €</span></div>
+      </div>
+
+      <!-- ══ CARNES ══ -->
+      <div class="dish-card" data-cat="carnes" style="display:none">
+        <div class="dish-img"><img src="images/solomillo.jpg" alt="Solomillo al Whisky" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Solomillo al Whisky</h3><span class="price">6,50 / 13 €</span></div>
+          <p>Solomillo salteado con cebolla caramelizada y salsa de whisky.</p>
+          <span class="tag">Estrella</span>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="carnes" style="display:none">
+        <div class="dish-img"><img src="images/presa-iberica.jpg" alt="Presa Ibérica" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Presa Ibérica</h3><span class="price">5,50 / 11,50 €</span></div>
+          <p>Presa de cerdo ibérico con verduras a la brasa.</p>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="carnes" style="display:none">
+        <div class="dish-img"><img src="images/carrillada.jpg" alt="Carrillada Ibérica" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Carrillada Ibérica</h3><span class="price">5 / 10 €</span></div>
+          <p>Carrillada guisada a fuego lento en su propia salsa. Con patatas fritas.</p>
+          <span class="tag">Favorito</span>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="carnes" style="display:none">
+        <div class="dish-img"><img src="images/mansaf-beduino.jpg" alt="Mansaf Beduino" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Mansaf Beduino</h3><span class="price">14 / 16 €</span></div>
+          <p>Cordero en salsa de yogurt con arroz y piñones. El plato más emblemático de la cocina árabe.</p>
+          <span class="tag tag--arab">Árabe</span>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="carnes" style="display:none">
+        <div class="dish-img"><img src="images/pastela-pollo.jpg" alt="Pastela de Pollo" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Pastela de Pollo</h3><span class="price">10,50 / 12 €</span></div>
+          <p>Hojaldre crujiente relleno de pollo con almendras y especias marroquíes.</p>
+          <span class="tag tag--arab">Árabe</span>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="carnes" style="display:none">
+        <div class="dish-img"><img src="images/tajin-kefta.jpg" alt="Tajin de Kefta" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Tajin de Kefta</h3><span class="price">10 / 12 €</span></div>
+          <p>Carne picada en salsa de tomate con huevos y especias. Cocinado en tajín.</p>
+          <span class="tag tag--arab">Árabe</span>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="carnes" style="display:none">
+        <div class="dish-img"><img src="images/pinchos-tawook.jpg" alt="Pinchos Pollo Steam Tawook" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Pinchos Pollo Steam Tawook</h3><span class="price">6,50 / 13 €</span></div>
+          <p>Pinchos de pollo al vapor con especias libanesas, arroz y pan pita.</p>
+          <span class="tag tag--arab">Árabe</span>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="carnes" style="display:none">
+        <div class="dish-img"><img src="images/briani.jpg" alt="Briani" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Briani</h3><span class="price">10 / 12 €</span></div>
+          <p>Arroz aromático con pollo, frutos secos y especias árabes.</p>
+          <span class="tag tag--arab">Árabe</span>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="carnes" style="display:none">
+        <div class="dish-img"><img src="images/hamburguesa.jpg" alt="Hamburguesa de Ternera" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Hamburguesa de Ternera</h3><span class="price">11 / 12 €</span></div>
+          <p>200g de ternera con cheddar y cebolla, pan artesanal y patatas fritas.</p>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="carnes" style="display:none">
+        <div class="dish-img"><img src="images/wok-pollo.jpg" alt="Wok de Pollo" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Wok de Pollo</h3><span class="price">— €</span></div>
+          <p>Pollo salteado al wok con noodles, pimientos, zanahoria y sésamo.</p>
+          <span class="tag">Novedad</span>
+        </div>
+      </div>
+
+      <!-- Sin foto -->
+      <div class="dish-list" data-cat="carnes" style="display:none">
+        <div class="list-item"><span class="list-name">Pinchos de Cordero</span><span class="list-price">14 / 15 €</span></div>
+        <div class="list-item"><span class="list-name">Pinchos de Ternera</span><span class="list-price">5,50 / 11 €</span></div>
+        <div class="list-item"><span class="list-name">Salteado de Pollo</span><span class="list-price">10 €</span></div>
+        <div class="list-item"><span class="list-name">Couscus de Pollo</span><span class="list-price">10 / 12 €</span></div>
+        <div class="list-item"><span class="list-name">Arayes de Ternera</span><span class="list-price">10 / 12 €</span></div>
+        <div class="list-item"><span class="list-name">Moussaka</span><span class="list-price">11 €</span></div>
+        <div class="list-item"><span class="list-name">Lagrimitas de Pollo</span><span class="list-price">5,50 / 12,50 €</span></div>
+        <div class="list-item"><span class="list-name">Solomio Carbonara</span><span class="list-price">5 / 9,50 €</span></div>
+        <div class="list-item"><span class="list-name">Solomio Whisky</span><span class="list-price">5 / 9,50 €</span></div>
+      </div>
+
+      <!-- ══ PESCADO ══ -->
+      <div class="dish-card" data-cat="pescado" style="display:none">
+        <div class="dish-img"><img src="images/pulpo.jpg" alt="Pulpo" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Pulpo</h3><span class="price">18 €</span></div>
+          <p>Pulpo con patatas en cazuela de barro. Tierno y sabroso.</p>
+          <span class="tag">Estrella</span>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="pescado" style="display:none">
+        <div class="dish-img"><img src="images/bacalao.jpg" alt="Bacalao Confitado" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Bacalao Confitado</h3><span class="price">9 €</span></div>
+          <p>Bacalao confitado sobre puré con verduras salteadas y brotes frescos.</p>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="pescado" style="display:none">
+        <div class="dish-img"><img src="images/dorada.jpg" alt="Dorada" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Dorada</h3><span class="price">15 €</span></div>
+          <p>Dorada a la plancha con guarnición. Fresca del día.</p>
+        </div>
+      </div>
+
+      <div class="dish-card" data-cat="pescado" style="display:none">
+        <div class="dish-img"><img src="images/pescado-frito.jpg" alt="Pescado Frito" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Pescado Frito Variado</h3><span class="price">6 / 12 €</span></div>
+          <p>Boquerones, bacalao, chocos y calamares. Con limón y ali-oli.</p>
+        </div>
+      </div>
+
+      <!-- Sin foto -->
+      <div class="dish-list" data-cat="pescado" style="display:none">
+        <div class="list-item"><span class="list-name">Salmón Barbacoa</span><span class="list-price">10 / 12 €</span></div>
+        <div class="list-item"><span class="list-name">Bacalao Frito</span><span class="list-price">Según peso</span></div>
+      </div>
+
+      <!-- ══ VEGETARIANO ══ -->
+      <div class="dish-list" data-cat="vegetariano" style="display:none">
+        <div class="list-item"><span class="list-name">Arayes de Queso <small>pan pita con queso</small></span><span class="list-price">8 €</span></div>
+        <div class="list-item"><span class="list-name">Couscous Vegetariano</span><span class="list-price">7,50 €</span></div>
+        <div class="list-item"><span class="list-name">Falafel</span><span class="list-price">5,50 / 11 €</span></div>
+        <div class="list-item"><span class="list-name">Dolma de Verduras</span><span class="list-price">5,50 / 11 €</span></div>
+        <div class="list-item"><span class="list-name">Humus</span><span class="list-price">— €</span></div>
+        <div class="list-item"><span class="list-name">Mutabal</span><span class="list-price">— €</span></div>
+        <div class="list-item"><span class="list-name">Lasaña de Berenjena</span><span class="list-price">11 €</span></div>
+        <div class="list-item"><span class="list-name">Berenjena Frita <small>con 4 quesos y miel</small></span><span class="list-price">13 €</span></div>
+      </div>
+
+      <!-- ══ POSTRES ══ -->
+      <div class="dish-card" data-cat="postres" style="display:none">
+        <div class="dish-img"><img src="images/postre-helado.jpg" alt="Postre especial" /></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Postre Especial de la Casa</h3><span class="price">— €</span></div>
+          <p>Bizcocho de chocolate con helado, caramelo y crumble crujiente.</p>
+          <span class="tag">Exclusivo</span>
+        </div>
+      </div>
+
+      <div class="dish-list" data-cat="postres" style="display:none">
+        <div class="list-item"><span class="list-name">Tarta Petra</span><span class="list-price">5 €</span></div>
+        <div class="list-item"><span class="list-name">Dulce Árabe</span><span class="list-price">2 €</span></div>
+        <div class="list-item"><span class="list-name">Torrija con Helado de Vainilla</span><span class="list-price">— €</span></div>
+      </div>
+
+      <!-- ══ BEBIDAS ══ -->
+      <div class="dish-list" data-cat="bebidas" style="display:none">
+        <div class="list-item list-head"><span>Cervezas</span></div>
+        <div class="list-item"><span class="list-name">Caña</span><span class="list-price">1,60 €</span></div>
+        <div class="list-item"><span class="list-name">Grande</span><span class="list-price">2,80 €</span></div>
+        <div class="list-item"><span class="list-name">Certada</span><span class="list-price">1,70 €</span></div>
+        <div class="list-item"><span class="list-name">Tercio</span><span class="list-price">2,50 €</span></div>
+
+        <div class="list-item list-head"><span>Vino Tinto</span></div>
+        <div class="list-item"><span class="list-name">Ribera — Copa</span><span class="list-price">3,50 €</span></div>
+        <div class="list-item"><span class="list-name">Ribera — Botella</span><span class="list-price">18 €</span></div>
+        <div class="list-item"><span class="list-name">Rioja — Copa</span><span class="list-price">3,50 €</span></div>
+        <div class="list-item"><span class="list-name">Rioja — Botella</span><span class="list-price">18 €</span></div>
+
+        <div class="list-item list-head"><span>Vino Blanco</span></div>
+        <div class="list-item"><span class="list-name">Seco — Copa</span><span class="list-price">3,50 €</span></div>
+        <div class="list-item"><span class="list-name">Seco — Botella</span><span class="list-price">15 €</span></div>
+        <div class="list-item"><span class="list-name">Dulce — Copa</span><span class="list-price">3,50 €</span></div>
+        <div class="list-item"><span class="list-name">Dulce — Botella</span><span class="list-price">20 €</span></div>
+
+        <div class="list-item list-head"><span>Refrescos &amp; Otros</span></div>
+        <div class="list-item"><span class="list-name">Refresco / Agua</span><span class="list-price">2,50 €</span></div>
+        <div class="list-item"><span class="list-name">Red Bull</span><span class="list-price">2,60 €</span></div>
+        <div class="list-item"><span class="list-name">Tinto de Verano</span><span class="list-price">1,50 €</span></div>
+        <div class="list-item"><span class="list-name">Café</span><span class="list-price">1,50 €</span></div>
+        <div class="list-item"><span class="list-name">Café Bombón</span><span class="list-price">2 €</span></div>
+      </div>
+
+    </div><!-- /carta -->
+  </div>
+</section>
+
+<!-- ══ GALERÍA ════════════════════════════════════ -->
+<section class="gallery section" id="galeria">
+  <div class="container">
+    <div class="sec-header reveal">
+      <p class="eyebrow">El espacio</p>
+      <h2 class="sec-title">Nuestra <em>Galería</em></h2>
+    </div>
+  </div>
+  <div class="gallery__grid reveal">
+    <div class="gallery__item g-tall" data-src="images/terraza-clientes.jpg">
+      <img src="images/terraza-clientes.jpg" alt="Terraza con clientes" />
+      <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+    </div>
+    <div class="gallery__item" data-src="images/interior.jpg">
+      <img src="images/interior.jpg" alt="Interior del restaurante" />
+      <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+    </div>
+    <div class="gallery__item" data-src="images/barra.jpg">
+      <img src="images/barra.jpg" alt="Barra de Casa Petra" />
+      <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+    </div>
+    <div class="gallery__item g-wide" data-src="images/terraza-exterior.jpg">
+      <img src="images/terraza-exterior.jpg" alt="Terraza exterior" />
+      <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+    </div>
+    <div class="gallery__item g-tall" data-src="images/terraza-mesas.jpg">
+      <img src="images/terraza-mesas.jpg" alt="Mesas preparadas" />
+      <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lb">
+    <button class="lb-close" id="lbClose"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lb-prev"  id="lbPrev"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lb-next"  id="lbNext"><i class="fa-solid fa-chevron-right"></i></button>
+    <img id="lbImg" src="" alt="" />
+  </div>
+</section>
+
+<!-- ══ RESERVAS ══════════════════════════════════ -->
+<section class="reservas section" id="reservas">
+  <div class="container">
+    <div class="reservas__grid">
+      <div class="reservas__info reveal-left">
+        <p class="eyebrow" style="color:var(--gold)">¿Quieres venir?</p>
+        <h2 class="sec-title" style="color:#fff">Reserva tu <em>mesa</em></h2>
+        <p>Asegura tu lugar y déjanos preparar algo especial. Eventos privados y menús personalizados bajo petición.</p>
+
+        <div class="horarios">
+          <h3>Horarios</h3>
+          <div class="horario"><span>Lun – Vie</span><span>13:00–16:00 · 20:00–23:30</span></div>
+          <div class="horario"><span>Sábado</span><span>13:00–17:00 · 20:00–00:00</span></div>
+          <div class="horario"><span>Domingo</span><span>13:00–17:00</span></div>
+        </div>
+
+        <div class="contact-quick">
+          <a href="tel:+34600000000" class="quick-link"><i class="fa-solid fa-phone"></i> +34 600 000 000</a>
+          <a href="https://wa.me/34600000000" target="_blank" class="quick-link wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp directo</a>
+        </div>
+      </div>
+
+      <div class="reservas__form reveal-right">
+        <form id="rForm" novalidate>
+          <div class="frow">
+            <div class="fgroup">
+              <label>Nombre *</label>
+              <input type="text" name="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="fgroup">
+              <label>Email *</label>
+              <input type="email" name="email" placeholder="tu@email.com" required />
+            </div>
+          </div>
+          <div class="frow">
+            <div class="fgroup">
+              <label>Teléfono</label>
+              <input type="tel" name="tel" placeholder="+34 600 000 000" />
+            </div>
+            <div class="fgroup">
+              <label>Personas *</label>
+              <select name="personas" required>
+                <option value="">Seleccionar</option>
+                <option>1 persona</option><option>2 personas</option>
+                <option>3 personas</option><option>4 personas</option>
+                <option>5–8 personas</option><option>Más de 8</option>
+              </select>
+            </div>
+          </div>
+          <div class="frow">
+            <div class="fgroup">
+              <label>Fecha *</label>
+              <input type="date" id="fFecha" name="fecha" required />
+            </div>
+            <div class="fgroup">
+              <label>Turno *</label>
+              <select name="hora" required>
+                <option value="">Seleccionar</option>
+                <optgroup label="Mediodía">
+                  <option>13:00</option><option>13:30</option>
+                  <option>14:00</option><option>14:30</option><option>15:00</option>
+                </optgroup>
+                <optgroup label="Noche">
+                  <option>20:00</option><option>20:30</option>
+                  <option>21:00</option><option>21:30</option><option>22:00</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="fgroup">
+            <label>Nota / Ocasión especial</label>
+            <textarea name="msg" rows="3" placeholder="Cumpleaños, alergias, ocasión especial…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--gold btn-full">
+            <i class="fa-solid fa-calendar-check"></i> Solicitar reserva
+          </button>
+          <div class="f-ok" id="fOk"><i class="fa-solid fa-circle-check"></i> ¡Reserva recibida! Te confirmamos en breve.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACTO ══════════════════════════════════ -->
+<section class="contacto section" id="contacto">
+  <div class="container">
+    <div class="sec-header reveal">
+      <p class="eyebrow">Encuéntranos</p>
+      <h2 class="sec-title">Cómo <em>llegar</em></h2>
+    </div>
+    <div class="contacto__grid">
+      <div class="contacto__info reveal-left">
+        <div class="cinfo"><i class="fa-solid fa-location-dot"></i><div><strong>Dirección</strong><p>Restaurante Casa Petra · Tu dirección aquí</p></div></div>
+        <div class="cinfo"><i class="fa-solid fa-phone"></i><div><strong>Teléfono</strong><p><a href="tel:+34600000000">+34 600 000 000</a></p></div></div>
+        <div class="cinfo"><i class="fa-solid fa-envelope"></i><div><strong>Email</strong><p><a href="mailto:info@casapetra.es">info@casapetra.es</a></p></div></div>
+        <div class="cinfo"><i class="fa-brands fa-instagram"></i><div><strong>Instagram</strong><p><a href="https://instagram.com" target="_blank">@casapetra.restaurante</a></p></div></div>
+        <div class="c-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TripAdvisor"><i class="fa-brands fa-tripadvisor"></i></a>
+        </div>
+      </div>
+      <div class="contacto__map reveal-right">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.6!2d-3.7!3d40.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCasa+Petra+Restaurante!5e0!3m2!1ses!2ses!4v1699000000000"
+          width="100%" height="100%" style="border:0" allowfullscreen loading="lazy" title="Ubicación Casa Petra"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="nav__logo" style="margin-bottom:.75rem">
+            <span class="logo-script">Casa</span>
+            <span class="logo-serif">PETRA</span>
+          </div>
+          <p>Cocina mediterránea y árabe con alma. Terraza, salón y barra. Siempre con producto fresco.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#menu">Carta</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#reservas">Reservas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Horarios</h4>
+          <ul class="f-hours">
+            <li><span>Lun–Vie</span><span>13–16 · 20–23:30</span></li>
+            <li><span>Sábado</span><span>13–17 · 20–00:00</span></li>
+            <li><span>Domingo</span><span>13–17</span></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="tel:+34600000000">+34 600 000 000</a></li>
+            <li><a href="mailto:info@casapetra.es">info@casapetra.es</a></li>
+          </ul>
+          <div class="f-social">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-tripadvisor"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <p>© 2025 Casa Petra · Todos los derechos reservados</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp flotante -->
+<a href="https://wa.me/34600000000" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Back to top -->
+<button class="back-top" id="backTop" aria-label="Arriba"><i class="fa-solid fa-chevron-up"></i></button>
+
+<script src="js/main.js"></script>
+</body>
+</html>

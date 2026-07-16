@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Fiamma — Pizzería Napoletana</title>
+<meta name="description" content="La Fiamma, pizzería napoletana. Horno de leña, masa madre 48h e ingredientes DOP italianos. Pide ya o crea tu pizza a tu manera.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍕</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="#local">
+      <span class="brand__mark">LF</span>
+      <span class="brand__name">La&nbsp;Fiamma</span>
+    </a>
+
+    <nav class="window-nav" aria-label="Secciones principales">
+      <button class="window-nav__btn is-active" data-target="local" type="button">El Local</button>
+      <button class="window-nav__btn" data-target="carta" type="button">La Carta</button>
+      <button class="window-nav__btn" data-target="builder" type="button">Hazte tu Pizza</button>
+    </nav>
+
+    <a class="btn btn--primary header-cta" href="tel:+34911223344">Pide Ahora</a>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>🔥&nbsp; 2X1 EN PIZZAS FAMILIARES LOS MARTES &nbsp;·&nbsp; ENTREGA EN 30 MIN O TE INVITAMOS AL POSTRE &nbsp;·&nbsp; MASA MADRE FERMENTADA 48H &nbsp;·&nbsp; HORNO DE LEÑA A 450°C &nbsp;·&nbsp; INGREDIENTES DOP ITALIANOS &nbsp;·&nbsp;</span>
+      <span>🔥&nbsp; 2X1 EN PIZZAS FAMILIARES LOS MARTES &nbsp;·&nbsp; ENTREGA EN 30 MIN O TE INVITAMOS AL POSTRE &nbsp;·&nbsp; MASA MADRE FERMENTADA 48H &nbsp;·&nbsp; HORNO DE LEÑA A 450°C &nbsp;·&nbsp; INGREDIENTES DOP ITALIANOS &nbsp;·&nbsp;</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= VENTANA 1: EL LOCAL ================= -->
+  <section id="local" class="window is-active" data-window="local">
+
+    <div class="hero" style="background-image:linear-gradient(180deg, rgba(20,10,6,.45), rgba(20,10,6,.85)), url('https://unsplash.com/photos/zyvkmq1yJBs/download?force=true&w=1800');">
+      <div class="hero__content">
+        <p class="eyebrow eyebrow--light">Napoletana desde 1995</p>
+        <h1>Fuego.<br>Tradición.<br>Pizza de verdad.</h1>
+        <p class="hero__tagline">Masa madre fermentada 48 horas, horno de leña a 450°C e ingredientes DOP traídos de Italia. Así de simple, así de bueno.</p>
+        <div class="hero__ctas">
+          <button class="btn btn--primary btn--lg" type="button" data-target="carta">Ver la Carta</button>
+          <button class="btn btn--ghost-light btn--lg" type="button" data-target="builder">Hazte tu Pizza</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="quick-info">
+      <div class="container quick-info__inner">
+        <div class="quick-info__item">
+          <span class="quick-info__label">Horario</span>
+          <span class="quick-info__value">Todos los días · 13:00–16:00 y 19:30–00:30</span>
+        </div>
+        <div class="quick-info__item">
+          <span class="quick-info__label">Dirección</span>
+          <span class="quick-info__value">Calle de la Fe, 8 · Madrid</span>
+        </div>
+        <div class="quick-info__item">
+          <span class="quick-info__label">Pedidos</span>
+          <span class="quick-info__value"><a href="tel:+34911223344">+34 911 223 344</a></span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section container">
+      <div class="stats-row">
+        <div class="stat-block">
+          <span class="stat-block__num">30</span>
+          <span class="stat-block__label">Años&nbsp;de&nbsp;tradición</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-block__num">+80K</span>
+          <span class="stat-block__label">Pizzas&nbsp;al&nbsp;año</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-block__num">450°</span>
+          <span class="stat-block__label">Horno&nbsp;de&nbsp;leña</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-block__num">48h</span>
+          <span class="stat-block__label">Fermentación&nbsp;masa&nbsp;madre</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container about">
+        <div class="about__text">
+          <p class="eyebrow">Nuestra historia</p>
+          <h2>No hacemos pizzas. Hacemos fuego.</h2>
+          <p>La Fiamma nació en 1995 cuando Antonio, napolitano de nacimiento, trajo a Madrid el horno de leña de su familia y una receta de masa madre que no ha cambiado en tres décadas. Cada pizza se fermenta 48 horas, se estira a mano y se hornea en menos de 90 segundos a 450°C.</p>
+          <p>Nada de atajos. Nada de ingredientes de importación dudosa. Solo harina italiana, tomate San Marzano y mozzarella fior di latte, como se hace en Nápoles desde siempre.</p>
+          <p class="guarantee">🍕 Si tu pizza no te vuela la cabeza, te invitamos a la siguiente. Así de seguros estamos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <p class="eyebrow center">El ambiente</p>
+        <h2 class="center">El horno nunca se apaga</h2>
+        <div class="gallery">
+          <figure class="gallery__item">
+            <img src="https://unsplash.com/photos/9xWl_zhIcS4/download?force=true&w=1000" alt="Pizza cocinándose dentro del horno de leña de La Fiamma" loading="lazy">
+            <figcaption>Nuestro horno de leña</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://unsplash.com/photos/7TAG9wlv1uw/download?force=true&w=1000" alt="Pizzaiolo horneando una pizza en La Fiamma" loading="lazy">
+            <figcaption>El pizzaiolo en acción</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://unsplash.com/photos/Q73XXHcIsa8/download?force=true&w=1000" alt="Sala interior rústica de La Fiamma" loading="lazy">
+            <figcaption>Nuestro comedor</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://unsplash.com/photos/YnXvyvHVKjs/download?force=true&w=1000" alt="Mesas de madera del restaurante La Fiamma" loading="lazy">
+            <figcaption>Mesas de madera maciza</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow center">Reseñas</p>
+        <h2 class="center">Lo que dicen en Google</h2>
+        <p class="reviews-summary center">
+          <span class="reviews-summary__score">4,8</span>
+          <span class="reviews-summary__stars" aria-hidden="true">★★★★★</span>
+          <span class="reviews-summary__count">312 reseñas en Google</span>
+        </p>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-card__head">
+              <span class="review-card__avatar" style="background:#b3241c">SM</span>
+              <div>
+                <span class="review-card__name">Sara M.</span>
+                <span class="review-card__date">Hace 1 semana</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+            <p>La mejor Diavola que he comido fuera de Italia. La masa tiene un punto de fermentación brutal. Adictiva.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__head">
+              <span class="review-card__avatar" style="background:#4b6b3f">TR</span>
+              <div>
+                <span class="review-card__name">Tomás R.</span>
+                <span class="review-card__date">Hace 2 semanas</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+            <p>Pedimos por teléfono y la pizza llegó en 25 minutos, ardiendo y perfecta. Se nota el horno de leña de verdad.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__head">
+              <span class="review-card__avatar" style="background:#c9962c">EV</span>
+              <div>
+                <span class="review-card__name">Elena V.</span>
+                <span class="review-card__date">Hace 3 semanas</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+            <p>Hicimos nuestra propia pizza en la sección interactiva de la web antes de ir. Llegamos y estaba exactamente como la habíamos montado. Un puntazo.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__head">
+              <span class="review-card__avatar" style="background:#b3241c">DL</span>
+              <div>
+                <span class="review-card__name">Diego L.</span>
+                <span class="review-card__date">Hace 1 mes</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-hidden="true">★★★★☆</div>
+            <p>Muy buena relación calidad-precio para la cantidad de producto DOP que llevan. Un sábado tuvimos que esperar mesa, reservad antes.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__head">
+              <span class="review-card__avatar" style="background:#4b6b3f">CP</span>
+              <div>
+                <span class="review-card__name">Carmen P.</span>
+                <span class="review-card__date">Hace 1 mes</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+            <p>La Boscaiola con trufa es una pasada. Ambiente acogedor y el equipo súper simpático. Volvemos seguro.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__head">
+              <span class="review-card__avatar" style="background:#c9962c">RH</span>
+              <div>
+                <span class="review-card__name">Rubén H.</span>
+                <span class="review-card__date">Hace 2 meses</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+            <p>Se nota que llevan 30 años haciendo esto. La Margherita, de una sencillez perfecta. Auténtica Nápoles en Madrid.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <p class="eyebrow center">Visítanos</p>
+        <h2 class="center">Dónde estamos</h2>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <ul class="info-list">
+              <li>
+                <span class="info-list__label">Dirección</span>
+                <span class="info-list__value">Calle de la Fe, 8<br>28012 Madrid, España</span>
+              </li>
+              <li>
+                <span class="info-list__label">Teléfono</span>
+                <span class="info-list__value"><a href="tel:+34911223344">+34 911 223 344</a></span>
+              </li>
+              <li>
+                <span class="info-list__label">Correo</span>
+                <span class="info-list__value"><a href="mailto:hola@lafiammapizza.es">hola@lafiammapizza.es</a></span>
+              </li>
+              <li>
+                <span class="info-list__label">Horario</span>
+                <span class="info-list__value">Todos los días<br>13:00–16:00 · 19:30–00:30</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="map-card">
+            <iframe
+              title="La Fiamma en Google Maps"
+              src="https://www.google.com/maps?q=Calle+de+la+Fe+8,+28012+Madrid,+España&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- ================= VENTANA 2: LA CARTA ================= -->
+  <section id="carta" class="window" data-window="carta">
+
+    <div class="carta-header">
+      <div class="container">
+        <p class="eyebrow eyebrow--light">Las 10 de siempre</p>
+        <h1>La Carta</h1>
+        <p class="carta-header__tagline">Las pizzas más tradicionales de Nápoles, hechas como manda la receta original.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="dish-grid dish-grid--menu">
+
+        <article class="dish-card">
+          <div class="dish-card__media">
+            <span class="badge badge--gold">La Original</span>
+            <img src="https://unsplash.com/photos/eNMdv_Wef7w/download?force=true&w=700" alt="Pizza Margherita Clásica recién horneada" loading="lazy">
+          </div>
+          <div class="dish-card__body">
+            <div class="dish-card__row">
+              <h3>Margherita Clásica</h3>
+              <span class="price">8,90&nbsp;€</span>
+            </div>
+            <p>Tomate San Marzano, mozzarella fior di latte, albahaca fresca, aceite de oliva virgen extra.</p>
+          </div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-card__media">
+            <img src="https://unsplash.com/photos/PKfz98depf0/download?force=true&w=700" alt="Pizza Marinara recién horneada" loading="lazy">
+          </div>
+          <div class="dish-card__body">
+            <div class="dish-card__row">
+              <h3>Marinara</h3>
+              <span class="price">7,90&nbsp;€</span>
+            </div>
+            <p>Tomate, ajo, orégano y aceite de oliva virgen extra. Sin queso, pura tradición napolitana.</p>
+          </div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-card__media">
+            <span class="badge badge--red">🔥 Más Vendida</span>
+            <img src="https://unsplash.com/photos/XtIHk2mLw0U/download?force=true&w=700" alt="Pizza Diavola picante recién horneada" loading="lazy">
+          </div>
+          <div class="dish-card__body">
+            <div class="dish-card__row">
+              <h3>Diavola</h3>
+              <span class="price">11,90&nbsp;€</span>
+            </div>
+            <p>Salami picante calabrese, tomate, mozzarella y guindilla fresca. No apta para tibios.</p>
+          </div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-card__media">
+            <img src="https://unsplash.com/photos/YKvGUO4Zb7Y/download?force=true&w=700" alt="Pizza Quattro Formaggi recién horneada" loading="lazy">
+          </div>
+          <div class="dish-card__body">
+            <div class="dish-card__row">
+              <h3>Quattro Formaggi</h3>
+              <span class="price">12,50&nbsp;€</span>
+            </div>
+            <p>Mozzarella, gorgonzola DOP, parmesano 24 meses y provolone ahumado.</p>
+          </div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-card__media">
+            <img src="https://unsplash.com/photos/zylNrmoaEfY/download?force=true&w=700" alt="Pizza Quattro Stagioni recién horneada" loading="lazy">
+          </div>
+          <div class="dish-card__body">
+            <div class="dish-card__row">
+              <h3>Quattro Stagioni</h3>
+              <span class="price">12,90&nbsp;€</span>
+            </div>
+            <p>Jamón cocido, champiñones, alcachofas y aceitunas negras, un cuarto para cada estación.</p>
+          </div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-card__media">
+            <img src="https://unsplash.com/photos/LppAkC7s6u4/download?force=true&w=700" alt="Pizza Capricciosa recién horneada" loading="lazy">
+          </div>
+          <div class="dish-card__body">
+            <div class="dish-card__row">
+              <h3>Capricciosa</h3>
+              <span class="price">13,50&nbsp;€</span>
+            </div>
+            <p>Jamón, champiñones, alcachofas, huevo y aceitunas. La más completa de la carta.</p>
+          </div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-card__media">
+            <img src="https://unsplash.com/photos/JOYjHvOTFJQ/download?force=true&w=700" alt="Pizza Prosciutto e Funghi recién horneada" loading="lazy">
+          </div>
+          <div class="dish-card__body">
+            <div class="dish-card__row">
+              <h3>Prosciutto e Funghi</h3>
+              <span class="price">11,50&nbsp;€</span>
+            </div>
+            <p>Jamón cocido, champiñones frescos laminados y mozzarella fior di latte.</p>
+          </div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-card__media">
+            <img src="https://unsplash.com/photos/SU1LFoeEUkk/download?force=true&w=700" alt="Pizza Napoletana recién horneada" loading="lazy">
+          </div>
+          <div class="dish-card__body">
+            <div class="dish-card__row">
+              <h3>Napoletana</h3>
+              <span class="price">10,90&nbsp;€</span>
+            </div>
+            <p>Anchoas del Cantábrico, aceitunas negras, alcaparras y orégano.</p>
+          </div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-card__media">
+            <span class="badge badge--gold">Premium</span>
+            <img src="https://unsplash.com/photos/TG5SPYNvpos/download?force=true&w=700" alt="Pizza Boscaiola con trufa recién horneada" loading="lazy">
+          </div>
+          <div class="dish-card__body">
+            <div class="dish-card__row">
+              <h3>Boscaiola</h3>
+              <span class="price">14,90&nbsp;€</span>
+            </div>
+            <p>Salchicha italiana, champiñones, mozzarella ahumada y un toque de trufa.</p>
+          </div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-card__media">
+            <img src="https://unsplash.com/photos/bYelBPwXW5k/download?force=true&w=700" alt="Calzone Della Casa recién horneado" loading="lazy">
+          </div>
+          <div class="dish-card__body">
+            <div class="dish-card__row">
+              <h3>Calzone Della Casa</h3>
+              <span class="price">13,50&nbsp;€</span>
+            </div>
+            <p>Ricotta, mozzarella, jamón y champiñones, horneado doblado y crujiente.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="carta-cta">
+        <p>¿No encuentras tu combinación perfecta?</p>
+        <button class="btn btn--primary btn--lg" type="button" data-target="builder">Créala tú mismo →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VENTANA 3: HAZTE TU PIZZA ================= -->
+  <section id="builder" class="window" data-window="builder">
+
+    <div class="carta-header" style="background-image:linear-gradient(180deg, rgba(20,10,6,.55), rgba(20,10,6,.85)), url('https://unsplash.com/photos/xIqVfW8XUt4/download?force=true&w=1800'); color:#fff;">
+      <div class="container">
+        <p class="eyebrow eyebrow--light">100% a tu manera</p>
+        <h1 style="color:#fff;">Hazte tu Pizza</h1>
+        <p class="carta-header__tagline" style="color:#f3e6d8;">Elige masa, tamaño e ingredientes. Nosotros ponemos el horno de leña.</p>
+      </div>
+    </div>
+
+    <div class="container builder">
+
+      <div class="builder__config">
+
+        <div class="builder__step">
+          <h2 class="builder__step-title"><span>1</span> Elige tu masa</h2>
+          <div class="option-group" data-group="masa" data-type="single">
+            <button class="option-chip is-active" type="button" data-value="Tradicional Napolitana" data-price="0">Tradicional Napolitana</button>
+            <button class="option-chip" type="button" data-value="Fina y Crujiente" data-price="0">Fina y Crujiente</button>
+            <button class="option-chip" type="button" data-value="Integral" data-price="1">Integral <em>+1,00&nbsp;€</em></button>
+          </div>
+        </div>
+
+        <div class="builder__step">
+          <h2 class="builder__step-title"><span>2</span> Elige tu tamaño</h2>
+          <div class="option-group" data-group="tamano" data-type="single">
+            <button class="option-chip" type="button" data-value="Individual (25cm)" data-price="8">Individual · 25cm <em>8,00&nbsp;€</em></button>
+            <button class="option-chip is-active" type="button" data-value="Mediana (30cm)" data-price="11">Mediana · 30cm <em>11,00&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Familiar (40cm)" data-price="15">Familiar · 40cm <em>15,00&nbsp;€</em></button>
+          </div>
+        </div>
+
+        <div class="builder__step">
+          <h2 class="builder__step-title"><span>3</span> Elige tu base</h2>
+          <div class="option-group" data-group="base" data-type="single">
+            <button class="option-chip is-active" type="button" data-value="Tomate San Marzano" data-price="0">Tomate San Marzano</button>
+            <button class="option-chip" type="button" data-value="Blanca (sin tomate)" data-price="0">Blanca, sin tomate</button>
+            <button class="option-chip" type="button" data-value="BBQ Ahumada" data-price="0.5">BBQ Ahumada <em>+0,50&nbsp;€</em></button>
+          </div>
+        </div>
+
+        <div class="builder__step">
+          <h2 class="builder__step-title"><span>4</span> Añade tus ingredientes</h2>
+
+          <p class="builder__group-label">Quesos</p>
+          <div class="option-group" data-group="toppings" data-type="multi">
+            <button class="option-chip" type="button" data-value="Mozzarella Extra" data-price="1.5">Mozzarella Extra <em>+1,50&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Gorgonzola" data-price="1.8">Gorgonzola <em>+1,80&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Parmesano" data-price="1.5">Parmesano <em>+1,50&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Burrata" data-price="2.5">Burrata <em>+2,50&nbsp;€</em></button>
+          </div>
+
+          <p class="builder__group-label">Carnes</p>
+          <div class="option-group" data-group="toppings" data-type="multi">
+            <button class="option-chip" type="button" data-value="Jamón" data-price="1.5">Jamón <em>+1,50&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Pepperoni" data-price="1.5">Pepperoni <em>+1,50&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Salchicha Italiana" data-price="1.8">Salchicha Italiana <em>+1,80&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Panceta" data-price="1.8">Panceta <em>+1,80&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Pollo a la Brasa" data-price="1.6">Pollo a la Brasa <em>+1,60&nbsp;€</em></button>
+          </div>
+
+          <p class="builder__group-label">Vegetales</p>
+          <div class="option-group" data-group="toppings" data-type="multi">
+            <button class="option-chip" type="button" data-value="Champiñones" data-price="1">Champiñones <em>+1,00&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Pimiento" data-price="1">Pimiento <em>+1,00&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Cebolla Morada" data-price="0.8">Cebolla Morada <em>+0,80&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Aceitunas" data-price="0.8">Aceitunas <em>+0,80&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Rúcula" data-price="1">Rúcula <em>+1,00&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Tomate Cherry" data-price="1">Tomate Cherry <em>+1,00&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Alcachofa" data-price="1.2">Alcachofa <em>+1,20&nbsp;€</em></button>
+          </div>
+
+          <p class="builder__group-label">Especiales</p>
+          <div class="option-group" data-group="toppings" data-type="multi">
+            <button class="option-chip" type="button" data-value="Trufa" data-price="2.5">Trufa <em>+2,50&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Anchoas" data-price="1.5">Anchoas <em>+1,50&nbsp;€</em></button>
+            <button class="option-chip" type="button" data-value="Piña (para los valientes)" data-price="1">Piña <em>+1,00&nbsp;€</em></button>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="builder__summary">
+        <div class="builder__summary-inner">
+          <h2>Tu Pizza</h2>
+          <ul class="builder__summary-list" id="builder-summary-list">
+            <li class="builder__summary-empty">Empieza a elegir arriba…</li>
+          </ul>
+          <div class="builder__summary-total">
+            <span>Total</span>
+            <span id="builder-summary-price">11,00&nbsp;€</span>
+          </div>
+          <button class="btn btn--primary btn--lg builder__submit" type="button" id="builder-submit">Añadir al Pedido</button>
+          <p class="builder__note">🔥 Lista en el horno en menos de 90 segundos</p>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>&copy; 2026 La Fiamma · Calle de la Fe, 8, Madrid · Sitio de ejemplo creado como demostración de diseño web.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

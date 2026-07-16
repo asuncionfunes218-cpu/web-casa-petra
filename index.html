@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Petra — Restaurante</title>
+<meta name="description" content="Casa Petra, cocina de mercado con alma mediterránea. Descubre nuestro local y nuestra carta.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍽️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="#local">
+      <span class="brand__mark">CP</span>
+      <span class="brand__name">Casa&nbsp;Petra</span>
+    </a>
+
+    <nav class="window-nav" aria-label="Secciones principales">
+      <button class="window-nav__btn is-active" data-target="local" type="button">El Local</button>
+      <button class="window-nav__btn" data-target="carta" type="button">La Carta</button>
+    </nav>
+
+    <a class="btn btn--ghost header-cta" href="tel:+34912345678">Reservar</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= VENTANA 1: EL LOCAL ================= -->
+  <section id="local" class="window is-active" data-window="local">
+
+    <div class="hero" style="background-image:linear-gradient(180deg, rgba(30,23,17,.35), rgba(30,23,17,.72)), url('https://unsplash.com/photos/ArL3c8o_9SM/download?force=true&w=1600');">
+      <div class="hero__content">
+        <p class="eyebrow">Bienvenidos a</p>
+        <h1>Casa Petra</h1>
+        <p class="hero__tagline">Cocina de mercado con alma mediterránea, en el corazón de Madrid.</p>
+        <button class="btn btn--primary" type="button" data-target="carta">Ver la Carta</button>
+      </div>
+    </div>
+
+    <section class="section container">
+      <div class="about">
+        <div class="about__text">
+          <p class="eyebrow">Nuestra historia</p>
+          <h2>Un lugar para sentarse con calma</h2>
+          <p>Casa Petra nació en 2014 con una idea sencilla: cocinar con producto de temporada, fuego de brasa y las recetas que aprendimos en casa. Carnes maduradas, pescado fresco de lonja y una bodega pensada para acompañar cada plato, en un espacio cálido pensado para quedarse un rato.</p>
+          <p>Trabajamos con proveedores locales y cambiamos parte de la carta según el mercado, porque creemos que la mejor cocina es la que respeta el producto.</p>
+        </div>
+        <div class="about__stats">
+          <div class="stat">
+            <span class="stat__num">2014</span>
+            <span class="stat__label">Desde</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">100%</span>
+            <span class="stat__label">Producto&nbsp;fresco</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">6</span>
+            <span class="stat__label">Días&nbsp;abiertos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <p class="eyebrow center">El ambiente</p>
+        <h2 class="center">Un rincón cálido y sencillo</h2>
+        <div class="gallery">
+          <figure class="gallery__item gallery__item--tall">
+            <img src="https://unsplash.com/photos/ArL3c8o_9SM/download?force=true&w=1000" alt="Sala interior de Casa Petra, decoración cálida y minimalista" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://unsplash.com/photos/MpVNraz312g/download?force=true&w=800" alt="Mesa preparada con velas en Casa Petra" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://unsplash.com/photos/GHvYHurRvUU/download?force=true&w=800" alt="Barra del restaurante Casa Petra" loading="lazy">
+          </figure>
+          <figure class="gallery__item gallery__item--wide">
+            <img src="https://unsplash.com/photos/ksYCzSUbYo4/download?force=true&w=1200" alt="Terraza de Casa Petra" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow center">Visítanos</p>
+        <h2 class="center">Dónde estamos</h2>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <ul class="info-list">
+              <li>
+                <span class="info-list__label">Dirección</span>
+                <span class="info-list__value">Calle del Almendro, 14<br>28005 Madrid, España</span>
+              </li>
+              <li>
+                <span class="info-list__label">Teléfono</span>
+                <span class="info-list__value"><a href="tel:+34912345678">+34 912 345 678</a></span>
+              </li>
+              <li>
+                <span class="info-list__label">Correo</span>
+                <span class="info-list__value"><a href="mailto:reservas@casapetra.es">reservas@casapetra.es</a></span>
+              </li>
+              <li>
+                <span class="info-list__label">Horario</span>
+                <span class="info-list__value">Martes a domingo<br>13:00–16:00 · 20:00–23:30<br>Lunes cerrado</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="map-card">
+            <iframe
+              title="Casa Petra en Google Maps"
+              src="https://www.google.com/maps?q=Calle+del+Almendro+14,+28005+Madrid,+España&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- ================= VENTANA 2: LA CARTA ================= -->
+  <section id="carta" class="window" data-window="carta">
+
+    <div class="carta-header">
+      <div class="container">
+        <p class="eyebrow">Nuestra propuesta</p>
+        <h1>La Carta</h1>
+        <p class="carta-header__tagline">Entrantes, carnes a la brasa, pescado fresco y una bodega para acompañar.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <nav class="category-nav" aria-label="Categorías de la carta">
+        <button class="category-nav__btn is-active" data-category="all" type="button">Todo</button>
+        <button class="category-nav__btn" data-category="entrantes" type="button">Entrantes</button>
+        <button class="category-nav__btn" data-category="carnes" type="button">Carnes</button>
+        <button class="category-nav__btn" data-category="pescados" type="button">Pescados</button>
+        <button class="category-nav__btn" data-category="bebidas" type="button">Bebidas</button>
+      </nav>
+
+      <!-- ENTRANTES -->
+      <section class="menu-category" data-category="entrantes">
+        <h2 class="menu-category__title">Entrantes</h2>
+        <div class="dish-grid">
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/4Wsd1Xc-pI4/download?force=true&w=700" alt="Croquetas caseras de jamón ibérico" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Croquetas Caseras de Jamón Ibérico</h3>
+                <span class="price">8,50&nbsp;€</span>
+              </div>
+              <p>Bechamel cremosa, jamón ibérico de bellota, pan rallado tostado.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/d825JrXvun8/download?force=true&w=700" alt="Ensalada Casa Petra con burrata y tomate" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Ensalada Casa Petra</h3>
+                <span class="price">9,90&nbsp;€</span>
+              </div>
+              <p>Burrata cremosa, tomate de temporada, albahaca fresca y aceite de oliva virgen extra.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/qMX3AdGwm0o/download?force=true&w=700" alt="Tabla de quesos artesanos" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Tabla de Quesos Artesanos</h3>
+                <span class="price">14,00&nbsp;€</span>
+              </div>
+              <p>Selección de quesos de pequeños productores, membrillo y nueces.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/OwhL1lhzOOI/download?force=true&w=700" alt="Pan con tomate y jamón" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Pan con Tomate y Jamón</h3>
+                <span class="price">7,50&nbsp;€</span>
+              </div>
+              <p>Pan de masa madre tostado, tomate de rama rallado y jamón curado.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CARNES -->
+      <section class="menu-category" data-category="carnes">
+        <h2 class="menu-category__title">Carnes</h2>
+        <div class="dish-grid">
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/lpkDVZF_cbw/download?force=true&w=700" alt="Solomillo de ternera a la parrilla" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Solomillo de Ternera a la Parrilla</h3>
+                <span class="price">22,50&nbsp;€</span>
+              </div>
+              <p>Solomillo madurado 21 días, patata asada y salsa de vino tinto.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/QtLYiB6P-KM/download?force=true&w=700" alt="Costillas de cerdo ibérico BBQ" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Costillas de Cerdo Ibérico BBQ</h3>
+                <span class="price">19,90&nbsp;€</span>
+              </div>
+              <p>Cocción lenta 12 horas, glaseado casero y patatas fritas.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/WuKFf6EGswY/download?force=true&w=700" alt="Entrecot a la brasa con patatas" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Entrecot a la Brasa</h3>
+                <span class="price">24,00&nbsp;€</span>
+              </div>
+              <p>Entrecot de vaca a la brasa de carbón, pimientos de padrón y patatas panadera.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/ocJjygT0rGM/download?force=true&w=700" alt="Parrillada mixta de la casa" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Parrillada Mixta de la Casa</h3>
+                <span class="price">26,50&nbsp;€</span>
+              </div>
+              <p>Selección de carnes a la brasa para compartir, con guarniciones de temporada.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PESCADOS -->
+      <section class="menu-category" data-category="pescados">
+        <h2 class="menu-category__title">Pescados</h2>
+        <div class="dish-grid">
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/PlTlgc0HNUo/download?force=true&w=700" alt="Salmón a la plancha con verduras" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Salmón a la Plancha</h3>
+                <span class="price">18,90&nbsp;€</span>
+              </div>
+              <p>Salmón fresco a la plancha, verduras de temporada salteadas y salsa de eneldo.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/-7ZtWjzo-68/download?force=true&w=700" alt="Pulpo a la gallega" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Pulpo a la Gallega</h3>
+                <span class="price">21,00&nbsp;€</span>
+              </div>
+              <p>Pulpo cocido a fuego lento, patata, pimentón de la Vera y aceite de oliva.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/zjySZK7wwfU/download?force=true&w=700" alt="Gambas al ajillo" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Gambas al Ajillo</h3>
+                <span class="price">16,50&nbsp;€</span>
+              </div>
+              <p>Gambas frescas salteadas con ajo, guindilla y perejil, en cazuela de barro.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/isHUj3N0194/download?force=true&w=700" alt="Lubina al horno con limón" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Lubina al Horno con Limón</h3>
+                <span class="price">20,50&nbsp;€</span>
+              </div>
+              <p>Lubina salvaje al horno, limón, hierbas frescas y patata panadera.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- BEBIDAS -->
+      <section class="menu-category" data-category="bebidas">
+        <h2 class="menu-category__title">Bebidas</h2>
+        <div class="drinks-columns">
+          <div class="drinks-group">
+            <h3>Vinos</h3>
+            <ul class="drinks-list">
+              <li><span>Rioja Crianza</span><span class="price">4,50&nbsp;€ copa · 18,00&nbsp;€ botella</span></li>
+              <li><span>Albariño</span><span class="price">4,80&nbsp;€ copa · 19,00&nbsp;€ botella</span></li>
+              <li><span>Verdejo</span><span class="price">4,20&nbsp;€ copa · 17,00&nbsp;€ botella</span></li>
+            </ul>
+          </div>
+          <div class="drinks-group">
+            <h3>Cervezas</h3>
+            <ul class="drinks-list">
+              <li><span>Cerveza Artesana Casa Petra</span><span class="price">3,50&nbsp;€</span></li>
+              <li><span>Cerveza Sin Alcohol</span><span class="price">3,00&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="drinks-group">
+            <h3>Refrescos y Agua</h3>
+            <ul class="drinks-list">
+              <li><span>Agua Mineral</span><span class="price">2,50&nbsp;€</span></li>
+              <li><span>Refrescos variados</span><span class="price">3,00&nbsp;€</span></li>
+              <li><span>Zumo Natural</span><span class="price">3,80&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="drinks-group">
+            <h3>Cócteles y Café</h3>
+            <ul class="drinks-list">
+              <li><span>Sangría Casa Petra (jarra)</span><span class="price">12,00&nbsp;€</span></li>
+              <li><span>Vermut de Grifo</span><span class="price">4,50&nbsp;€</span></li>
+              <li><span>Café / Infusión</span><span class="price">2,00&nbsp;€</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>&copy; 2026 Casa Petra · Calle del Almendro, 14, Madrid · Sitio de ejemplo creado como demostración de diseño web.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

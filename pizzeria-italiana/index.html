@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Fiamma — Ristorante Italo-Español</title>
-<meta name="description" content="La Fiamma, cocina italo-española desde 1962. Horno de piedra, masa madre de 60 años y producto fresco de Italia y España. Pide ya o crea tu pizza a tu manera.">
+<meta name="description" content="La Fiamma, cocina italo-española desde 1962. Horno de piedra, masa madre de 60 años y producto fresco de Italia y España.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍕</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
     <nav class="window-nav" aria-label="Secciones principales">
       <button class="window-nav__btn is-active" data-target="local" type="button">El Local</button>
       <button class="window-nav__btn" data-target="carta" type="button">La Carta</button>
-      <button class="window-nav__btn" data-target="builder" type="button">Hazte tu Pizza</button>
+      <button class="window-nav__btn" data-target="horno" type="button">Horno</button>
     </nav>
 
     <a class="btn btn--primary header-cta" href="tel:+34911223344">Pide Ahora</a>
@@ -51,7 +51,7 @@
         <p class="hero__tagline">Un horno napolitano que cruzó el Mediterráneo, una masa madre de tres generaciones y el mejor producto fresco de Italia y España, cocido a 450°C.</p>
         <div class="hero__ctas">
           <button class="btn btn--primary btn--lg" type="button" data-target="carta">Ver la Carta</button>
-          <button class="btn btn--ghost-light btn--lg" type="button" data-target="builder">Hazte tu Pizza</button>
+          <button class="btn btn--ghost-light btn--lg" type="button" data-target="horno">Conoce el Horno</button>
         </div>
       </div>
     </div>
@@ -231,7 +231,7 @@
               </div>
             </div>
             <div class="review-card__stars" aria-hidden="true">★★★★★</div>
-            <p>Hicimos nuestra propia pizza en la web antes de ir. Llegamos y estaba exactamente como la habíamos montado. Un puntazo.</p>
+            <p>Nos enseñaron los distintos hornos que usan según el plato. Se aprende y se come de maravilla al mismo tiempo. Un puntazo.</p>
           </article>
 
           <article class="review-card reveal">
@@ -464,113 +464,112 @@
       </div>
 
       <div class="carta-cta reveal">
-        <p>¿No encuentras tu combinación perfecta?</p>
-        <button class="btn btn--primary btn--lg" type="button" data-target="builder">Créala tú mismo →</button>
+        <p>¿Quieres ver cómo se hace?</p>
+        <button class="btn btn--primary btn--lg" type="button" data-target="horno">Descubre nuestros hornos →</button>
       </div>
     </div>
   </section>
 
-  <!-- ================= VENTANA 3: HAZTE TU PIZZA ================= -->
-  <section id="builder" class="window" data-window="builder">
+  <!-- ================= VENTANA 3: HORNO ================= -->
+  <section id="horno" class="window window--dark" data-window="horno">
 
     <div class="carta-header carta-header--dark">
-      <img class="carta-header__bg" src="https://unsplash.com/photos/xIqVfW8XUt4/download?force=true&w=1800" alt="" loading="lazy">
+      <img class="carta-header__bg" src="https://unsplash.com/photos/D2o5_qaBT5c/download?force=true&w=1800" alt="" loading="lazy">
       <div class="carta-header__overlay"></div>
       <div class="container carta-header__inner">
-        <p class="eyebrow eyebrow--light">100% a tu manera</p>
-        <h1 style="color:#fff;">Hazte tu Pizza</h1>
-        <p class="carta-header__tagline" style="color:#f3e6d8;">Elige masa, tamaño e ingredientes. Nosotros ponemos el horno de piedra.</p>
+        <p class="eyebrow eyebrow--light">Cuatro fuegos, un mismo oficio</p>
+        <h1 style="color:#fff;">El Horno</h1>
+        <p class="carta-header__tagline" style="color:#e9d7b8;">Cada receta pide su fuego. Así trabajamos la madera, la piedra y el producto de temporada.</p>
       </div>
     </div>
 
-    <div class="container builder">
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow center">Nuestros hornos</p>
+        <h2 class="center">Cada pizza tiene su fuego</h2>
+        <p class="section-lead center">Cuatro hornos, cuatro maneras de trabajar la masa, el humo y el calor.</p>
 
-      <div class="builder__config">
+        <div class="oven-list">
 
-        <div class="builder__step reveal">
-          <h2 class="builder__step-title"><span>1</span> Elige tu masa</h2>
-          <div class="option-group" data-group="masa" data-type="single">
-            <button class="option-chip is-active" type="button" data-value="Tradicional Napolitana" data-price="0">Tradicional Napolitana</button>
-            <button class="option-chip" type="button" data-value="Fina y Crujiente" data-price="0">Fina y Crujiente</button>
-            <button class="option-chip" type="button" data-value="Integral" data-price="1">Integral <em>+1,00&nbsp;€</em></button>
-          </div>
+          <article class="oven-list__item reveal">
+            <div class="oven-list__media">
+              <img src="https://unsplash.com/photos/D2o5_qaBT5c/download?force=true&w=700" alt="Horno napoletano de piedra de La Fiamma" loading="lazy">
+              <img src="https://unsplash.com/photos/eNMdv_Wef7w/download?force=true&w=700" alt="Pizza Margherita recién salida del horno napoletano" loading="lazy">
+            </div>
+            <div class="oven-list__body">
+              <span class="oven-list__tag">Horno 01</span>
+              <h3>Napoletano de Piedra</h3>
+              <p>El original, construido en Nápoles en 1958. Leña de encina, 450°C y 90 segundos de cocción. Aquí nace la Margherita.</p>
+            </div>
+          </article>
+
+          <article class="oven-list__item reveal">
+            <div class="oven-list__media">
+              <img src="https://unsplash.com/photos/0p8rBBuZnUo/download?force=true&w=700" alt="Horno de brasa y ahumados de La Fiamma" loading="lazy">
+              <img src="https://unsplash.com/photos/XtIHk2mLw0U/download?force=true&w=700" alt="Pizza Diavola recién salida del horno de brasa" loading="lazy">
+            </div>
+            <div class="oven-list__body">
+              <span class="oven-list__tag">Horno 02</span>
+              <h3>De Brasa y Ahumados</h3>
+              <p>Carbón vegetal español a fuego lento, para salami picante, panceta y quesos ahumados. El calor indirecto intensifica cada sabor.</p>
+            </div>
+          </article>
+
+          <article class="oven-list__item reveal">
+            <div class="oven-list__media">
+              <img src="https://unsplash.com/photos/9xWl_zhIcS4/download?force=true&w=700" alt="Horno de bóveda toscana de La Fiamma" loading="lazy">
+              <img src="https://unsplash.com/photos/bYelBPwXW5k/download?force=true&w=700" alt="Calzone recién salido del horno de bóveda toscana" loading="lazy">
+            </div>
+            <div class="oven-list__body">
+              <span class="oven-list__tag">Horno 03</span>
+              <h3>De Bóveda Toscana</h3>
+              <p>Cocción más larga y suave, ideal para masas gruesas y calzones rellenos que necesitan tiempo para dorarse por dentro.</p>
+            </div>
+          </article>
+
+          <article class="oven-list__item reveal">
+            <div class="oven-list__media">
+              <img src="https://unsplash.com/photos/7TAG9wlv1uw/download?force=true&w=700" alt="Horno de piedra volcánica de La Fiamma" loading="lazy">
+              <img src="https://unsplash.com/photos/PKfz98depf0/download?force=true&w=700" alt="Pizza Marinara recién salida del horno de piedra volcánica" loading="lazy">
+            </div>
+            <div class="oven-list__body">
+              <span class="oven-list__tag">Horno 04</span>
+              <h3>De Piedra Volcánica</h3>
+              <p>Retiene el calor de forma uniforme, ideal para bases finas y extra crujientes como la Marinara.</p>
+            </div>
+          </article>
+
         </div>
-
-        <div class="builder__step reveal">
-          <h2 class="builder__step-title"><span>2</span> Elige tu tamaño</h2>
-          <div class="option-group" data-group="tamano" data-type="single">
-            <button class="option-chip" type="button" data-value="Individual (25cm)" data-price="8">Individual · 25cm <em>8,00&nbsp;€</em></button>
-            <button class="option-chip is-active" type="button" data-value="Mediana (30cm)" data-price="11">Mediana · 30cm <em>11,00&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Familiar (40cm)" data-price="15">Familiar · 40cm <em>15,00&nbsp;€</em></button>
-          </div>
-        </div>
-
-        <div class="builder__step reveal">
-          <h2 class="builder__step-title"><span>3</span> Elige tu base</h2>
-          <div class="option-group" data-group="base" data-type="single">
-            <button class="option-chip is-active" type="button" data-value="Tomate San Marzano" data-price="0">Tomate San Marzano</button>
-            <button class="option-chip" type="button" data-value="Blanca (sin tomate)" data-price="0">Blanca, sin tomate</button>
-            <button class="option-chip" type="button" data-value="BBQ Ahumada" data-price="0.5">BBQ Ahumada <em>+0,50&nbsp;€</em></button>
-          </div>
-        </div>
-
-        <div class="builder__step reveal">
-          <h2 class="builder__step-title"><span>4</span> Añade tus ingredientes</h2>
-
-          <p class="builder__group-label">Quesos</p>
-          <div class="option-group" data-group="toppings" data-type="multi">
-            <button class="option-chip" type="button" data-value="Mozzarella Extra" data-price="1.5">Mozzarella Extra <em>+1,50&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Gorgonzola" data-price="1.8">Gorgonzola <em>+1,80&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Parmesano" data-price="1.5">Parmesano <em>+1,50&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Burrata" data-price="2.5">Burrata <em>+2,50&nbsp;€</em></button>
-          </div>
-
-          <p class="builder__group-label">Carnes</p>
-          <div class="option-group" data-group="toppings" data-type="multi">
-            <button class="option-chip" type="button" data-value="Jamón" data-price="1.5">Jamón <em>+1,50&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Pepperoni" data-price="1.5">Pepperoni <em>+1,50&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Salchicha Italiana" data-price="1.8">Salchicha Italiana <em>+1,80&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Panceta" data-price="1.8">Panceta <em>+1,80&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Pollo a la Brasa" data-price="1.6">Pollo a la Brasa <em>+1,60&nbsp;€</em></button>
-          </div>
-
-          <p class="builder__group-label">Vegetales</p>
-          <div class="option-group" data-group="toppings" data-type="multi">
-            <button class="option-chip" type="button" data-value="Champiñones" data-price="1">Champiñones <em>+1,00&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Pimiento" data-price="1">Pimiento <em>+1,00&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Cebolla Morada" data-price="0.8">Cebolla Morada <em>+0,80&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Aceitunas" data-price="0.8">Aceitunas <em>+0,80&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Rúcula" data-price="1">Rúcula <em>+1,00&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Tomate Cherry" data-price="1">Tomate Cherry <em>+1,00&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Alcachofa" data-price="1.2">Alcachofa <em>+1,20&nbsp;€</em></button>
-          </div>
-
-          <p class="builder__group-label">Especiales</p>
-          <div class="option-group" data-group="toppings" data-type="multi">
-            <button class="option-chip" type="button" data-value="Trufa" data-price="2.5">Trufa <em>+2,50&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Anchoas" data-price="1.5">Anchoas <em>+1,50&nbsp;€</em></button>
-            <button class="option-chip" type="button" data-value="Piña (para los valientes)" data-price="1">Piña <em>+1,00&nbsp;€</em></button>
-          </div>
-        </div>
-
       </div>
+    </section>
 
-      <aside class="builder__summary">
-        <div class="builder__summary-inner">
-          <h2>Tu Pizza</h2>
-          <ul class="builder__summary-list" id="builder-summary-list">
-            <li class="builder__summary-empty">Empieza a elegir arriba…</li>
-          </ul>
-          <div class="builder__summary-total">
-            <span>Total</span>
-            <span id="builder-summary-price">11,00&nbsp;€</span>
-          </div>
-          <button class="btn btn--primary btn--lg builder__submit" type="button" id="builder-submit">Añadir al Pedido</button>
-          <p class="builder__note">🔥 Lista en el horno en menos de 90 segundos</p>
+    <section class="section section--produce">
+      <div class="container">
+        <p class="eyebrow center">Producto de temporada</p>
+        <h2 class="center">Lo que trae el mercado, entra al horno</h2>
+        <p class="section-lead center">Cambiamos parte de la carta según lo que encontramos cada semana en la huerta.</p>
+
+        <div class="gallery gallery--dark">
+          <figure class="gallery__item reveal">
+            <img src="https://unsplash.com/photos/XPltBlxfChk/download?force=true&w=900" alt="Verduras de temporada recién llegadas al mercado" loading="lazy">
+            <figcaption>Recién llegadas del mercado</figcaption>
+          </figure>
+          <figure class="gallery__item reveal">
+            <img src="https://unsplash.com/photos/VV-KRDpSuek/download?force=true&w=900" alt="Cajas de tomate fresco de temporada" loading="lazy">
+            <figcaption>Tomate de temporada, corazón de la salsa</figcaption>
+          </figure>
+          <figure class="gallery__item reveal">
+            <img src="https://unsplash.com/photos/adagF9w9f8w/download?force=true&w=900" alt="Selección semanal de verduras de la huerta" loading="lazy">
+            <figcaption>Selección semanal de la huerta</figcaption>
+          </figure>
+          <figure class="gallery__item reveal">
+            <img src="https://unsplash.com/photos/omICPqHDfgY/download?force=true&w=900" alt="Verdura de hoja fresca recogida a diario" loading="lazy">
+            <figcaption>Verdura de hoja, recogida a diario</figcaption>
+          </figure>
         </div>
-      </aside>
+      </div>
+    </section>
 
-    </div>
   </section>
 
 </main>

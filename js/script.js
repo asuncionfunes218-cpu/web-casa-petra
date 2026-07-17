@@ -1,4 +1,24 @@
 (function () {
+  // Si una foto externa no llega a cargar, se sustituye por un marcador
+  // elegante en vez de mostrar el icono de imagen rota.
+  var placeholder = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">' +
+    '<rect width="400" height="300" fill="#f1e8dc"/>' +
+    '<g fill="none" stroke="#a8492f" stroke-width="2" opacity="0.6">' +
+    '<circle cx="200" cy="150" r="34"/>' +
+    '<path d="M170 165 L190 140 L215 160 L235 130 L260 165" />' +
+    '</g></svg>'
+  );
+
+  document.querySelectorAll('img').forEach(function (img) {
+    img.addEventListener('error', function () {
+      if (img.dataset.fallbackApplied) return;
+      img.dataset.fallbackApplied = 'true';
+      img.src = placeholder;
+      img.classList.add('img-fallback');
+    });
+  });
+
   var windowButtons = document.querySelectorAll('[data-target]');
   var windows = document.querySelectorAll('.window');
   var navButtons = document.querySelectorAll('.window-nav__btn');

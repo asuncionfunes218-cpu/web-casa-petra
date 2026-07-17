@@ -33,9 +33,31 @@ body {
 }
 
 img { max-width: 100%; display: block; }
-img.img-fallback { object-fit: contain !important; padding: 20% ; background: var(--color-bg-alt); }
 
 a { color: inherit; }
+
+/* ===== Ilustraciones (sustituyen a las fotografías) ===== */
+
+.illus {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(155deg, var(--color-bg-alt), var(--color-surface));
+}
+
+.illus__icon {
+  width: 42%;
+  height: 42%;
+  color: var(--color-primary);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 .container {
   max-width: var(--container-w);
@@ -210,9 +232,12 @@ h2.center { margin-left: auto; margin-right: auto; }
 /* ===== Hero (El Local) ===== */
 
 .hero {
+  position: relative;
   min-height: 78vh;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 28% 22%, rgba(168, 73, 47, .55), transparent 60%),
+    linear-gradient(160deg, #362b21 0%, #1c1712 75%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,7 +246,31 @@ h2.center { margin-left: auto; margin-right: auto; }
   padding: 24px;
 }
 
-.hero__content { max-width: 620px; }
+.hero__watermark {
+  position: absolute;
+  right: -6%;
+  bottom: -10%;
+  width: 46vw;
+  max-width: 520px;
+  height: auto;
+  color: #fff;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: .6;
+  opacity: .08;
+  animation: watermark-breathe 16s ease-in-out infinite alternate;
+}
+
+@keyframes watermark-breathe {
+  from { transform: scale(1) rotate(0deg); }
+  to { transform: scale(1.08) rotate(3deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__watermark { animation: none; }
+}
+
+.hero__content { position: relative; max-width: 620px; }
 .hero__content h1 { color: #fff; }
 .hero__content .eyebrow { color: #e8cdb8; }
 .hero__tagline { color: #f1e9df; font-size: 1.1rem; margin-bottom: 1.6em; }
@@ -335,13 +384,11 @@ h2.center { margin-left: auto; margin-right: auto; }
   box-shadow: 0 10px 26px -18px rgba(43, 36, 29, .45);
 }
 
-.gallery__item img {
-  width: 100%;
-  height: auto;
-  display: block;
+.gallery__item .illus {
+  aspect-ratio: 1 / 1;
   transition: transform .6s ease;
 }
-.gallery__item:hover img { transform: scale(1.03); }
+.gallery__item:hover .illus { transform: scale(1.03); }
 
 .gallery__item figcaption {
   padding: 12px 16px 14px;
@@ -543,10 +590,9 @@ h2.center { margin-left: auto; margin-right: auto; }
   flex-direction: column;
 }
 
-.dish-card img {
-  width: 100%;
+.dish-card .illus {
   height: 210px;
-  object-fit: cover;
+  aspect-ratio: auto;
 }
 
 .dish-card__body { padding: 20px 22px 22px; }

@@ -209,12 +209,31 @@ h2.center { margin-left: auto; margin-right: auto; }
 }
 .btn--ghost-light:hover { background: rgba(255, 255, 255, .12); }
 
-.header-cta { white-space: nowrap; }
+.header-cta { white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; }
+.header-cta__icon { display: none; flex-shrink: 0; }
 
 @media (max-width: 780px) {
-  .header-cta { display: none; }
   .brand__name { display: none; }
   .window-nav__btn { padding: 8px 12px; font-size: .78rem; }
+
+  .header-cta {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .header-cta__icon { display: block; }
+  .header-cta__label { display: none; }
+}
+
+@media (max-width: 400px) {
+  .site-header__inner { padding: 12px 14px; gap: 8px; }
+  .brand__mark { width: 32px; height: 32px; font-size: .82rem; }
+  .window-nav { gap: 2px; padding: 3px; }
+  .window-nav__btn { padding: 7px 9px; font-size: .7rem; }
+  .header-cta { width: 36px; height: 36px; }
 }
 
 /* ===== Marquesina de tradición ===== */
@@ -360,6 +379,7 @@ h2.center { margin-left: auto; margin-right: auto; }
 }
 
 .stat-block {
+  min-width: 0;
   text-align: center;
   padding: 26px 12px;
   border: 1px solid var(--color-border);
@@ -385,10 +405,15 @@ h2.center { margin-left: auto; margin-right: auto; }
   text-transform: uppercase;
   letter-spacing: .08em;
   color: var(--color-muted);
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 700px) {
   .stats-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 420px) {
+  .stats-row { grid-template-columns: 1fr; }
 }
 
 /* ===== Sobre nosotros ===== */

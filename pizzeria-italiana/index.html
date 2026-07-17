@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La Fiamma — Pizzería Napoletana</title>
-<meta name="description" content="La Fiamma, pizzería napoletana. Horno de leña, masa madre 48h e ingredientes DOP italianos. Pide ya o crea tu pizza a tu manera.">
+<title>La Fiamma — Ristorante Italo-Español</title>
+<meta name="description" content="La Fiamma, cocina italo-española desde 1962. Horno de piedra, masa madre de 60 años y producto fresco de Italia y España. Pide ya o crea tu pizza a tu manera.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍕</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -31,8 +31,8 @@
 
   <div class="marquee" aria-hidden="true">
     <div class="marquee__track">
-      <span>🔥&nbsp; 2X1 EN PIZZAS FAMILIARES LOS MARTES &nbsp;·&nbsp; ENTREGA EN 30 MIN O TE INVITAMOS AL POSTRE &nbsp;·&nbsp; MASA MADRE FERMENTADA 48H &nbsp;·&nbsp; HORNO DE LEÑA A 450°C &nbsp;·&nbsp; INGREDIENTES DOP ITALIANOS &nbsp;·&nbsp;</span>
-      <span>🔥&nbsp; 2X1 EN PIZZAS FAMILIARES LOS MARTES &nbsp;·&nbsp; ENTREGA EN 30 MIN O TE INVITAMOS AL POSTRE &nbsp;·&nbsp; MASA MADRE FERMENTADA 48H &nbsp;·&nbsp; HORNO DE LEÑA A 450°C &nbsp;·&nbsp; INGREDIENTES DOP ITALIANOS &nbsp;·&nbsp;</span>
+      <span>🔥&nbsp; HORNO DE PIEDRA DESDE 1962 &nbsp;·&nbsp; MASA MADRE DE MÁS DE 60 AÑOS &nbsp;·&nbsp; TOMATE DE NUESTRA HUERTA &nbsp;·&nbsp; MOZZARELLA DI BUFALA DE CAMPANIA &nbsp;·&nbsp; LEÑA DE ENCINA &nbsp;·&nbsp; TRES GENERACIONES, UNA MISMA RECETA &nbsp;·&nbsp;</span>
+      <span>🔥&nbsp; HORNO DE PIEDRA DESDE 1962 &nbsp;·&nbsp; MASA MADRE DE MÁS DE 60 AÑOS &nbsp;·&nbsp; TOMATE DE NUESTRA HUERTA &nbsp;·&nbsp; MOZZARELLA DI BUFALA DE CAMPANIA &nbsp;·&nbsp; LEÑA DE ENCINA &nbsp;·&nbsp; TRES GENERACIONES, UNA MISMA RECETA &nbsp;·&nbsp;</span>
     </div>
   </div>
 </header>
@@ -42,11 +42,13 @@
   <!-- ================= VENTANA 1: EL LOCAL ================= -->
   <section id="local" class="window is-active" data-window="local">
 
-    <div class="hero" style="background-image:linear-gradient(180deg, rgba(20,10,6,.45), rgba(20,10,6,.85)), url('https://unsplash.com/photos/zyvkmq1yJBs/download?force=true&w=1800');">
-      <div class="hero__content">
-        <p class="eyebrow eyebrow--light">Napoletana desde 1995</p>
-        <h1>Fuego.<br>Tradición.<br>Pizza de verdad.</h1>
-        <p class="hero__tagline">Masa madre fermentada 48 horas, horno de leña a 450°C e ingredientes DOP traídos de Italia. Así de simple, así de bueno.</p>
+    <div class="hero">
+      <img class="hero__bg" src="https://unsplash.com/photos/zyvkmq1yJBs/download?force=true&w=1800" alt="" loading="eager">
+      <div class="hero__overlay"></div>
+      <div class="hero__content reveal">
+        <p class="eyebrow eyebrow--light">Cocina italo-española desde 1962</p>
+        <h1>Fuego de piedra.<br>Raíces de dos tierras.</h1>
+        <p class="hero__tagline">Un horno napolitano que cruzó el Mediterráneo, una masa madre de tres generaciones y el mejor producto fresco de Italia y España, cocido a 450°C.</p>
         <div class="hero__ctas">
           <button class="btn btn--primary btn--lg" type="button" data-target="carta">Ver la Carta</button>
           <button class="btn btn--ghost-light btn--lg" type="button" data-target="builder">Hazte tu Pizza</button>
@@ -73,20 +75,20 @@
 
     <section class="section container">
       <div class="stats-row">
-        <div class="stat-block">
-          <span class="stat-block__num">30</span>
+        <div class="stat-block reveal">
+          <span class="stat-block__num" data-count-to="62" data-suffix="">0</span>
           <span class="stat-block__label">Años&nbsp;de&nbsp;tradición</span>
         </div>
-        <div class="stat-block">
-          <span class="stat-block__num">+80K</span>
-          <span class="stat-block__label">Pizzas&nbsp;al&nbsp;año</span>
+        <div class="stat-block reveal">
+          <span class="stat-block__num" data-count-to="3" data-suffix="">0</span>
+          <span class="stat-block__label">Generaciones&nbsp;en&nbsp;el&nbsp;horno</span>
         </div>
-        <div class="stat-block">
-          <span class="stat-block__num">450°</span>
-          <span class="stat-block__label">Horno&nbsp;de&nbsp;leña</span>
+        <div class="stat-block reveal">
+          <span class="stat-block__num" data-count-to="450" data-suffix="°">0</span>
+          <span class="stat-block__label">Horno&nbsp;de&nbsp;piedra</span>
         </div>
-        <div class="stat-block">
-          <span class="stat-block__num">48h</span>
+        <div class="stat-block reveal">
+          <span class="stat-block__num" data-count-to="48" data-suffix="h">0</span>
           <span class="stat-block__label">Fermentación&nbsp;masa&nbsp;madre</span>
         </div>
       </div>
@@ -94,34 +96,90 @@
 
     <section class="section">
       <div class="container about">
-        <div class="about__text">
+        <div class="about__text reveal">
           <p class="eyebrow">Nuestra historia</p>
-          <h2>No hacemos pizzas. Hacemos fuego.</h2>
-          <p>La Fiamma nació en 1995 cuando Antonio, napolitano de nacimiento, trajo a Madrid el horno de leña de su familia y una receta de masa madre que no ha cambiado en tres décadas. Cada pizza se fermenta 48 horas, se estira a mano y se hornea en menos de 90 segundos a 450°C.</p>
-          <p>Nada de atajos. Nada de ingredientes de importación dudosa. Solo harina italiana, tomate San Marzano y mozzarella fior di latte, como se hace en Nápoles desde siempre.</p>
+          <h2>Dos países, un mismo fuego</h2>
+          <p>En 1962, Giovanni Ferretti cruzó el Mediterráneo desde Nápoles con la receta de masa madre de su abuela y un horno de piedra que desmontó ladrillo a ladrillo para volver a levantarlo en Madrid. Allí conoció a Pilar, hija de agricultores de la huerta valenciana, y juntos abrieron La Fiamma.</p>
+          <p>Tres generaciones después, el horno original —reconstruido con las mismas piedras que cruzaron el mar— sigue encendido cada día. La receta no ha cambiado. La pasión, tampoco.</p>
           <p class="guarantee">🍕 Si tu pizza no te vuela la cabeza, te invitamos a la siguiente. Así de seguros estamos.</p>
+        </div>
+        <figure class="about__image reveal">
+          <img src="https://unsplash.com/photos/wZyxpSGwW0g/download?force=true&w=900" alt="Manos estirando la masa madre de La Fiamma" loading="lazy">
+          <figcaption>La misma receta, amasada a mano cada mañana</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--oven">
+      <div class="container oven">
+        <figure class="oven__image reveal">
+          <img src="https://unsplash.com/photos/D2o5_qaBT5c/download?force=true&w=1000" alt="Horno de piedra de leña de La Fiamma encendido" loading="lazy">
+          <span class="oven__flame" aria-hidden="true">🔥</span>
+        </figure>
+        <div class="oven__text reveal">
+          <p class="eyebrow">El corazón de la casa</p>
+          <h2>El horno que nunca se apaga</h2>
+          <p>Nuestro horno de piedra se construyó en Nápoles en 1958 y viajó a España piedra a piedra en 1962. Se enciende con leña de encina cuatro horas antes de abrir y alcanza los 450°C, la temperatura exacta a la que la masa se hincha, se dora y se carameliza en apenas 90 segundos.</p>
+          <p>Los rescoldos nunca mueren del todo: se mantienen vivos de un servicio a otro, tal y como lleva ocurriendo desde hace más de sesenta años.</p>
+          <ul class="oven__facts">
+            <li><strong>1958</strong> — Construido en Nápoles</li>
+            <li><strong>1962</strong> — Reconstruido en Madrid, piedra a piedra</li>
+            <li><strong>450°C</strong> — Temperatura de cocción</li>
+            <li><strong>90&nbsp;seg</strong> — Tiempo de horneado</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section class="section section--alt">
       <div class="container">
+        <p class="eyebrow center">Producto y origen</p>
+        <h2 class="center">Dos tierras, una misma mesa</h2>
+        <p class="section-lead center">Traemos lo mejor de Italia y compramos lo mejor de España cada mañana. Sin atajos.</p>
+
+        <div class="origin-grid">
+          <div class="origin-card reveal">
+            <span class="origin-card__flag" aria-hidden="true">🇮🇹</span>
+            <h3>De Nápoles</h3>
+            <ul>
+              <li>Masa madre con más de 60 años de cultivo, heredada de la familia Ferretti.</li>
+              <li>Mozzarella di bufala D.O.P., traída de Campania cada semana.</li>
+              <li>Tomate San Marzano D.O.P., cultivado a los pies del Vesubio.</li>
+              <li>El horno de piedra original, reconstruido piedra a piedra en Madrid.</li>
+            </ul>
+          </div>
+          <div class="origin-card reveal">
+            <span class="origin-card__flag" aria-hidden="true">🇪🇸</span>
+            <h3>De nuestra tierra</h3>
+            <ul>
+              <li>Tomate y albahaca de la huerta valenciana, recogidos a diario.</li>
+              <li>Aceite de oliva virgen extra de Jaén, de primera prensada en frío.</li>
+              <li>Jamón ibérico de bellota de Guijuelo.</li>
+              <li>Pan y postres horneados cada mañana en nuestro obrador.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
         <p class="eyebrow center">El ambiente</p>
         <h2 class="center">El horno nunca se apaga</h2>
         <div class="gallery">
-          <figure class="gallery__item">
+          <figure class="gallery__item reveal">
             <img src="https://unsplash.com/photos/9xWl_zhIcS4/download?force=true&w=1000" alt="Pizza cocinándose dentro del horno de leña de La Fiamma" loading="lazy">
             <figcaption>Nuestro horno de leña</figcaption>
           </figure>
-          <figure class="gallery__item">
+          <figure class="gallery__item reveal">
             <img src="https://unsplash.com/photos/7TAG9wlv1uw/download?force=true&w=1000" alt="Pizzaiolo horneando una pizza en La Fiamma" loading="lazy">
             <figcaption>El pizzaiolo en acción</figcaption>
           </figure>
-          <figure class="gallery__item">
+          <figure class="gallery__item reveal">
             <img src="https://unsplash.com/photos/Q73XXHcIsa8/download?force=true&w=1000" alt="Sala interior rústica de La Fiamma" loading="lazy">
             <figcaption>Nuestro comedor</figcaption>
           </figure>
-          <figure class="gallery__item">
+          <figure class="gallery__item reveal">
             <img src="https://unsplash.com/photos/YnXvyvHVKjs/download?force=true&w=1000" alt="Mesas de madera del restaurante La Fiamma" loading="lazy">
             <figcaption>Mesas de madera maciza</figcaption>
           </figure>
@@ -129,7 +187,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section--alt">
       <div class="container">
         <p class="eyebrow center">Reseñas</p>
         <h2 class="center">Lo que dicen en Google</h2>
@@ -140,82 +198,82 @@
         </p>
 
         <div class="reviews-grid">
-          <article class="review-card">
+          <article class="review-card reveal">
             <div class="review-card__head">
-              <span class="review-card__avatar" style="background:#b3241c">SM</span>
+              <span class="review-card__avatar" style="background:#a13a1f">SM</span>
               <div>
                 <span class="review-card__name">Sara M.</span>
                 <span class="review-card__date">Hace 1 semana</span>
               </div>
             </div>
             <div class="review-card__stars" aria-hidden="true">★★★★★</div>
-            <p>La mejor Diavola que he comido fuera de Italia. La masa tiene un punto de fermentación brutal. Adictiva.</p>
+            <p>Se nota el horno de piedra de verdad. La Diavola tiene un punto de fermentación brutal. Adictiva.</p>
           </article>
 
-          <article class="review-card">
+          <article class="review-card reveal">
             <div class="review-card__head">
-              <span class="review-card__avatar" style="background:#4b6b3f">TR</span>
+              <span class="review-card__avatar" style="background:#556b2f">TR</span>
               <div>
                 <span class="review-card__name">Tomás R.</span>
                 <span class="review-card__date">Hace 2 semanas</span>
               </div>
             </div>
             <div class="review-card__stars" aria-hidden="true">★★★★★</div>
-            <p>Pedimos por teléfono y la pizza llegó en 25 minutos, ardiendo y perfecta. Se nota el horno de leña de verdad.</p>
+            <p>Nos contaron la historia del horno que cruzó el mar y luego la probamos: hay sesenta años de oficio en cada bocado.</p>
           </article>
 
-          <article class="review-card">
+          <article class="review-card reveal">
             <div class="review-card__head">
-              <span class="review-card__avatar" style="background:#c9962c">EV</span>
+              <span class="review-card__avatar" style="background:#b8863a">EV</span>
               <div>
                 <span class="review-card__name">Elena V.</span>
                 <span class="review-card__date">Hace 3 semanas</span>
               </div>
             </div>
             <div class="review-card__stars" aria-hidden="true">★★★★★</div>
-            <p>Hicimos nuestra propia pizza en la sección interactiva de la web antes de ir. Llegamos y estaba exactamente como la habíamos montado. Un puntazo.</p>
+            <p>Hicimos nuestra propia pizza en la web antes de ir. Llegamos y estaba exactamente como la habíamos montado. Un puntazo.</p>
           </article>
 
-          <article class="review-card">
+          <article class="review-card reveal">
             <div class="review-card__head">
-              <span class="review-card__avatar" style="background:#b3241c">DL</span>
+              <span class="review-card__avatar" style="background:#a13a1f">DL</span>
               <div>
                 <span class="review-card__name">Diego L.</span>
                 <span class="review-card__date">Hace 1 mes</span>
               </div>
             </div>
             <div class="review-card__stars" aria-hidden="true">★★★★☆</div>
-            <p>Muy buena relación calidad-precio para la cantidad de producto DOP que llevan. Un sábado tuvimos que esperar mesa, reservad antes.</p>
+            <p>Se nota el mimo con el producto español y el italiano a partes iguales. Un sábado tuvimos que esperar mesa, reservad antes.</p>
           </article>
 
-          <article class="review-card">
+          <article class="review-card reveal">
             <div class="review-card__head">
-              <span class="review-card__avatar" style="background:#4b6b3f">CP</span>
+              <span class="review-card__avatar" style="background:#556b2f">CP</span>
               <div>
                 <span class="review-card__name">Carmen P.</span>
                 <span class="review-card__date">Hace 1 mes</span>
               </div>
             </div>
             <div class="review-card__stars" aria-hidden="true">★★★★★</div>
-            <p>La Boscaiola con trufa es una pasada. Ambiente acogedor y el equipo súper simpático. Volvemos seguro.</p>
+            <p>La Boscaiola con trufa es una pasada. Ambiente rústico de verdad, no de decorado. Volvemos seguro.</p>
           </article>
 
-          <article class="review-card">
+          <article class="review-card reveal">
             <div class="review-card__head">
-              <span class="review-card__avatar" style="background:#c9962c">RH</span>
+              <span class="review-card__avatar" style="background:#b8863a">RH</span>
               <div>
                 <span class="review-card__name">Rubén H.</span>
                 <span class="review-card__date">Hace 2 meses</span>
               </div>
             </div>
             <div class="review-card__stars" aria-hidden="true">★★★★★</div>
-            <p>Se nota que llevan 30 años haciendo esto. La Margherita, de una sencillez perfecta. Auténtica Nápoles en Madrid.</p>
+            <p>La Margherita, de una sencillez perfecta. Se nota que llevan tres generaciones haciendo esto.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section--alt">
+    <section class="section">
       <div class="container">
         <p class="eyebrow center">Visítanos</p>
         <h2 class="center">Dónde estamos</h2>
@@ -263,14 +321,14 @@
       <div class="container">
         <p class="eyebrow eyebrow--light">Las 10 de siempre</p>
         <h1>La Carta</h1>
-        <p class="carta-header__tagline">Las pizzas más tradicionales de Nápoles, hechas como manda la receta original.</p>
+        <p class="carta-header__tagline">Recetas que cruzaron el Mediterráneo. Sin atajos, sin prisa, sin cambios en sesenta años.</p>
       </div>
     </div>
 
     <div class="container">
       <div class="dish-grid dish-grid--menu">
 
-        <article class="dish-card">
+        <article class="dish-card reveal">
           <div class="dish-card__media">
             <span class="badge badge--gold">La Original</span>
             <img src="https://unsplash.com/photos/eNMdv_Wef7w/download?force=true&w=700" alt="Pizza Margherita Clásica recién horneada" loading="lazy">
@@ -284,7 +342,7 @@
           </div>
         </article>
 
-        <article class="dish-card">
+        <article class="dish-card reveal">
           <div class="dish-card__media">
             <img src="https://unsplash.com/photos/PKfz98depf0/download?force=true&w=700" alt="Pizza Marinara recién horneada" loading="lazy">
           </div>
@@ -297,7 +355,7 @@
           </div>
         </article>
 
-        <article class="dish-card">
+        <article class="dish-card reveal">
           <div class="dish-card__media">
             <span class="badge badge--red">🔥 Más Vendida</span>
             <img src="https://unsplash.com/photos/XtIHk2mLw0U/download?force=true&w=700" alt="Pizza Diavola picante recién horneada" loading="lazy">
@@ -311,7 +369,7 @@
           </div>
         </article>
 
-        <article class="dish-card">
+        <article class="dish-card reveal">
           <div class="dish-card__media">
             <img src="https://unsplash.com/photos/YKvGUO4Zb7Y/download?force=true&w=700" alt="Pizza Quattro Formaggi recién horneada" loading="lazy">
           </div>
@@ -324,7 +382,7 @@
           </div>
         </article>
 
-        <article class="dish-card">
+        <article class="dish-card reveal">
           <div class="dish-card__media">
             <img src="https://unsplash.com/photos/zylNrmoaEfY/download?force=true&w=700" alt="Pizza Quattro Stagioni recién horneada" loading="lazy">
           </div>
@@ -337,7 +395,7 @@
           </div>
         </article>
 
-        <article class="dish-card">
+        <article class="dish-card reveal">
           <div class="dish-card__media">
             <img src="https://unsplash.com/photos/LppAkC7s6u4/download?force=true&w=700" alt="Pizza Capricciosa recién horneada" loading="lazy">
           </div>
@@ -350,7 +408,7 @@
           </div>
         </article>
 
-        <article class="dish-card">
+        <article class="dish-card reveal">
           <div class="dish-card__media">
             <img src="https://unsplash.com/photos/JOYjHvOTFJQ/download?force=true&w=700" alt="Pizza Prosciutto e Funghi recién horneada" loading="lazy">
           </div>
@@ -363,7 +421,7 @@
           </div>
         </article>
 
-        <article class="dish-card">
+        <article class="dish-card reveal">
           <div class="dish-card__media">
             <img src="https://unsplash.com/photos/SU1LFoeEUkk/download?force=true&w=700" alt="Pizza Napoletana recién horneada" loading="lazy">
           </div>
@@ -376,7 +434,7 @@
           </div>
         </article>
 
-        <article class="dish-card">
+        <article class="dish-card reveal">
           <div class="dish-card__media">
             <span class="badge badge--gold">Premium</span>
             <img src="https://unsplash.com/photos/TG5SPYNvpos/download?force=true&w=700" alt="Pizza Boscaiola con trufa recién horneada" loading="lazy">
@@ -390,7 +448,7 @@
           </div>
         </article>
 
-        <article class="dish-card">
+        <article class="dish-card reveal">
           <div class="dish-card__media">
             <img src="https://unsplash.com/photos/bYelBPwXW5k/download?force=true&w=700" alt="Calzone Della Casa recién horneado" loading="lazy">
           </div>
@@ -405,7 +463,7 @@
 
       </div>
 
-      <div class="carta-cta">
+      <div class="carta-cta reveal">
         <p>¿No encuentras tu combinación perfecta?</p>
         <button class="btn btn--primary btn--lg" type="button" data-target="builder">Créala tú mismo →</button>
       </div>
@@ -415,11 +473,13 @@
   <!-- ================= VENTANA 3: HAZTE TU PIZZA ================= -->
   <section id="builder" class="window" data-window="builder">
 
-    <div class="carta-header" style="background-image:linear-gradient(180deg, rgba(20,10,6,.55), rgba(20,10,6,.85)), url('https://unsplash.com/photos/xIqVfW8XUt4/download?force=true&w=1800'); color:#fff;">
-      <div class="container">
+    <div class="carta-header carta-header--dark">
+      <img class="carta-header__bg" src="https://unsplash.com/photos/xIqVfW8XUt4/download?force=true&w=1800" alt="" loading="lazy">
+      <div class="carta-header__overlay"></div>
+      <div class="container carta-header__inner">
         <p class="eyebrow eyebrow--light">100% a tu manera</p>
         <h1 style="color:#fff;">Hazte tu Pizza</h1>
-        <p class="carta-header__tagline" style="color:#f3e6d8;">Elige masa, tamaño e ingredientes. Nosotros ponemos el horno de leña.</p>
+        <p class="carta-header__tagline" style="color:#f3e6d8;">Elige masa, tamaño e ingredientes. Nosotros ponemos el horno de piedra.</p>
       </div>
     </div>
 
@@ -427,7 +487,7 @@
 
       <div class="builder__config">
 
-        <div class="builder__step">
+        <div class="builder__step reveal">
           <h2 class="builder__step-title"><span>1</span> Elige tu masa</h2>
           <div class="option-group" data-group="masa" data-type="single">
             <button class="option-chip is-active" type="button" data-value="Tradicional Napolitana" data-price="0">Tradicional Napolitana</button>
@@ -436,7 +496,7 @@
           </div>
         </div>
 
-        <div class="builder__step">
+        <div class="builder__step reveal">
           <h2 class="builder__step-title"><span>2</span> Elige tu tamaño</h2>
           <div class="option-group" data-group="tamano" data-type="single">
             <button class="option-chip" type="button" data-value="Individual (25cm)" data-price="8">Individual · 25cm <em>8,00&nbsp;€</em></button>
@@ -445,7 +505,7 @@
           </div>
         </div>
 
-        <div class="builder__step">
+        <div class="builder__step reveal">
           <h2 class="builder__step-title"><span>3</span> Elige tu base</h2>
           <div class="option-group" data-group="base" data-type="single">
             <button class="option-chip is-active" type="button" data-value="Tomate San Marzano" data-price="0">Tomate San Marzano</button>
@@ -454,7 +514,7 @@
           </div>
         </div>
 
-        <div class="builder__step">
+        <div class="builder__step reveal">
           <h2 class="builder__step-title"><span>4</span> Añade tus ingredientes</h2>
 
           <p class="builder__group-label">Quesos</p>

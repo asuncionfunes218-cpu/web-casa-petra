@@ -317,6 +317,50 @@ h2.center { margin-left: auto; margin-right: auto; }
   .quick-info__item:first-child { border-top: none; padding-top: 0; }
 }
 
+/* ===== Producto fresco ===== */
+
+.section--produce { background: var(--color-bg-alt); }
+
+.produce-lead {
+  max-width: 560px;
+  margin: -8px auto 40px;
+  color: var(--color-muted);
+}
+
+.produce-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.produce-item {
+  text-align: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+}
+
+.produce-item .illus {
+  width: 72px;
+  height: 72px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+}
+
+.produce-item .illus__icon { width: 46%; height: 46%; }
+
+.produce-item h3 { font-size: 1.02rem; margin-bottom: .4em; }
+.produce-item p { color: var(--color-muted); font-size: .88rem; margin: 0; }
+
+@media (max-width: 800px) {
+  .produce-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 460px) {
+  .produce-grid { grid-template-columns: 1fr; }
+}
+
 /* ===== Sobre nosotros ===== */
 
 .about {

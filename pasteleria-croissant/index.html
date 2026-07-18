@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Miga Dorada — Panadería y Pastelería Artesana</title>
+<meta name="description" content="La Miga Dorada, panadería y pastelería artesana. Croissants de mantequilla, bollería recién horneada y tartas caseras en el corazón de Madrid.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥐</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="#local">
+      <span class="brand__mark">MD</span>
+      <span class="brand__name">La&nbsp;Miga&nbsp;Dorada</span>
+    </a>
+
+    <nav class="window-nav" aria-label="Secciones principales">
+      <button class="window-nav__btn is-active" data-target="local" type="button">El Obrador</button>
+      <button class="window-nav__btn" data-target="carta" type="button">La Carta</button>
+    </nav>
+
+    <a class="btn btn--ghost header-cta" href="tel:+34913456789">
+      <svg class="header-cta__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="header-cta__label">Encargar</span>
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= VENTANA 1: EL OBRADOR ================= -->
+  <section id="local" class="window is-active" data-window="local">
+
+    <div class="hero" style="background-image:linear-gradient(180deg, rgba(74,52,40,.28), rgba(74,52,40,.68)), url('https://unsplash.com/photos/mSHfVvDb2Ok/download?force=true&w=1600');">
+      <div class="hero__content">
+        <p class="eyebrow">Bienvenidos a</p>
+        <h1>La Miga Dorada</h1>
+        <p class="hero__tagline">Croissants de mantequilla, bollería recién horneada y tartas caseras, cada mañana desde las cinco.</p>
+        <button class="btn btn--primary" type="button" data-target="carta">Ver la Carta</button>
+      </div>
+    </div>
+
+    <div class="quick-info">
+      <div class="container quick-info__inner">
+        <div class="quick-info__item">
+          <span class="quick-info__label">Horario</span>
+          <span class="quick-info__value">Todos los días · 7:30–20:00</span>
+        </div>
+        <div class="quick-info__item">
+          <span class="quick-info__label">Dirección</span>
+          <span class="quick-info__value">Calle de la Palma, 22 · Madrid</span>
+        </div>
+        <div class="quick-info__item">
+          <span class="quick-info__label">Encargos</span>
+          <span class="quick-info__value"><a href="tel:+34913456789">+34 913 456 789</a></span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section container">
+      <div class="about">
+        <div class="about__text">
+          <p class="eyebrow">Nuestra historia</p>
+          <h2>El olor a mantequilla que despierta el barrio</h2>
+          <p>La Miga Dorada nació en 2018 con una idea sencilla: hacer el mejor croissant de mantequilla del barrio, con la técnica francesa del hojaldrado y el cariño de una panadería de toda la vida. Cada mañana, antes de las cinco, el obrador ya huele a mantequilla derretida y masa fermentando.</p>
+          <p>Amasamos, laminamos y horneamos todo a la vista, en tandas pequeñas, varias veces al día. Nada de congelado, nada de prisa: solo tiempo, mantequilla de calidad y manos que saben lo que hacen.</p>
+        </div>
+        <div class="about__stats">
+          <div class="stat">
+            <span class="stat__num">2018</span>
+            <span class="stat__label">Desde</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">100%</span>
+            <span class="stat__label">Mantequilla&nbsp;natural</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">5:00</span>
+            <span class="stat__label">Primer&nbsp;horneado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <p class="eyebrow center">El obrador</p>
+        <h2 class="center">Hecho a mano, a la vista de todos</h2>
+        <div class="gallery">
+          <figure class="gallery__item">
+            <img src="https://unsplash.com/photos/7oLemmP3XVk/download?force=true&w=1000" alt="Sala de La Miga Dorada con mesas para desayunar" loading="lazy">
+            <figcaption>Nuestro rincón para desayunar</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://unsplash.com/photos/t02lkmSe7C8/download?force=true&w=800" alt="Manos amasando masa en el obrador de La Miga Dorada" loading="lazy">
+            <figcaption>El obrador, cada madrugada</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://unsplash.com/photos/6d5I1-gixyU/download?force=true&w=800" alt="Vitrina de bollería recién horneada" loading="lazy">
+            <figcaption>Nuestra vitrina</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://unsplash.com/photos/NCSxv_ShUGY/download?force=true&w=1200" alt="Rincón acogedor de La Miga Dorada" loading="lazy">
+            <figcaption>Un rincón para quedarse</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--reviews">
+      <div class="container">
+        <p class="eyebrow center">Reseñas</p>
+        <h2 class="center">Lo que dicen en Google</h2>
+        <p class="reviews-summary center">
+          <span class="reviews-summary__score">4,9</span>
+          <span class="reviews-summary__stars" aria-hidden="true">★★★★★</span>
+          <span class="reviews-summary__count">204 reseñas en Google</span>
+        </p>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-card__head">
+              <span class="review-card__avatar" style="background:#c17b6a">EM</span>
+              <div>
+                <span class="review-card__name">Elena M.</span>
+                <span class="review-card__date">Hace 3 días</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+            <p>El croissant de mantequilla más hojaldrado que he probado en Madrid. Se deshace en capas nada más tocarlo.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__head">
+              <span class="review-card__avatar" style="background:#c9974a">RT</span>
+              <div>
+                <span class="review-card__name">Rubén T.</span>
+                <span class="review-card__date">Hace 1 semana</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+            <p>Vamos cada domingo a por la caracola de nueces. Si llegas después de las diez, ya no queda ninguna.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__head">
+              <span class="review-card__avatar" style="background:#8a7060">SL</span>
+              <div>
+                <span class="review-card__name">Sara L.</span>
+                <span class="review-card__date">Hace 2 semanas</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+            <p>Encargamos la tarta de cumpleaños y fue todo un acierto. Poco dulce, mucho sabor, y muy bonita.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__head">
+              <span class="review-card__avatar" style="background:#c17b6a">DP</span>
+              <div>
+                <span class="review-card__name">Diego P.</span>
+                <span class="review-card__date">Hace 3 semanas</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-hidden="true">★★★★☆</div>
+            <p>El pan de masa madre está buenísimo. Los fines de semana hay cola, pero merece la pena esperar.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__head">
+              <span class="review-card__avatar" style="background:#c9974a">MA</span>
+              <div>
+                <span class="review-card__name">Marina A.</span>
+                <span class="review-card__date">Hace 1 mes</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+            <p>El croissant de almendra es una pasada, con esa crema por dentro. Y el trato siempre encantador.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__head">
+              <span class="review-card__avatar" style="background:#8a7060">JC</span>
+              <div>
+                <span class="review-card__name">Javier C.</span>
+                <span class="review-card__date">Hace 2 meses</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+            <p>Se nota que todo es artesanal. La tarta de queso al horno, de las mejores que he probado, sin duda.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow center">Visítanos</p>
+        <h2 class="center">Dónde estamos</h2>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <ul class="info-list">
+              <li>
+                <span class="info-list__label">Dirección</span>
+                <span class="info-list__value">Calle de la Palma, 22<br>28004 Madrid, España</span>
+              </li>
+              <li>
+                <span class="info-list__label">Teléfono</span>
+                <span class="info-list__value"><a href="tel:+34913456789">+34 913 456 789</a></span>
+              </li>
+              <li>
+                <span class="info-list__label">Correo</span>
+                <span class="info-list__value"><a href="mailto:hola@lamigadorada.es">hola@lamigadorada.es</a></span>
+              </li>
+              <li>
+                <span class="info-list__label">Horario</span>
+                <span class="info-list__value">Todos los días<br>7:30–20:00</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="map-card">
+            <iframe
+              title="La Miga Dorada en Google Maps"
+              src="https://www.google.com/maps?q=Calle+de+la+Palma+22,+28004+Madrid,+España&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- ================= VENTANA 2: LA CARTA ================= -->
+  <section id="carta" class="window" data-window="carta">
+
+    <div class="carta-header">
+      <div class="container">
+        <p class="eyebrow">Nuestra propuesta</p>
+        <h1>La Carta</h1>
+        <p class="carta-header__tagline">Croissants, bollería, tartas, panes artesanos y algo caliente para acompañar.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <nav class="category-nav" aria-label="Categorías de la carta">
+        <button class="category-nav__btn is-active" data-category="all" type="button">Todo</button>
+        <button class="category-nav__btn" data-category="croissants" type="button">Croissants</button>
+        <button class="category-nav__btn" data-category="olleria" type="button">Bollería</button>
+        <button class="category-nav__btn" data-category="tartas" type="button">Tartas</button>
+        <button class="category-nav__btn" data-category="panes" type="button">Panes</button>
+        <button class="category-nav__btn" data-category="bebidas" type="button">Bebidas</button>
+      </nav>
+
+      <!-- CROISSANTS -->
+      <section class="menu-category" data-category="croissants">
+        <h2 class="menu-category__title">Croissants</h2>
+        <div class="dish-grid">
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/sqkXyyj4WdE/download?force=true&w=700" alt="Croissant de mantequilla recién horneado" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Croissant de Mantequilla</h3>
+                <span class="price">2,20&nbsp;€</span>
+              </div>
+              <p>Hojaldrado 27 veces con mantequilla de Isigny, fermentación lenta de 18 horas.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/d4hPtKyQkoc/download?force=true&w=700" alt="Croissant de chocolate recién horneado" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Croissant de Chocolate</h3>
+                <span class="price">2,60&nbsp;€</span>
+              </div>
+              <p>Relleno de dos barras de chocolate negro 70%, masa hojaldrada crujiente.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/fc8y5qpBKWQ/download?force=true&w=700" alt="Croissant de almendra recién horneado" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Croissant de Almendra</h3>
+                <span class="price">2,80&nbsp;€</span>
+              </div>
+              <p>Relleno de crema de almendra, cubierto de almendra laminada y azúcar glas.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/lp9wGFOZTz8/download?force=true&w=700" alt="Croissant de jamón y queso recién horneado" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Croissant Jamón y Queso</h3>
+                <span class="price">3,50&nbsp;€</span>
+              </div>
+              <p>Jamón cocido y queso emmental gratinado, horneado hasta quedar dorado.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- BOLLERÍA -->
+      <section class="menu-category" data-category="olleria">
+        <h2 class="menu-category__title">Bollería</h2>
+        <div class="dish-grid">
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/CpFCIRKNPOc/download?force=true&w=700" alt="Napolitana de chocolate recién horneada" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Napolitana de Chocolate</h3>
+                <span class="price">2,40&nbsp;€</span>
+              </div>
+              <p>Hojaldre relleno de crema y pepitas de chocolate, glaseado por encima.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/fitwDsD6gxM/download?force=true&w=700" alt="Caracola de nueces y pasas recién horneada" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Caracola de Nueces y Pasas</h3>
+                <span class="price">2,60&nbsp;€</span>
+              </div>
+              <p>Masa enrollada con nueces, pasas y un toque de canela, bañada en almíbar.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/ByV6BMNB0PI/download?force=true&w=700" alt="Rollo de canela con glaseado recién horneado" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Rollo de Canela con Glaseado</h3>
+                <span class="price">2,90&nbsp;€</span>
+              </div>
+              <p>Enrollado de masa de brioche, canela y un glaseado de queso crema por encima.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/p9568ach7gs/download?force=true&w=700" alt="Ensaimada rellena de crema recién horneada" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Ensaimada Rellena de Crema</h3>
+                <span class="price">3,20&nbsp;€</span>
+              </div>
+              <p>Masa fermentada muy fina, enrollada y rellena de crema pastelera casera.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- TARTAS -->
+      <section class="menu-category" data-category="tartas">
+        <h2 class="menu-category__title">Tartas y Dulces</h2>
+        <div class="dish-grid">
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/lKF0Urvp4RY/download?force=true&w=700" alt="Porción de tarta de queso al horno" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Tarta de Queso al Horno</h3>
+                <span class="price">4,50&nbsp;€</span>
+              </div>
+              <p>Cremosa por dentro, dorada por fuera, sin base de galleta. La receta de la casa.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/QX814A1w3j4/download?force=true&w=700" alt="Porción de milhojas de crema" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Milhojas de Crema</h3>
+                <span class="price">3,80&nbsp;€</span>
+              </div>
+              <p>Capas de hojaldre crujiente y crema pastelera, espolvoreado con azúcar glas.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/gZv1nVGr2Xc/download?force=true&w=700" alt="Porción de tarta de manzana" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Tarta de Manzana</h3>
+                <span class="price">4,20&nbsp;€</span>
+              </div>
+              <p>Manzana laminada sobre crema de almendra, en base de masa quebrada.</p>
+            </div>
+          </article>
+          <article class="dish-card">
+            <img src="https://unsplash.com/photos/upY7FPFfMNo/download?force=true&w=700" alt="Palmera de chocolate recién horneada" loading="lazy">
+            <div class="dish-card__body">
+              <div class="dish-card__row">
+                <h3>Palmera de Chocolate</h3>
+                <span class="price">2,50&nbsp;€</span>
+              </div>
+              <p>Hojaldre caramelizado bañado en chocolate negro y chocolate blanco.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PANES -->
+      <section class="menu-category" data-category="panes">
+        <h2 class="menu-category__title">Panes Artesanos</h2>
+        <div class="drinks-columns">
+          <div class="drinks-group">
+            <h3>De cada día</h3>
+            <ul class="drinks-list">
+              <li><span>Pan de Masa Madre (barra)</span><span class="price">4,50&nbsp;€</span></li>
+              <li><span>Chapata</span><span class="price">2,20&nbsp;€</span></li>
+              <li><span>Baguette Tradicional</span><span class="price">1,80&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="drinks-group">
+            <h3>Especiales</h3>
+            <ul class="drinks-list">
+              <li><span>Pan de Centeno con Nueces</span><span class="price">5,00&nbsp;€</span></li>
+              <li><span>Pan de Semillas</span><span class="price">4,80&nbsp;€</span></li>
+              <li><span>Pan Integral de Espelta</span><span class="price">4,60&nbsp;€</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- BEBIDAS -->
+      <section class="menu-category" data-category="bebidas">
+        <h2 class="menu-category__title">Bebidas</h2>
+        <div class="drinks-columns">
+          <div class="drinks-group">
+            <h3>Café</h3>
+            <ul class="drinks-list">
+              <li><span>Café Solo / Cortado</span><span class="price">1,60&nbsp;€</span></li>
+              <li><span>Café con Leche</span><span class="price">1,90&nbsp;€</span></li>
+              <li><span>Capuchino</span><span class="price">2,40&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="drinks-group">
+            <h3>Otras bebidas</h3>
+            <ul class="drinks-list">
+              <li><span>Chocolate a la Taza</span><span class="price">3,20&nbsp;€</span></li>
+              <li><span>Zumo de Naranja Natural</span><span class="price">3,00&nbsp;€</span></li>
+              <li><span>Té e Infusiones</span><span class="price">2,20&nbsp;€</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>&copy; 2026 La Miga Dorada · Calle de la Palma, 22, Madrid · Sitio de ejemplo creado como demostración de diseño web.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

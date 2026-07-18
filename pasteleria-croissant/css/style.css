@@ -13,6 +13,7 @@
   --color-gold: #c9974a;
 
   --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-script: "Playball", cursive;
   --font-body: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
 
   --radius: 10px;
@@ -24,6 +25,7 @@
 html { scroll-behavior: smooth; }
 
 body {
+  position: relative;
   margin: 0;
   background: var(--color-bg);
   color: var(--color-text);
@@ -31,6 +33,20 @@ body {
   font-weight: 400;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Fondo ambiente: fotografía de pasteles difuminada, fija tras todo el contenido */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -60px;
+  background-image: url('https://unsplash.com/photos/cSzyY2UaFSI/download?force=true&w=1600');
+  background-size: cover;
+  background-position: center;
+  filter: blur(34px) saturate(1.15);
+  opacity: .22;
+  z-index: -1;
+  pointer-events: none;
 }
 
 img { max-width: 100%; display: block; }
@@ -119,33 +135,37 @@ h2.center { margin-left: auto; margin-right: auto; }
   font-weight: 600;
 }
 
+.brand__name--script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 1.55rem;
+  color: var(--color-primary-dark);
+}
+
 .window-nav {
   display: flex;
-  gap: 4px;
-  background: var(--color-bg-alt);
-  padding: 4px;
-  border-radius: 999px;
+  gap: 22px;
 }
 
 .window-nav__btn {
   border: none;
+  border-bottom: 2px solid transparent;
   background: transparent;
-  padding: 9px 20px;
-  border-radius: 999px;
+  padding: 6px 2px;
   white-space: nowrap;
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: .88rem;
+  font-size: .92rem;
   letter-spacing: .01em;
   color: var(--color-muted);
   cursor: pointer;
-  transition: background .2s ease, color .2s ease;
+  transition: color .2s ease, border-color .2s ease;
 }
 
 .window-nav__btn.is-active,
 .window-nav__btn:hover {
-  background: var(--color-primary);
-  color: #fff;
+  color: var(--color-primary-dark);
+  border-bottom-color: var(--color-primary);
 }
 
 .btn {
@@ -180,7 +200,8 @@ h2.center { margin-left: auto; margin-right: auto; }
 
 @media (max-width: 640px) {
   .brand__name { display: none; }
-  .window-nav__btn { padding: 9px 14px; font-size: .8rem; }
+  .window-nav { gap: 14px; }
+  .window-nav__btn { font-size: .82rem; }
 
   .header-cta {
     padding: 0;
@@ -195,7 +216,8 @@ h2.center { margin-left: auto; margin-right: auto; }
 
 @media (max-width: 360px) {
   .site-header__inner { padding: 14px 16px; gap: 10px; }
-  .window-nav__btn { padding: 8px 10px; font-size: .74rem; }
+  .window-nav { gap: 10px; }
+  .window-nav__btn { font-size: .72rem; }
   .header-cta { width: 38px; height: 38px; }
 }
 
@@ -209,8 +231,8 @@ h2.center { margin-left: auto; margin-right: auto; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.section { padding: 72px 0; }
-.section--alt { background: var(--color-bg-alt); }
+.section { padding: 72px 0; background: rgba(253, 248, 242, .82); }
+.section--alt { background: rgba(247, 232, 226, .82); }
 
 /* ===== Hero (El Obrador) ===== */
 
@@ -230,6 +252,22 @@ h2.center { margin-left: auto; margin-right: auto; }
 .hero__content h1 { color: #fff; }
 .hero__content .eyebrow { color: #f3d4c4; }
 .hero__tagline { color: #fbeee6; font-size: 1.1rem; margin-bottom: 1.6em; }
+
+.hero__brand {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: clamp(2.8rem, 8vw, 4.6rem);
+  letter-spacing: .01em;
+}
+
+/* Festón tipo toldo de pastelería parisina, mordiendo el borde inferior del hero */
+.scallop {
+  position: relative;
+  height: 36px;
+  margin-top: -36px;
+  background:
+    radial-gradient(circle at 18px 0, transparent 18px, var(--color-bg) 19px) 0 0 / 36px 36px repeat-x;
+}
 
 /* ===== Barra rápida: horario / dirección / encargos ===== */
 
@@ -290,6 +328,7 @@ h2.center { margin-left: auto; margin-right: auto; }
 .stat {
   min-width: 0;
   border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-gold);
   border-radius: var(--radius);
   padding: 22px;
   text-align: center;
@@ -363,7 +402,7 @@ h2.center { margin-left: auto; margin-right: auto; }
 
 /* ===== Reseñas ===== */
 
-.section--reviews { background: var(--color-bg-alt); }
+.section--reviews { background: rgba(247, 232, 226, .82); }
 
 .reviews-summary {
   display: flex;
@@ -394,6 +433,7 @@ h2.center { margin-left: auto; margin-right: auto; }
 .review-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-gold);
   border-radius: var(--radius);
   padding: 24px;
 }
@@ -494,7 +534,7 @@ h2.center { margin-left: auto; margin-right: auto; }
 .carta-header {
   padding: 64px 0 32px;
   text-align: center;
-  background: var(--color-bg-alt);
+  background: rgba(247, 232, 226, .82);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -558,6 +598,7 @@ h2.center { margin-left: auto; margin-right: auto; }
   width: 100%;
   height: 210px;
   object-fit: cover;
+  border-bottom: 3px solid var(--color-gold);
 }
 
 .dish-card__body { padding: 20px 22px 22px; }
@@ -627,7 +668,7 @@ h2.center { margin-left: auto; margin-right: auto; }
 .site-footer {
   border-top: 1px solid var(--color-border);
   padding: 28px 0;
-  background: var(--color-bg-alt);
+  background: rgba(247, 232, 226, .82);
 }
 
 .site-footer__inner {

@@ -117,18 +117,24 @@ h2.center { margin-left: auto; margin-right: auto; }
 
 /* ===== Animaciones de aparición al hacer scroll ===== */
 
-.reveal {
+/* Por defecto el contenido siempre es visible: si el JavaScript no llega a
+   ejecutarse (por ejemplo, al previsualizar el HTML en un cliente de correo),
+   nunca debe quedar nada oculto. La animación de aparición solo se activa
+   cuando confirmamos, de forma síncrona, que el JS sí se ha ejecutado. */
+.reveal { opacity: 1; transform: none; }
+
+html.js .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity .8s ease, transform .8s ease;
 }
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
+html.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
-.reveal:nth-child(2) { transition-delay: .08s; }
-.reveal:nth-child(3) { transition-delay: .16s; }
-.reveal:nth-child(4) { transition-delay: .24s; }
-.reveal:nth-child(5) { transition-delay: .32s; }
-.reveal:nth-child(6) { transition-delay: .4s; }
+html.js .reveal:nth-child(2) { transition-delay: .08s; }
+html.js .reveal:nth-child(3) { transition-delay: .16s; }
+html.js .reveal:nth-child(4) { transition-delay: .24s; }
+html.js .reveal:nth-child(5) { transition-delay: .32s; }
+html.js .reveal:nth-child(6) { transition-delay: .4s; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
@@ -208,9 +214,24 @@ h2.center { margin-left: auto; margin-right: auto; }
 }
 
 .window-nav__btn.is-active,
-.window-nav__btn:hover {
+.window-nav__btn:hover,
+#tab-local:checked ~ header .window-nav__btn[for="tab-local"],
+#tab-carta:checked ~ header .window-nav__btn[for="tab-carta"],
+#tab-horno:checked ~ header .window-nav__btn[for="tab-horno"] {
   background: var(--color-primary);
   color: #fff;
+}
+
+.tab-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .btn {
@@ -308,7 +329,10 @@ h2.center { margin-left: auto; margin-right: auto; }
 /* ===== Ventanas ===== */
 
 .window { display: none; }
-.window.is-active { display: block; animation: fadein .35s ease; }
+.window.is-active,
+#tab-local:checked ~ main #local,
+#tab-carta:checked ~ main #carta,
+#tab-horno:checked ~ main #horno { display: block; animation: fadein .35s ease; }
 
 @keyframes fadein {
   from { opacity: 0; transform: translateY(6px); }

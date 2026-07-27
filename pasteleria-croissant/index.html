@@ -62,6 +62,9 @@
 </defs>
 </svg>
 
+<input type="radio" name="window-tab" id="tab-local" class="tab-radio" checked>
+<input type="radio" name="window-tab" id="tab-carta" class="tab-radio">
+
 <header class="site-header">
   <div class="site-header__inner">
     <a class="brand" href="#local">
@@ -70,8 +73,8 @@
     </a>
 
     <nav class="window-nav" aria-label="Secciones principales">
-      <button class="window-nav__btn is-active" data-target="local" type="button">El Obrador</button>
-      <button class="window-nav__btn" data-target="carta" type="button">La Carta</button>
+      <label class="window-nav__btn" data-target="local" for="tab-local">El Obrador</label>
+      <label class="window-nav__btn" data-target="carta" for="tab-carta">La Carta</label>
     </nav>
 
     <a class="btn btn--ghost header-cta" href="tel:+34913456789">
@@ -84,7 +87,7 @@
 <main>
 
   <!-- ================= VENTANA 1: EL OBRADOR ================= -->
-  <section id="local" class="window is-active" data-window="local">
+  <section id="local" class="window" data-window="local">
 
     <div class="hero">
       <svg class="hero__watermark" viewBox="0 0 64 64" aria-hidden="true"><use href="#ic-croissant"/></svg>
@@ -92,7 +95,7 @@
         <p class="eyebrow">Bienvenidos a</p>
         <h1 class="hero__brand">La Miga Dorada</h1>
         <p class="hero__tagline">Croissants de mantequilla, bollería recién horneada y tartas caseras, cada mañana desde las cinco.</p>
-        <button class="btn btn--primary" type="button" data-target="carta">Ver la Carta</button>
+        <label class="btn btn--primary" data-target="carta" for="tab-carta">Ver la Carta</label>
       </div>
     </div>
     <div class="scallop" aria-hidden="true"></div>
@@ -460,17 +463,17 @@
           <div class="drinks-group">
             <h3>De cada día</h3>
             <ul class="drinks-list">
-              <li><span>Pan de Masa Madre (barra)</span><span class="price">4,50&nbsp;€</span></li>
-              <li><span>Chapata</span><span class="price">2,20&nbsp;€</span></li>
-              <li><span>Baguette Tradicional</span><span class="price">1,80&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-wheat"/></svg>Pan de Masa Madre (barra)</span><span class="price">4,50&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-wheat"/></svg>Chapata</span><span class="price">2,20&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-wheat"/></svg>Baguette Tradicional</span><span class="price">1,80&nbsp;€</span></li>
             </ul>
           </div>
           <div class="drinks-group">
             <h3>Especiales</h3>
             <ul class="drinks-list">
-              <li><span>Pan de Centeno con Nueces</span><span class="price">5,00&nbsp;€</span></li>
-              <li><span>Pan de Semillas</span><span class="price">4,80&nbsp;€</span></li>
-              <li><span>Pan Integral de Espelta</span><span class="price">4,60&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-wheat"/></svg>Pan de Centeno con Nueces</span><span class="price">5,00&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-wheat"/></svg>Pan de Semillas</span><span class="price">4,80&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-wheat"/></svg>Pan Integral de Espelta</span><span class="price">4,60&nbsp;€</span></li>
             </ul>
           </div>
         </div>
@@ -483,17 +486,17 @@
           <div class="drinks-group">
             <h3>Café</h3>
             <ul class="drinks-list">
-              <li><span>Café Solo / Cortado</span><span class="price">1,60&nbsp;€</span></li>
-              <li><span>Café con Leche</span><span class="price">1,90&nbsp;€</span></li>
-              <li><span>Capuchino</span><span class="price">2,40&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-cup"/></svg>Café Solo / Cortado</span><span class="price">1,60&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-cup"/></svg>Café con Leche</span><span class="price">1,90&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-cup"/></svg>Capuchino</span><span class="price">2,40&nbsp;€</span></li>
             </ul>
           </div>
           <div class="drinks-group">
             <h3>Otras bebidas</h3>
             <ul class="drinks-list">
-              <li><span>Chocolate a la Taza</span><span class="price">3,20&nbsp;€</span></li>
-              <li><span>Zumo de Naranja Natural</span><span class="price">3,00&nbsp;€</span></li>
-              <li><span>Té e Infusiones</span><span class="price">2,20&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-cup"/></svg>Chocolate a la Taza</span><span class="price">3,20&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-cup"/></svg>Zumo de Naranja Natural</span><span class="price">3,00&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-cup"/></svg>Té e Infusiones</span><span class="price">2,20&nbsp;€</span></li>
             </ul>
           </div>
         </div>

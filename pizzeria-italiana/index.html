@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<script>document.documentElement.classList.add('js');</script>
 
 <svg aria-hidden="true" style="position:absolute; width:0; height:0; overflow:hidden;">
 <defs>
@@ -63,6 +64,10 @@
 </defs>
 </svg>
 
+<input type="radio" name="window-tab" id="tab-local" class="tab-radio" checked>
+<input type="radio" name="window-tab" id="tab-carta" class="tab-radio">
+<input type="radio" name="window-tab" id="tab-horno" class="tab-radio">
+
 <header class="site-header">
   <div class="site-header__inner">
     <a class="brand" href="#local">
@@ -71,9 +76,9 @@
     </a>
 
     <nav class="window-nav" aria-label="Secciones principales">
-      <button class="window-nav__btn is-active" data-target="local" type="button">El Local</button>
-      <button class="window-nav__btn" data-target="carta" type="button">La Carta</button>
-      <button class="window-nav__btn" data-target="horno" type="button">Horno</button>
+      <label class="window-nav__btn" data-target="local" for="tab-local">El Local</label>
+      <label class="window-nav__btn" data-target="carta" for="tab-carta">La Carta</label>
+      <label class="window-nav__btn" data-target="horno" for="tab-horno">Horno</label>
     </nav>
 
     <a class="btn btn--primary header-cta" href="tel:+34911223344">
@@ -93,7 +98,7 @@
 <main>
 
   <!-- ================= VENTANA 1: EL LOCAL ================= -->
-  <section id="local" class="window is-active" data-window="local">
+  <section id="local" class="window" data-window="local">
 
     <div class="hero">
       <svg class="hero__watermark" viewBox="0 0 64 64" aria-hidden="true"><use href="#ic-flame"/></svg>
@@ -103,8 +108,8 @@
         <h1>Fuego de piedra.<br>Raíces de dos tierras.</h1>
         <p class="hero__tagline">Un horno napolitano que cruzó el Mediterráneo, una masa madre de tres generaciones y el mejor producto fresco de Italia y España, cocido a 450°C.</p>
         <div class="hero__ctas">
-          <button class="btn btn--primary btn--lg" type="button" data-target="carta">Ver la Carta</button>
-          <button class="btn btn--ghost-light btn--lg" type="button" data-target="horno">Conoce el Horno</button>
+          <label class="btn btn--primary btn--lg" data-target="carta" for="tab-carta">Ver la Carta</label>
+          <label class="btn btn--ghost-light btn--lg" data-target="horno" for="tab-horno">Conoce el Horno</label>
         </div>
       </div>
     </div>
@@ -129,19 +134,19 @@
     <section class="section container">
       <div class="stats-row">
         <div class="stat-block reveal">
-          <span class="stat-block__num" data-count-to="62" data-suffix="">0</span>
+          <span class="stat-block__num" data-count-to="62" data-suffix="">62</span>
           <span class="stat-block__label">Años de tradición</span>
         </div>
         <div class="stat-block reveal">
-          <span class="stat-block__num" data-count-to="3" data-suffix="">0</span>
+          <span class="stat-block__num" data-count-to="3" data-suffix="">3</span>
           <span class="stat-block__label">Generaciones en el horno</span>
         </div>
         <div class="stat-block reveal">
-          <span class="stat-block__num" data-count-to="450" data-suffix="°">0</span>
+          <span class="stat-block__num" data-count-to="450" data-suffix="°">450°</span>
           <span class="stat-block__label">Horno de piedra</span>
         </div>
         <div class="stat-block reveal">
-          <span class="stat-block__num" data-count-to="48" data-suffix="h">0</span>
+          <span class="stat-block__num" data-count-to="48" data-suffix="h">48h</span>
           <span class="stat-block__label">Fermentación masa madre</span>
         </div>
       </div>
@@ -518,7 +523,7 @@
 
       <div class="carta-cta reveal">
         <p>¿Quieres ver cómo se hace?</p>
-        <button class="btn btn--primary btn--lg" type="button" data-target="horno">Descubre nuestros hornos →</button>
+        <label class="btn btn--primary btn--lg" data-target="horno" for="tab-horno">Descubre nuestros hornos →</label>
       </div>
     </div>
   </section>

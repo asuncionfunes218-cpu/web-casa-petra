@@ -132,6 +132,9 @@
 </defs>
 </svg>
 
+<input type="radio" name="window-tab" id="tab-local" class="tab-radio" checked>
+<input type="radio" name="window-tab" id="tab-carta" class="tab-radio">
+
 <header class="site-header">
   <div class="site-header__inner">
     <a class="brand" href="#local">
@@ -140,8 +143,8 @@
     </a>
 
     <nav class="window-nav" aria-label="Secciones principales">
-      <button class="window-nav__btn is-active" data-target="local" type="button">El Local</button>
-      <button class="window-nav__btn" data-target="carta" type="button">La Carta</button>
+      <label class="window-nav__btn" data-target="local" for="tab-local">El Local</label>
+      <label class="window-nav__btn" data-target="carta" for="tab-carta">La Carta</label>
     </nav>
 
     <a class="btn btn--ghost header-cta" href="tel:+34912345678">
@@ -154,7 +157,7 @@
 <main>
 
   <!-- ================= VENTANA 1: EL LOCAL ================= -->
-  <section id="local" class="window is-active" data-window="local">
+  <section id="local" class="window" data-window="local">
 
     <div class="hero">
       <svg class="hero__watermark" viewBox="0 0 64 64" aria-hidden="true"><use href="#ic-plate"/></svg>
@@ -162,7 +165,7 @@
         <p class="eyebrow">Bienvenidos a</p>
         <h1>Bar Casa José</h1>
         <p class="hero__tagline">Cocina de mercado con alma mediterránea, en el corazón de Madrid.</p>
-        <button class="btn btn--primary" type="button" data-target="carta">Ver la Carta</button>
+        <label class="btn btn--primary" data-target="carta" for="tab-carta">Ver la Carta</label>
       </div>
     </div>
 
@@ -559,32 +562,32 @@
           <div class="drinks-group">
             <h3>Vinos</h3>
             <ul class="drinks-list">
-              <li><span>Rioja Crianza</span><span class="price">4,50&nbsp;€ copa · 18,00&nbsp;€ botella</span></li>
-              <li><span>Albariño</span><span class="price">4,80&nbsp;€ copa · 19,00&nbsp;€ botella</span></li>
-              <li><span>Verdejo</span><span class="price">4,20&nbsp;€ copa · 17,00&nbsp;€ botella</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-glass"/></svg>Rioja Crianza</span><span class="price">4,50&nbsp;€ copa · 18,00&nbsp;€ botella</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-glass"/></svg>Albariño</span><span class="price">4,80&nbsp;€ copa · 19,00&nbsp;€ botella</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-glass"/></svg>Verdejo</span><span class="price">4,20&nbsp;€ copa · 17,00&nbsp;€ botella</span></li>
             </ul>
           </div>
           <div class="drinks-group">
             <h3>Cervezas</h3>
             <ul class="drinks-list">
-              <li><span>Cerveza Artesana Casa José</span><span class="price">3,50&nbsp;€</span></li>
-              <li><span>Cerveza Sin Alcohol</span><span class="price">3,00&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-glass"/></svg>Cerveza Artesana Casa José</span><span class="price">3,50&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-glass"/></svg>Cerveza Sin Alcohol</span><span class="price">3,00&nbsp;€</span></li>
             </ul>
           </div>
           <div class="drinks-group">
             <h3>Refrescos y Agua</h3>
             <ul class="drinks-list">
-              <li><span>Agua Mineral</span><span class="price">2,50&nbsp;€</span></li>
-              <li><span>Refrescos variados</span><span class="price">3,00&nbsp;€</span></li>
-              <li><span>Zumo Natural</span><span class="price">3,80&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-glass"/></svg>Agua Mineral</span><span class="price">2,50&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-glass"/></svg>Refrescos variados</span><span class="price">3,00&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-glass"/></svg>Zumo Natural</span><span class="price">3,80&nbsp;€</span></li>
             </ul>
           </div>
           <div class="drinks-group">
             <h3>Cócteles y Café</h3>
             <ul class="drinks-list">
-              <li><span>Sangría Casa José (jarra)</span><span class="price">12,00&nbsp;€</span></li>
-              <li><span>Vermut de Grifo</span><span class="price">4,50&nbsp;€</span></li>
-              <li><span>Café / Infusión</span><span class="price">2,00&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-glass"/></svg>Sangría Casa José (jarra)</span><span class="price">12,00&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-glass"/></svg>Vermut de Grifo</span><span class="price">4,50&nbsp;€</span></li>
+              <li><span class="drinks-list__name"><svg class="drinks-list__icon" aria-hidden="true"><use href="#ic-glass"/></svg>Café / Infusión</span><span class="price">2,00&nbsp;€</span></li>
             </ul>
           </div>
         </div>

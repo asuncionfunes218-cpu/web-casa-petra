@@ -161,9 +161,23 @@ h2.center { margin-left: auto; margin-right: auto; }
 }
 
 .window-nav__btn.is-active,
-.window-nav__btn:hover {
+.window-nav__btn:hover,
+#tab-local:checked ~ header .window-nav__btn[for="tab-local"],
+#tab-carta:checked ~ header .window-nav__btn[for="tab-carta"] {
   background: var(--color-primary);
   color: #fff;
+}
+
+.tab-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .btn {
@@ -219,7 +233,9 @@ h2.center { margin-left: auto; margin-right: auto; }
 /* ===== Ventanas ===== */
 
 .window { display: none; }
-.window.is-active { display: block; animation: fadein .35s ease; }
+.window.is-active,
+#tab-local:checked ~ main #local,
+#tab-carta:checked ~ main #carta { display: block; animation: fadein .35s ease; }
 
 @keyframes fadein {
   from { opacity: 0; transform: translateY(6px); }
@@ -695,6 +711,20 @@ h2.center { margin-left: auto; margin-right: auto; }
 }
 
 .drinks-list .price { font-size: .85rem; color: var(--color-muted); }
+
+.drinks-list__name { display: inline-flex; align-items: center; gap: 9px; }
+
+.drinks-list__icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 @media (max-width: 700px) {
   .drinks-columns { grid-template-columns: 1fr; }

@@ -1,4 +1,4 @@
-/* ===== La Miga Dorada — estilos ===== */
+/* ===== Michael's Coffee House — estilos ===== */
 
 :root {
   --color-bg: #fdf8f2;
@@ -276,9 +276,6 @@ h2.center { margin-left: auto; margin-right: auto; }
   position: relative;
   min-height: 78vh;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 26% 24%, rgba(193, 123, 106, .5), transparent 60%),
-    linear-gradient(160deg, #4a3428 0%, #2b1d15 75%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -287,31 +284,25 @@ h2.center { margin-left: auto; margin-right: auto; }
   padding: 24px;
 }
 
-.hero__watermark {
+.hero__bg {
   position: absolute;
-  right: -8%;
-  bottom: -16%;
-  width: 50vw;
-  max-width: 520px;
-  height: auto;
-  color: var(--color-gold);
-  fill: none;
-  stroke: currentColor;
-  stroke-width: .5;
-  opacity: .14;
-  animation: hero-breathe 16s ease-in-out infinite alternate;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
-@keyframes hero-breathe {
-  from { transform: scale(1) rotate(0deg); }
-  to { transform: scale(1.08) rotate(-3deg); }
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 26% 24%, rgba(74, 52, 40, .55), transparent 60%),
+    linear-gradient(160deg, rgba(43, 29, 21, .78) 0%, rgba(24, 16, 11, .88) 75%);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero__watermark { animation: none; }
-}
-
-.hero__content { position: relative; max-width: 640px; }
+.hero__content { position: relative; z-index: 2; max-width: 640px; }
 .hero__content h1 { color: #fff; }
 .hero__content .eyebrow { color: #f3d4c4; }
 .hero__tagline { color: #fbeee6; font-size: 1.1rem; margin-bottom: 1.6em; }

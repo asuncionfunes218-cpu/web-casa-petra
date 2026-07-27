@@ -13,6 +13,56 @@
 </head>
 <body>
 
+<svg aria-hidden="true" style="position:absolute; width:0; height:0; overflow:hidden;">
+<defs>
+<symbol id="ic-flame" viewBox="0 0 64 64">
+  <path d="M32 8c8 8 14 16 14 24a14 14 0 0 1-28 0c0-5 2-8 5-11 0 4 2 6 4 6-2-6 0-13 5-19z"/>
+</symbol>
+<symbol id="ic-wheat" viewBox="0 0 64 64">
+  <line x1="32" y1="14" x2="32" y2="50"/>
+  <path d="M32 18c-4-2-8 0-8 4 4 2 8 0 8-4z"/>
+  <path d="M32 18c4-2 8 0 8 4-4 2-8 0-8-4z"/>
+  <path d="M32 26c-4-2-8 0-8 4 4 2 8 0 8-4z"/>
+  <path d="M32 26c4-2 8 0 8 4-4 2-8 0-8-4z"/>
+  <path d="M32 34c-4-2-8 0-8 4 4 2 8 0 8-4z"/>
+  <path d="M32 34c4-2 8 0 8 4-4 2-8 0-8-4z"/>
+</symbol>
+<symbol id="ic-oven" viewBox="0 0 64 64">
+  <path d="M12 50V30a20 20 0 0 1 40 0v20z"/>
+  <path d="M20 50V32a12 12 0 0 1 24 0v18"/>
+  <path d="M30 40c-3 3-3 6 0 8 3-2 3-5 0-8z"/>
+</symbol>
+<symbol id="ic-lamp" viewBox="0 0 64 64">
+  <line x1="32" y1="8" x2="32" y2="18"/>
+  <path d="M18 18h28l6 16H12z"/>
+  <line x1="12" y1="34" x2="52" y2="34"/>
+</symbol>
+<symbol id="ic-glass" viewBox="0 0 64 64">
+  <path d="M20 10h24l-4 18a8 8 0 0 1-16 0z"/>
+  <line x1="32" y1="30" x2="32" y2="46"/>
+  <line x1="22" y1="50" x2="42" y2="50"/>
+  <line x1="32" y1="46" x2="32" y2="50"/>
+</symbol>
+<symbol id="ic-pizza" viewBox="0 0 64 64">
+  <path d="M32 10 54 46H10z"/>
+  <path d="M14 46a20 20 0 0 1 36 0"/>
+  <circle cx="28" cy="28" r="2"/>
+  <circle cx="36" cy="32" r="2"/>
+  <circle cx="32" cy="22" r="2"/>
+</symbol>
+<symbol id="ic-tomato" viewBox="0 0 64 64">
+  <circle cx="32" cy="36" r="16"/>
+  <path d="M32 20c-3-6-9-8-9-8s2 6 6 9"/>
+  <path d="M32 20c3-6 9-8 9-8s-2 6-6 9"/>
+  <line x1="32" y1="20" x2="32" y2="24"/>
+</symbol>
+<symbol id="ic-leaf" viewBox="0 0 64 64">
+  <path d="M14 50C14 30 30 14 50 14c0 20-16 36-36 36z"/>
+  <path d="M18 46 34 30"/>
+</symbol>
+</defs>
+</svg>
+
 <header class="site-header">
   <div class="site-header__inner">
     <a class="brand" href="#local">
@@ -46,7 +96,7 @@
   <section id="local" class="window is-active" data-window="local">
 
     <div class="hero">
-      <img class="hero__bg" src="https://unsplash.com/photos/zyvkmq1yJBs/download?force=true&w=1800" alt="" loading="eager">
+      <svg class="hero__watermark" viewBox="0 0 64 64" aria-hidden="true"><use href="#ic-flame"/></svg>
       <div class="hero__overlay"></div>
       <div class="hero__content reveal">
         <p class="eyebrow eyebrow--light">Cocina italo-española desde 1962</p>
@@ -107,7 +157,7 @@
           <p class="guarantee">🍕 Si tu pizza no te vuela la cabeza, te invitamos a la siguiente. Así de seguros estamos.</p>
         </div>
         <figure class="about__image reveal">
-          <img src="https://unsplash.com/photos/wZyxpSGwW0g/download?force=true&w=900" alt="Manos estirando la masa madre de La Fiamma" loading="lazy">
+          <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-wheat"/></svg></div>
           <figcaption>La misma receta, amasada a mano cada mañana</figcaption>
         </figure>
       </div>
@@ -116,7 +166,7 @@
     <section class="section section--oven">
       <div class="container oven">
         <figure class="oven__image reveal">
-          <img src="https://unsplash.com/photos/D2o5_qaBT5c/download?force=true&w=1000" alt="Horno de piedra de leña de La Fiamma encendido" loading="lazy">
+          <div class="illus illus--oven-dark" aria-hidden="true"><svg class="illus__icon"><use href="#ic-oven"/></svg></div>
           <span class="oven__flame" aria-hidden="true">🔥</span>
         </figure>
         <div class="oven__text reveal">
@@ -171,19 +221,19 @@
         <h2 class="center">El horno nunca se apaga</h2>
         <div class="gallery">
           <figure class="gallery__item reveal">
-            <img src="https://unsplash.com/photos/9xWl_zhIcS4/download?force=true&w=1000" alt="Pizza cocinándose dentro del horno de leña de La Fiamma" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-oven"/></svg></div>
             <figcaption>Nuestro horno de leña</figcaption>
           </figure>
           <figure class="gallery__item reveal">
-            <img src="https://unsplash.com/photos/7TAG9wlv1uw/download?force=true&w=1000" alt="Pizzaiolo horneando una pizza en La Fiamma" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-flame"/></svg></div>
             <figcaption>El pizzaiolo en acción</figcaption>
           </figure>
           <figure class="gallery__item reveal">
-            <img src="https://unsplash.com/photos/Q73XXHcIsa8/download?force=true&w=1000" alt="Sala interior rústica de La Fiamma" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-lamp"/></svg></div>
             <figcaption>Nuestro comedor</figcaption>
           </figure>
           <figure class="gallery__item reveal">
-            <img src="https://unsplash.com/photos/YnXvyvHVKjs/download?force=true&w=1000" alt="Mesas de madera del restaurante La Fiamma" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-glass"/></svg></div>
             <figcaption>Mesas de madera maciza</figcaption>
           </figure>
         </div>
@@ -334,7 +384,7 @@
         <article class="dish-card reveal">
           <div class="dish-card__media">
             <span class="badge badge--gold">La Original</span>
-            <img src="https://unsplash.com/photos/eNMdv_Wef7w/download?force=true&w=700" alt="Pizza Margherita Clásica recién horneada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-pizza"/></svg></div>
           </div>
           <div class="dish-card__body">
             <div class="dish-card__row">
@@ -347,7 +397,7 @@
 
         <article class="dish-card reveal">
           <div class="dish-card__media">
-            <img src="https://unsplash.com/photos/PKfz98depf0/download?force=true&w=700" alt="Pizza Marinara recién horneada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-pizza"/></svg></div>
           </div>
           <div class="dish-card__body">
             <div class="dish-card__row">
@@ -361,7 +411,7 @@
         <article class="dish-card reveal">
           <div class="dish-card__media">
             <span class="badge badge--red">🔥 Más Vendida</span>
-            <img src="https://unsplash.com/photos/XtIHk2mLw0U/download?force=true&w=700" alt="Pizza Diavola picante recién horneada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-pizza"/></svg></div>
           </div>
           <div class="dish-card__body">
             <div class="dish-card__row">
@@ -374,7 +424,7 @@
 
         <article class="dish-card reveal">
           <div class="dish-card__media">
-            <img src="https://unsplash.com/photos/YKvGUO4Zb7Y/download?force=true&w=700" alt="Pizza Quattro Formaggi recién horneada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-pizza"/></svg></div>
           </div>
           <div class="dish-card__body">
             <div class="dish-card__row">
@@ -387,7 +437,7 @@
 
         <article class="dish-card reveal">
           <div class="dish-card__media">
-            <img src="https://unsplash.com/photos/zylNrmoaEfY/download?force=true&w=700" alt="Pizza Quattro Stagioni recién horneada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-pizza"/></svg></div>
           </div>
           <div class="dish-card__body">
             <div class="dish-card__row">
@@ -400,7 +450,7 @@
 
         <article class="dish-card reveal">
           <div class="dish-card__media">
-            <img src="https://unsplash.com/photos/LppAkC7s6u4/download?force=true&w=700" alt="Pizza Capricciosa recién horneada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-pizza"/></svg></div>
           </div>
           <div class="dish-card__body">
             <div class="dish-card__row">
@@ -413,7 +463,7 @@
 
         <article class="dish-card reveal">
           <div class="dish-card__media">
-            <img src="https://unsplash.com/photos/JOYjHvOTFJQ/download?force=true&w=700" alt="Pizza Prosciutto e Funghi recién horneada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-pizza"/></svg></div>
           </div>
           <div class="dish-card__body">
             <div class="dish-card__row">
@@ -426,7 +476,7 @@
 
         <article class="dish-card reveal">
           <div class="dish-card__media">
-            <img src="https://unsplash.com/photos/SU1LFoeEUkk/download?force=true&w=700" alt="Pizza Napoletana recién horneada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-pizza"/></svg></div>
           </div>
           <div class="dish-card__body">
             <div class="dish-card__row">
@@ -440,7 +490,7 @@
         <article class="dish-card reveal">
           <div class="dish-card__media">
             <span class="badge badge--gold">Premium</span>
-            <img src="https://unsplash.com/photos/TG5SPYNvpos/download?force=true&w=700" alt="Pizza Boscaiola con trufa recién horneada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-pizza"/></svg></div>
           </div>
           <div class="dish-card__body">
             <div class="dish-card__row">
@@ -453,7 +503,7 @@
 
         <article class="dish-card reveal">
           <div class="dish-card__media">
-            <img src="https://unsplash.com/photos/bYelBPwXW5k/download?force=true&w=700" alt="Calzone Della Casa recién horneado" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-pizza"/></svg></div>
           </div>
           <div class="dish-card__body">
             <div class="dish-card__row">
@@ -477,7 +527,7 @@
   <section id="horno" class="window window--dark" data-window="horno">
 
     <div class="carta-header carta-header--dark">
-      <img class="carta-header__bg" src="https://unsplash.com/photos/D2o5_qaBT5c/download?force=true&w=1800" alt="" loading="lazy">
+      <svg class="carta-header__watermark" viewBox="0 0 64 64" aria-hidden="true"><use href="#ic-oven"/></svg>
       <div class="carta-header__overlay"></div>
       <div class="container carta-header__inner">
         <p class="eyebrow eyebrow--light">Cuatro fuegos, un mismo oficio</p>
@@ -496,8 +546,8 @@
 
           <article class="oven-list__item reveal">
             <div class="oven-list__media">
-              <img src="https://unsplash.com/photos/D2o5_qaBT5c/download?force=true&w=700" alt="Horno napoletano de piedra de La Fiamma" loading="lazy">
-              <img src="https://unsplash.com/photos/eNMdv_Wef7w/download?force=true&w=700" alt="Pizza Margherita recién salida del horno napoletano" loading="lazy">
+              <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-oven"/></svg></div>
+              <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-pizza"/></svg></div>
             </div>
             <div class="oven-list__body">
               <span class="oven-list__tag">Horno 01</span>
@@ -508,8 +558,8 @@
 
           <article class="oven-list__item reveal">
             <div class="oven-list__media">
-              <img src="https://unsplash.com/photos/0p8rBBuZnUo/download?force=true&w=700" alt="Horno de brasa y ahumados de La Fiamma" loading="lazy">
-              <img src="https://unsplash.com/photos/XtIHk2mLw0U/download?force=true&w=700" alt="Pizza Diavola recién salida del horno de brasa" loading="lazy">
+              <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-oven"/></svg></div>
+              <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-pizza"/></svg></div>
             </div>
             <div class="oven-list__body">
               <span class="oven-list__tag">Horno 02</span>
@@ -520,8 +570,8 @@
 
           <article class="oven-list__item reveal">
             <div class="oven-list__media">
-              <img src="https://unsplash.com/photos/9xWl_zhIcS4/download?force=true&w=700" alt="Horno de bóveda toscana de La Fiamma" loading="lazy">
-              <img src="https://unsplash.com/photos/bYelBPwXW5k/download?force=true&w=700" alt="Calzone recién salido del horno de bóveda toscana" loading="lazy">
+              <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-oven"/></svg></div>
+              <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-pizza"/></svg></div>
             </div>
             <div class="oven-list__body">
               <span class="oven-list__tag">Horno 03</span>
@@ -532,8 +582,8 @@
 
           <article class="oven-list__item reveal">
             <div class="oven-list__media">
-              <img src="https://unsplash.com/photos/7TAG9wlv1uw/download?force=true&w=700" alt="Horno de piedra volcánica de La Fiamma" loading="lazy">
-              <img src="https://unsplash.com/photos/PKfz98depf0/download?force=true&w=700" alt="Pizza Marinara recién salida del horno de piedra volcánica" loading="lazy">
+              <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-oven"/></svg></div>
+              <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-pizza"/></svg></div>
             </div>
             <div class="oven-list__body">
               <span class="oven-list__tag">Horno 04</span>
@@ -554,19 +604,19 @@
 
         <div class="gallery gallery--dark">
           <figure class="gallery__item reveal">
-            <img src="https://unsplash.com/photos/XPltBlxfChk/download?force=true&w=900" alt="Verduras de temporada recién llegadas al mercado" loading="lazy">
+            <div class="illus illus--dark" aria-hidden="true"><svg class="illus__icon"><use href="#ic-tomato"/></svg></div>
             <figcaption>Recién llegadas del mercado</figcaption>
           </figure>
           <figure class="gallery__item reveal">
-            <img src="https://unsplash.com/photos/VV-KRDpSuek/download?force=true&w=900" alt="Cajas de tomate fresco de temporada" loading="lazy">
+            <div class="illus illus--dark" aria-hidden="true"><svg class="illus__icon"><use href="#ic-tomato"/></svg></div>
             <figcaption>Tomate de temporada, corazón de la salsa</figcaption>
           </figure>
           <figure class="gallery__item reveal">
-            <img src="https://unsplash.com/photos/adagF9w9f8w/download?force=true&w=900" alt="Selección semanal de verduras de la huerta" loading="lazy">
+            <div class="illus illus--dark" aria-hidden="true"><svg class="illus__icon"><use href="#ic-leaf"/></svg></div>
             <figcaption>Selección semanal de la huerta</figcaption>
           </figure>
           <figure class="gallery__item reveal">
-            <img src="https://unsplash.com/photos/omICPqHDfgY/download?force=true&w=900" alt="Verdura de hoja fresca recogida a diario" loading="lazy">
+            <div class="illus illus--dark" aria-hidden="true"><svg class="illus__icon"><use href="#ic-leaf"/></svg></div>
             <figcaption>Verdura de hoja, recogida a diario</figcaption>
           </figure>
         </div>

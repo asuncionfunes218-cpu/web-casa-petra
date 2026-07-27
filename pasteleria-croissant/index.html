@@ -13,6 +13,55 @@
 </head>
 <body>
 
+<svg aria-hidden="true" style="position:absolute; width:0; height:0; overflow:hidden;">
+<defs>
+<symbol id="ic-croissant" viewBox="0 0 64 64">
+  <path d="M12 42C8 34 8 24 14 16c4 6 10 8 16 6-8 4-12 12-10 20 1 5 4 9 8 11-6 2-12 1-17-2-4-2-8-5-11-9z"/>
+  <path d="M16 24c5-2 10-1 14 2"/>
+  <path d="M14 32c5-2 11-1 15 2"/>
+  <path d="M15 40c4-1 9 0 13 3"/>
+</symbol>
+<symbol id="ic-swirl" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="20"/>
+  <path d="M32 32c-1-7 5-13 12-13s11 5 11 11-4 9-9 9-7-3-7-7 3-5 6-5"/>
+</symbol>
+<symbol id="ic-cake" viewBox="0 0 64 64">
+  <path d="M10 48 54 48 32 14z"/>
+  <line x1="15" y1="40" x2="49" y2="40"/>
+  <line x1="19" y1="32" x2="45" y2="32"/>
+  <circle cx="32" cy="10" r="3"/>
+</symbol>
+<symbol id="ic-case" viewBox="0 0 64 64">
+  <path d="M10 46V28c0-4 4-8 8-8h28c4 0 8 4 8 8v18z"/>
+  <line x1="10" y1="46" x2="54" y2="46"/>
+  <line x1="10" y1="36" x2="54" y2="36"/>
+  <circle cx="24" cy="30" r="3"/>
+  <circle cx="40" cy="30" r="3"/>
+</symbol>
+<symbol id="ic-cup" viewBox="0 0 64 64">
+  <path d="M14 26h28v14a14 14 0 0 1-28 0z"/>
+  <path d="M42 30h4a6 6 0 0 1 0 12h-4"/>
+  <line x1="10" y1="50" x2="42" y2="50"/>
+  <path d="M22 18c-2-2-2-4 0-6"/>
+  <path d="M30 18c-2-2-2-4 0-6"/>
+</symbol>
+<symbol id="ic-wheat" viewBox="0 0 64 64">
+  <line x1="32" y1="14" x2="32" y2="50"/>
+  <path d="M32 18c-4-2-8 0-8 4 4 2 8 0 8-4z"/>
+  <path d="M32 18c4-2 8 0 8 4-4 2-8 0-8-4z"/>
+  <path d="M32 26c-4-2-8 0-8 4 4 2 8 0 8-4z"/>
+  <path d="M32 26c4-2 8 0 8 4-4 2-8 0-8-4z"/>
+  <path d="M32 34c-4-2-8 0-8 4 4 2 8 0 8-4z"/>
+  <path d="M32 34c4-2 8 0 8 4-4 2-8 0-8-4z"/>
+</symbol>
+<symbol id="ic-lamp" viewBox="0 0 64 64">
+  <line x1="32" y1="8" x2="32" y2="18"/>
+  <path d="M18 18h28l6 16H12z"/>
+  <line x1="12" y1="34" x2="52" y2="34"/>
+</symbol>
+</defs>
+</svg>
+
 <header class="site-header">
   <div class="site-header__inner">
     <a class="brand" href="#local">
@@ -37,7 +86,8 @@
   <!-- ================= VENTANA 1: EL OBRADOR ================= -->
   <section id="local" class="window is-active" data-window="local">
 
-    <div class="hero" style="background-image:linear-gradient(180deg, rgba(43,26,18,.35), rgba(43,26,18,.72)), url('https://unsplash.com/photos/xE8HJHMg46Y/download?force=true&w=1600');">
+    <div class="hero">
+      <svg class="hero__watermark" viewBox="0 0 64 64" aria-hidden="true"><use href="#ic-croissant"/></svg>
       <div class="hero__content">
         <p class="eyebrow">Bienvenidos a</p>
         <h1 class="hero__brand">La Miga Dorada</h1>
@@ -95,19 +145,19 @@
         <h2 class="center">Hecho a mano, a la vista de todos</h2>
         <div class="gallery">
           <figure class="gallery__item">
-            <img src="https://unsplash.com/photos/7oLemmP3XVk/download?force=true&w=1000" alt="Sala de La Miga Dorada con mesas para desayunar" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-lamp"/></svg></div>
             <figcaption>Nuestro rincón para desayunar</figcaption>
           </figure>
           <figure class="gallery__item">
-            <img src="https://unsplash.com/photos/t02lkmSe7C8/download?force=true&w=800" alt="Manos amasando masa en el obrador de La Miga Dorada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-wheat"/></svg></div>
             <figcaption>El obrador, cada madrugada</figcaption>
           </figure>
           <figure class="gallery__item">
-            <img src="https://unsplash.com/photos/6d5I1-gixyU/download?force=true&w=800" alt="Vitrina de bollería recién horneada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-case"/></svg></div>
             <figcaption>Nuestra vitrina</figcaption>
           </figure>
           <figure class="gallery__item">
-            <img src="https://unsplash.com/photos/NCSxv_ShUGY/download?force=true&w=1200" alt="Rincón acogedor de La Miga Dorada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-cup"/></svg></div>
             <figcaption>Un rincón para quedarse</figcaption>
           </figure>
         </div>
@@ -267,7 +317,7 @@
         <h2 class="menu-category__title">Croissants</h2>
         <div class="dish-grid">
           <article class="dish-card">
-            <img src="https://unsplash.com/photos/sqkXyyj4WdE/download?force=true&w=700" alt="Croissant de mantequilla recién horneado" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-croissant"/></svg></div>
             <div class="dish-card__body">
               <div class="dish-card__row">
                 <h3>Croissant de Mantequilla</h3>
@@ -277,7 +327,7 @@
             </div>
           </article>
           <article class="dish-card">
-            <img src="https://unsplash.com/photos/d4hPtKyQkoc/download?force=true&w=700" alt="Croissant de chocolate recién horneado" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-croissant"/></svg></div>
             <div class="dish-card__body">
               <div class="dish-card__row">
                 <h3>Croissant de Chocolate</h3>
@@ -287,7 +337,7 @@
             </div>
           </article>
           <article class="dish-card">
-            <img src="https://unsplash.com/photos/fc8y5qpBKWQ/download?force=true&w=700" alt="Croissant de almendra recién horneado" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-croissant"/></svg></div>
             <div class="dish-card__body">
               <div class="dish-card__row">
                 <h3>Croissant de Almendra</h3>
@@ -297,7 +347,7 @@
             </div>
           </article>
           <article class="dish-card">
-            <img src="https://unsplash.com/photos/lp9wGFOZTz8/download?force=true&w=700" alt="Croissant de jamón y queso recién horneado" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-croissant"/></svg></div>
             <div class="dish-card__body">
               <div class="dish-card__row">
                 <h3>Croissant Jamón y Queso</h3>
@@ -314,7 +364,7 @@
         <h2 class="menu-category__title">Bollería</h2>
         <div class="dish-grid">
           <article class="dish-card">
-            <img src="https://unsplash.com/photos/CpFCIRKNPOc/download?force=true&w=700" alt="Napolitana de chocolate recién horneada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-swirl"/></svg></div>
             <div class="dish-card__body">
               <div class="dish-card__row">
                 <h3>Napolitana de Chocolate</h3>
@@ -324,7 +374,7 @@
             </div>
           </article>
           <article class="dish-card">
-            <img src="https://unsplash.com/photos/fitwDsD6gxM/download?force=true&w=700" alt="Caracola de nueces y pasas recién horneada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-swirl"/></svg></div>
             <div class="dish-card__body">
               <div class="dish-card__row">
                 <h3>Caracola de Nueces y Pasas</h3>
@@ -334,7 +384,7 @@
             </div>
           </article>
           <article class="dish-card">
-            <img src="https://unsplash.com/photos/ByV6BMNB0PI/download?force=true&w=700" alt="Rollo de canela con glaseado recién horneado" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-swirl"/></svg></div>
             <div class="dish-card__body">
               <div class="dish-card__row">
                 <h3>Rollo de Canela con Glaseado</h3>
@@ -344,7 +394,7 @@
             </div>
           </article>
           <article class="dish-card">
-            <img src="https://unsplash.com/photos/p9568ach7gs/download?force=true&w=700" alt="Ensaimada rellena de crema recién horneada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-swirl"/></svg></div>
             <div class="dish-card__body">
               <div class="dish-card__row">
                 <h3>Ensaimada Rellena de Crema</h3>
@@ -361,7 +411,7 @@
         <h2 class="menu-category__title">Tartas y Dulces</h2>
         <div class="dish-grid">
           <article class="dish-card">
-            <img src="https://unsplash.com/photos/lKF0Urvp4RY/download?force=true&w=700" alt="Porción de tarta de queso al horno" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-cake"/></svg></div>
             <div class="dish-card__body">
               <div class="dish-card__row">
                 <h3>Tarta de Queso al Horno</h3>
@@ -371,7 +421,7 @@
             </div>
           </article>
           <article class="dish-card">
-            <img src="https://unsplash.com/photos/QX814A1w3j4/download?force=true&w=700" alt="Porción de milhojas de crema" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-cake"/></svg></div>
             <div class="dish-card__body">
               <div class="dish-card__row">
                 <h3>Milhojas de Crema</h3>
@@ -381,7 +431,7 @@
             </div>
           </article>
           <article class="dish-card">
-            <img src="https://unsplash.com/photos/gZv1nVGr2Xc/download?force=true&w=700" alt="Porción de tarta de manzana" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-cake"/></svg></div>
             <div class="dish-card__body">
               <div class="dish-card__row">
                 <h3>Tarta de Manzana</h3>
@@ -391,7 +441,7 @@
             </div>
           </article>
           <article class="dish-card">
-            <img src="https://unsplash.com/photos/upY7FPFfMNo/download?force=true&w=700" alt="Palmera de chocolate recién horneada" loading="lazy">
+            <div class="illus" aria-hidden="true"><svg class="illus__icon"><use href="#ic-cake"/></svg></div>
             <div class="dish-card__body">
               <div class="dish-card__row">
                 <h3>Palmera de Chocolate</h3>

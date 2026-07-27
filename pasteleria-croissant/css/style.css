@@ -623,13 +623,26 @@ h2.center { margin-left: auto; margin-right: auto; }
 }
 
 .category-nav__btn.is-active,
-.category-nav__btn:hover {
+.category-nav__btn:hover,
+#cat-all:checked ~ .category-nav .category-nav__btn[for="cat-all"],
+#cat-croissants:checked ~ .category-nav .category-nav__btn[for="cat-croissants"],
+#cat-olleria:checked ~ .category-nav .category-nav__btn[for="cat-olleria"],
+#cat-tartas:checked ~ .category-nav .category-nav__btn[for="cat-tartas"],
+#cat-panes:checked ~ .category-nav .category-nav__btn[for="cat-panes"],
+#cat-bebidas:checked ~ .category-nav .category-nav__btn[for="cat-bebidas"] {
   background: var(--color-primary);
   border-color: var(--color-primary);
   color: #fff;
 }
 
-.menu-category { padding: 48px 0 16px; scroll-margin-top: 100px; }
+.menu-category { display: none; padding: 48px 0 16px; scroll-margin-top: 100px; }
+
+#cat-all:checked ~ .menu-category,
+#cat-croissants:checked ~ [data-category="croissants"],
+#cat-olleria:checked ~ [data-category="olleria"],
+#cat-tartas:checked ~ [data-category="tartas"],
+#cat-panes:checked ~ [data-category="panes"],
+#cat-bebidas:checked ~ [data-category="bebidas"] { display: block; }
 
 .menu-category__title {
   border-bottom: 2px solid var(--color-primary);

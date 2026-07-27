@@ -406,12 +406,18 @@
     </div>
 
     <div class="container">
+      <input type="radio" name="category-filter" id="cat-all" class="tab-radio" checked>
+      <input type="radio" name="category-filter" id="cat-entrantes" class="tab-radio">
+      <input type="radio" name="category-filter" id="cat-carnes" class="tab-radio">
+      <input type="radio" name="category-filter" id="cat-pescados" class="tab-radio">
+      <input type="radio" name="category-filter" id="cat-bebidas" class="tab-radio">
+
       <nav class="category-nav" aria-label="Categorías de la carta">
-        <button class="category-nav__btn is-active" data-category="all" type="button">Todo</button>
-        <button class="category-nav__btn" data-category="entrantes" type="button">Entrantes</button>
-        <button class="category-nav__btn" data-category="carnes" type="button">Carnes</button>
-        <button class="category-nav__btn" data-category="pescados" type="button">Pescados</button>
-        <button class="category-nav__btn" data-category="bebidas" type="button">Bebidas</button>
+        <label class="category-nav__btn" data-category="all" for="cat-all">Todo</label>
+        <label class="category-nav__btn" data-category="entrantes" for="cat-entrantes">Entrantes</label>
+        <label class="category-nav__btn" data-category="carnes" for="cat-carnes">Carnes</label>
+        <label class="category-nav__btn" data-category="pescados" for="cat-pescados">Pescados</label>
+        <label class="category-nav__btn" data-category="bebidas" for="cat-bebidas">Bebidas</label>
       </nav>
 
       <!-- ENTRANTES -->

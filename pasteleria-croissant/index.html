@@ -368,13 +368,20 @@
     </div>
 
     <div class="container">
+      <input type="radio" name="category-filter" id="cat-all" class="tab-radio" checked>
+      <input type="radio" name="category-filter" id="cat-croissants" class="tab-radio">
+      <input type="radio" name="category-filter" id="cat-olleria" class="tab-radio">
+      <input type="radio" name="category-filter" id="cat-tartas" class="tab-radio">
+      <input type="radio" name="category-filter" id="cat-panes" class="tab-radio">
+      <input type="radio" name="category-filter" id="cat-bebidas" class="tab-radio">
+
       <nav class="category-nav" aria-label="Categorías de la carta">
-        <button class="category-nav__btn is-active" data-category="all" type="button">Todo</button>
-        <button class="category-nav__btn" data-category="croissants" type="button">Croissants</button>
-        <button class="category-nav__btn" data-category="olleria" type="button">Bollería</button>
-        <button class="category-nav__btn" data-category="tartas" type="button">Tartas</button>
-        <button class="category-nav__btn" data-category="panes" type="button">Panes</button>
-        <button class="category-nav__btn" data-category="bebidas" type="button">Bebidas</button>
+        <label class="category-nav__btn" data-category="all" for="cat-all">Todo</label>
+        <label class="category-nav__btn" data-category="croissants" for="cat-croissants">Croissants</label>
+        <label class="category-nav__btn" data-category="olleria" for="cat-olleria">Bollería</label>
+        <label class="category-nav__btn" data-category="tartas" for="cat-tartas">Tartas</label>
+        <label class="category-nav__btn" data-category="panes" for="cat-panes">Panes</label>
+        <label class="category-nav__btn" data-category="bebidas" for="cat-bebidas">Bebidas</label>
       </nav>
 
       <!-- CROISSANTS -->

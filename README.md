@@ -39,8 +39,11 @@ que degradan a fuentes del sistema si no hay conexión.
 - **Evolución mensual** comparando ingresos y gastos de los últimos 12 meses.
 - **Asesor de ahorro**: diagnóstico, consejos priorizados y un plan de recorte
   que reparte el ajuste necesario entre categorías.
-- **Memoria**: los datos se guardan en el navegador y se navega por meses.
-  Copia de seguridad en JSON y exportación del mes en CSV.
+- **Memoria dentro del propio artefacto**: al guardar, la página se vuelve a
+  publicar consigo misma y con los datos incrustados en un bloque
+  `<script type="application/json" id="datos">`. Sobreviven al cierre y se ven
+  desde cualquier dispositivo con la misma cuenta.
+- Copia de seguridad en JSON y exportación del mes en CSV.
 - **Borrado con deshacer** y avisos efímeros en lugar de diálogos del navegador.
 
 ### Notas de rendimiento
@@ -56,6 +59,27 @@ que degradan a fuentes del sistema si no hay conexión.
 - Los tooltips solo se activan con ratón (`hover: hover`) y se limitan a un
   fotograma.
 
-Los datos no salen del dispositivo: se guardan en el almacenamiento local del
-navegador. Conviene descargar una copia de seguridad de vez en cuando desde el
-menú **Datos**.
+### Cómo funciona la memoria
+
+Dentro de un artefacto, `localStorage` es almacenamiento de terceros: el
+navegador lo descarta al cerrar y no lanza ningún error al hacerlo, así que no
+sirve para guardar nada. La app usa la capacidad `artifact` del runtime:
+
+1. Al arrancar lee el bloque `id="datos"` incrustado en la página y, si el
+   `localStorage` tiene una copia con marca de tiempo posterior, se queda con esa.
+2. Cada cambio se escribe en `localStorage` al instante (borrador rápido).
+3. Ocho segundos después del último cambio —o al cerrar el formulario de altas, o
+   al ocultarse la página— llama a `artifact.publish()` con la página entera
+   reconstruida y los datos nuevos dentro. La vista se recarga con esa versión.
+
+La plantilla de reconstrucción es `document.body.innerHTML` capturado en la
+primera línea del script, antes de que la app toque el DOM. El envoltorio es
+idéntico byte a byte entre publicaciones sucesivas (comprobado en seis ciclos
+seguidos), así que solo crece lo que ocupan los datos.
+
+El indicador de la cabecera distingue tres situaciones: guardado, cambios
+pendientes (con botón para guardar ya) y sin guardado posible. En este último
+caso aparece un aviso y solo queda la copia de seguridad manual.
+
+Fuera de un artefacto —la página autónoma servida desde un dominio propio—
+`localStorage` sí es de primera parte y persiste; ahí no se publica nada.

@@ -212,9 +212,16 @@ button { -webkit-tap-highlight-color: transparent; }
   gap: 9px;
 }
 
-.topbar-main { display: flex; align-items: center; gap: 10px; }
+.topbar-main { display: flex; align-items: center; gap: 10px; min-width: 0; }
 
-.brand { display: flex; align-items: center; gap: 9px; margin-right: auto; min-width: 0; }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-right: auto;
+  min-width: 0;
+  overflow: hidden;
+}
 
 .brand-mark {
   width: 34px; height: 34px;
@@ -227,7 +234,14 @@ button { -webkit-tap-highlight-color: transparent; }
 }
 .brand-mark svg { width: 19px; height: 19px; }
 
-.brand h1 { font-size: 18px; line-height: 1.1; }
+.brand > div { min-width: 0; }
+.brand h1 {
+  font-size: 17px;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .brand-sub { display: none; margin: 1px 0 0; font-size: 11.5px; color: var(--ink-3); }
 
 .topbar-nav { display: flex; align-items: center; gap: 8px; }
@@ -302,22 +316,41 @@ button { -webkit-tap-highlight-color: transparent; }
 .balance-pill.is-good .v { color: var(--good-text); }
 .balance-pill.is-crit .v { color: var(--crit-text); }
 
-.save-chip {
-  font-size: 11px;
+.save-btn {
+  flex: none;
+  border: 1px solid var(--line);
+  background: var(--surface);
   color: var(--ink-3);
-  display: none;
+  border-radius: 999px;
+  padding: 0 9px;
+  height: 34px;
+  min-width: 34px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
+  gap: 7px;
   white-space: nowrap;
 }
-.save-chip::before {
-  content: "";
-  width: 6px; height: 6px;
+.save-btn .pt {
+  width: 8px; height: 8px;
   border-radius: 999px;
   background: var(--good);
+  flex: none;
 }
-.save-chip[data-state="error"] { color: var(--crit-text); }
-.save-chip[data-state="error"]::before { background: var(--crit); }
+.save-btn .lbl { display: none; }
+.save-btn[data-state="pendiente"] .lbl,
+.save-btn[data-state="guardando"] .lbl,
+.save-btn[data-state="local"] .lbl { display: inline; }
+.save-btn[data-state="pendiente"] { color: var(--warn-text); background: var(--warn-soft); border-color: transparent; }
+.save-btn[data-state="pendiente"] .pt { background: var(--warn); }
+.save-btn[data-state="guardando"] { color: var(--ink-2); }
+.save-btn[data-state="guardando"] .pt { background: var(--accent); animation: latido 1.1s ease-in-out infinite; }
+.save-btn[data-state="local"] { color: var(--crit-text); background: var(--crit-soft); border-color: transparent; }
+.save-btn[data-state="local"] .pt { background: var(--crit); }
+@keyframes latido { 50% { opacity: .25; } }
 
 /* ====================================================================== tabs */
 .tabs {
@@ -1145,6 +1178,7 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
 @media (min-width: 700px) {
   .app { padding-left: 20px; padding-right: 20px; }
   .topbar { margin: 0 -20px; padding-left: 20px; padding-right: 20px; }
+  .save-btn .lbl { display: inline; }
   .stats { grid-template-columns: repeat(4, 1fr); gap: 12px; }
   .grid-2 { grid-template-columns: 1fr 1fr; }
   .tips { grid-template-columns: 1fr 1fr; }
@@ -1185,7 +1219,7 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
   .app { padding-bottom: 40px; }
   .brand-sub { display: block; }
   .brand h1 { font-size: 20px; }
-  .save-chip { display: inline-flex; }
+  .save-btn { padding: 0 12px; }
 
   .topbar { padding-top: 14px; padding-bottom: 0; }
   .topbar-main { gap: 14px; }
@@ -1250,7 +1284,9 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
           <p class="brand-sub">Control de gastos mensual</p>
         </div>
       </div>
-      <span class="save-chip" id="saveState">Guardado</span>
+      <button type="button" class="save-btn" id="saveState" data-state="guardado" title="Estado del guardado">
+        <span class="pt" aria-hidden="true"></span><span class="lbl">Guardado</span>
+      </button>
       <details class="menu" id="menu">
         <summary class="btn btn-sm" role="button" aria-label="Datos y ajustes">
           Datos
@@ -1269,6 +1305,8 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
               <option value="PEN">Sol peruano (S/)</option>
             </select>
           </div>
+          <div class="menu-sep"></div>
+          <button type="button" class="menu-item" id="mGuardar">Guardar ahora</button>
           <div class="menu-sep"></div>
           <button type="button" class="menu-item" id="mCopiar">Copiar gastos fijos del mes anterior</button>
           <button type="button" class="menu-item" id="mEjemplo">Cargar un mes de ejemplo</button>
@@ -1453,7 +1491,7 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
   </main>
 
   <footer class="foot">
-    <span>Tus datos se guardan solo en este navegador. Descarga una copia de vez en cuando desde <b>Datos</b>.</span>
+    <span id="footNota">Tus datos se guardan dentro del propio artefacto.</span>
     <span style="margin-left:auto" id="footStamp"></span>
   </footer>
 </div>
@@ -1521,12 +1559,19 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
   </div>
 </section>
 
+<script type="application/json" id="datos">null</script>
+
 <div class="toasts" id="toasts" aria-live="polite"></div>
 <div class="tooltip" id="tip" role="status"></div>
 
 <script>
 (function () {
   "use strict";
+
+  /* Copia de la página tal y como la sirvió el servidor, tomada antes de que
+     la aplicación modifique nada. Es la plantilla con la que se reconstruye
+     al guardar. */
+  var FUENTE = document.body ? document.body.innerHTML.trim() : "";
 
   /* =====================================================================
      1. Categorías, rangos de referencia y consejos
@@ -1743,14 +1788,20 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
 
   var STORAGE_KEY = "cuentas-claras-v1";
   var VISTAS = ["resumen", "gastos", "analisis", "asesor"];
-  var almacenaOk = true;
   var state;
+
+  /* Dentro de un artefacto, localStorage es almacenamiento de terceros: el
+     navegador lo descarta al cerrar. La memoria de verdad es la propia
+     página, que se vuelve a publicar con los datos incrustados. */
+  var enArtefacto = !!(window.claude && typeof window.claude.use === "function");
+  var RETARDO_PUBLICAR = 8000;
+  var guardado = { estado: "guardado", soloLocal: !enArtefacto, publicando: false, timer: null, reintentos: 0, motivo: "" };
 
   function mesVacio() { return { ingresos: [], fijos: [], extras: [], objetivo: 20 }; }
 
   function estadoInicial() {
     var k = mesKeyOf(new Date());
-    var s = { v: 2, moneda: "EUR", vista: "resumen", mesActivo: k, meses: {} };
+    var s = { v: 2, moneda: "EUR", vista: "resumen", mesActivo: k, guardadoEn: 0, meses: {} };
     s.meses[k] = mesVacio();
     return s;
   }
@@ -1781,6 +1832,7 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
       v: 2,
       moneda: MONEDAS[raw.moneda] ? raw.moneda : "EUR",
       vista: VISTAS.indexOf(raw.vista) !== -1 ? raw.vista : "resumen",
+      guardadoEn: Number(raw.guardadoEn) || 0,
       meses: {}, mesActivo: ""
     };
     Object.keys(raw.meses).forEach(function (k) {
@@ -1792,38 +1844,200 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
     return s;
   }
 
-  function cargar() {
+  /* --- Lectura: gana la copia más reciente ----------------------------- */
+
+  function leerEmbebido() {
+    var el = document.getElementById("datos");
+    if (!el) return null;
+    var txt = (el.textContent || "").trim();
+    if (!txt || txt === "null") return null;
+    try { return normalizaEstado(JSON.parse(txt)); } catch (e) { return null; }
+  }
+
+  function leerLocal() {
     try {
       var raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return estadoInicial();
-      return normalizaEstado(JSON.parse(raw)) || estadoInicial();
-    } catch (e) {
-      almacenaOk = false;
-      return estadoInicial();
-    }
+      return raw ? normalizaEstado(JSON.parse(raw)) : null;
+    } catch (e) { return null; }
   }
 
-  var guardarTimer = null;
-  function guardar() {
-    if (guardarTimer) clearTimeout(guardarTimer);
-    guardarTimer = setTimeout(function () {
-      guardarTimer = null;
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-        almacenaOk = true;
-        marcaGuardado("ok");
-      } catch (e) {
-        almacenaOk = false;
-        marcaGuardado("error");
+  function cargar() {
+    var publicado = leerEmbebido();
+    var local = leerLocal();
+    if (publicado && local) {
+      if ((local.guardadoEn || 0) > (publicado.guardadoEn || 0)) {
+        guardado.estado = "pendiente";
+        return local;
       }
-    }, 250);
+      return publicado;
+    }
+    if (publicado) return publicado;
+    if (local) { guardado.estado = "pendiente"; return local; }
+    return estadoInicial();
   }
 
-  function marcaGuardado(estado) {
+  /* --- Escritura --------------------------------------------------------- */
+
+  function guardarLocal() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); return true; }
+    catch (e) { return false; }
+  }
+
+  /* conNube=false para preferencias (pestaña, mes): no merecen republicar. */
+  function guardar(conNube) {
+    state.guardadoEn = Date.now();
+    var ok = guardarLocal();
+    if (conNube === false) return;
+
+    if (!enArtefacto) {
+      guardado.estado = ok ? "guardado" : "local";
+      guardado.motivo = ok ? "" : "Este navegador no permite guardar.";
+      pintaGuardado();
+      return;
+    }
+    if (guardado.soloLocal) { guardado.estado = "local"; pintaGuardado(); return; }
+    if (guardado.estado !== "guardando") guardado.estado = "pendiente";
+    pintaGuardado();
+    programarPublicacion();
+  }
+
+  function enCampo() {
+    var a = document.activeElement;
+    if (!a) return false;
+    var t = a.tagName;
+    return t === "INPUT" || t === "SELECT" || t === "TEXTAREA" || a.isContentEditable;
+  }
+
+  function programarPublicacion() {
+    if (guardado.soloLocal) return;
+    if (guardado.timer) clearTimeout(guardado.timer);
+    guardado.timer = setTimeout(function () { publicar(false); }, RETARDO_PUBLICAR);
+  }
+
+  var promesaArtefacto = null;
+  function obtenerArtefacto() {
+    if (promesaArtefacto) return promesaArtefacto;
+    if (!enArtefacto) { promesaArtefacto = Promise.resolve(null); return promesaArtefacto; }
+    promesaArtefacto = Promise.resolve(window.claude.use("artifact")).then(
+      function (ns) { return ns && typeof ns.publish === "function" ? ns : null; },
+      function () { return null; }
+    );
+    return promesaArtefacto;
+  }
+
+  /* Localiza el hueco del bloque <script id="datos"> dentro de la fuente. */
+  function huecoDatos(fuente) {
+    var attr = fuente.indexOf('id="datos"');
+    if (attr === -1) return null;
+    var abre = fuente.indexOf(">", attr);
+    if (abre === -1) return null;
+    var cierra = fuente.toLowerCase().indexOf("</" + "script", abre);
+    if (cierra === -1) return null;
+    return { ini: abre + 1, fin: cierra };
+  }
+
+  function paginaConDatos(datos) {
+    var hueco = huecoDatos(FUENTE);
+    if (!hueco) return null;
+    /* "\/" es un escape válido en JSON y evita cerrar el <script> antes de tiempo. */
+    var json = JSON.stringify(datos).replace(/<\//g, "<\\/");
+    return '<!doctype html>\n<html lang="es">\n<head>\n<meta charset="utf-8">\n' +
+      '<meta name="viewport" content="width=device-width, initial-scale=1">\n' +
+      '<meta name="color-scheme" content="light dark">\n</head>\n<body>\n' +
+      FUENTE.slice(0, hueco.ini) + json + FUENTE.slice(hueco.fin) +
+      "\n</body>\n</html>\n";
+  }
+
+  function publicar(forzado) {
+    if (guardado.timer) { clearTimeout(guardado.timer); guardado.timer = null; }
+    if (guardado.publicando || guardado.soloLocal) return;
+    if (guardado.estado === "guardado") { if (forzado) avisar("No hay cambios pendientes."); return; }
+    if (!forzado && (comp.abierto || enCampo())) { programarPublicacion(); return; }
+
+    obtenerArtefacto().then(function (ns) {
+      if (!ns) { soloLocal(); return; }
+      var html = paginaConDatos(state);
+      if (!html) { soloLocal("No he podido reconstruir la página para guardarla."); return; }
+
+      guardado.publicando = true;
+      guardado.estado = "guardando";
+      pintaGuardado();
+      try { sessionStorage.setItem("cc-scroll", String(window.scrollY || 0)); } catch (e) {}
+
+      return ns.publish(html).then(function () {
+        guardado.publicando = false;
+        guardado.estado = "guardado";
+        guardado.reintentos = 0;
+        pintaGuardado();
+      }, function (err) {
+        guardado.publicando = false;
+        falloPublicacion(err, forzado);
+      });
+    });
+  }
+
+  function falloPublicacion(err, forzado) {
+    var code = (err && err.code) || "upstream_error";
+
+    if (code === "conflict") { guardado.estado = "guardado"; pintaGuardado(); return; }
+
+    if (code === "rate_limited") {
+      guardado.estado = "pendiente";
+      pintaGuardado();
+      guardado.timer = setTimeout(function () { publicar(false); }, 60000);
+      if (forzado) avisar("Guardando demasiado seguido. Lo reintento en un minuto.");
+      return;
+    }
+
+    if (code === "upstream_error" && guardado.reintentos < 1) {
+      guardado.reintentos++;
+      guardado.estado = "pendiente";
+      pintaGuardado();
+      guardado.timer = setTimeout(function () { publicar(false); }, 6000);
+      return;
+    }
+
+    if (code === "too_large") {
+      soloLocal("Los datos ya no caben en la página. Descarga una copia y vacía los meses antiguos.");
+      return;
+    }
+
+    soloLocal();
+  }
+
+  function soloLocal(motivo) {
+    guardado.soloLocal = true;
+    guardado.estado = "local";
+    guardado.motivo = motivo || "";
+    pintaGuardado();
+    pendiente.resumen = true;
+    programar();
+  }
+
+  var TEXTO_GUARDADO = {
+    guardado:  ["Guardado", "Todo guardado en el artefacto"],
+    pendiente: ["Guardar",  "Hay cambios sin guardar. Toca para guardarlos ahora."],
+    guardando: ["Guardando", "Guardando…"],
+    local:     ["Solo aquí", "No se puede guardar en el artefacto: los datos solo viven en este navegador."]
+  };
+
+  function pintaGuardado() {
     var el = $("#saveState");
     if (!el) return;
-    el.dataset.state = estado === "error" ? "error" : "ok";
-    el.textContent = estado === "error" ? "Sin guardar" : "Guardado";
+    var t = TEXTO_GUARDADO[guardado.estado] || TEXTO_GUARDADO.guardado;
+    el.dataset.state = guardado.estado;
+    el.querySelector(".lbl").textContent = t[0];
+    el.title = guardado.motivo || t[1];
+    el.setAttribute("aria-label", guardado.motivo || t[1]);
+
+    var nota = $("#footNota");
+    if (nota) {
+      nota.innerHTML = !enArtefacto
+        ? "Tus datos se guardan en este navegador. Descarga una copia de vez en cuando desde <b>Datos</b>."
+        : guardado.soloLocal
+          ? "Sin guardado en el artefacto: descarga una copia desde <b>Datos</b>."
+          : "Tus datos se guardan dentro del propio artefacto, así que los verás desde cualquier dispositivo con tu cuenta.";
+    }
   }
 
   function mesActual() {
@@ -1988,7 +2202,7 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
     if (VISTAS.indexOf(vista) === -1 || vista === state.vista) return;
     state.vista = vista;
     aplicarVista();
-    guardar();
+    guardar(false);
     programar();
     window.scrollTo({ top: 0, behavior: "auto" });
   }
@@ -2039,9 +2253,11 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
 
   function renderAvisos(d) {
     var html = "";
-    if (!almacenaOk) {
+    if (guardado.soloLocal && enArtefacto) {
       html += '<div class="banner">' + ICON.warn +
-        "<span>Este navegador no deja guardar datos. Puedes trabajar igual, pero descarga una copia antes de cerrar.</span></div>";
+        "<span><b>No puedo guardar en el artefacto.</b> " + esc(guardado.motivo ||
+        "Lo que apuntes solo vive en este navegador y puede perderse al cerrar.") +
+        " Descarga una copia desde <b>Datos</b>.</span></div>";
     } else if (d.nEntradas === 0 && mesesConDatos().length === 0) {
       html += '<div class="banner" style="background:var(--accent-soft);color:var(--ink)">' +
         "<span>¿Primera vez? Toca <b>+</b> para tu primer apunte, o carga un mes de ejemplo.</span>" +
@@ -2679,6 +2895,7 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
     $("#composer").classList.remove("is-open");
     $("#scrim").classList.remove("is-on");
     document.body.classList.remove("is-locked");
+    if (guardado.estado === "pendiente") publicar(false);
   }
 
   function guardarComposer() {
@@ -2997,7 +3214,7 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
     if (!/^\d{4}-\d{2}$/.test(clave) || clave === state.mesActivo) return;
     mesDe(clave);
     state.mesActivo = clave;
-    guardar();
+    guardar(false);
     invalidar();
     window.scrollTo({ top: 0, behavior: "auto" });
   }
@@ -3039,6 +3256,12 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
     });
 
     $("#fab").addEventListener("click", function () { abrirComposer(comp.tipo); });
+
+    $("#saveState").addEventListener("click", function () {
+      if (!enArtefacto) { avisar("Guardado en este navegador."); return; }
+      if (guardado.soloLocal) { irAVista("resumen"); avisar("Descarga una copia desde Datos para no perder nada."); return; }
+      publicar(true);
+    });
 
     $("#composerTipo").addEventListener("click", function (ev) {
       var b = ev.target.closest("[data-tipo]");
@@ -3092,6 +3315,10 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
     var accion = function (sel, fn) {
       $(sel).addEventListener("click", function () { cerrarMenu(); fn(); });
     };
+    accion("#mGuardar", function () {
+      if (!enArtefacto) { avisar("Guardado en este navegador."); return; }
+      publicar(true);
+    });
     accion("#mCopiar", copiarFijos);
     accion("#mEjemplo", cargarEjemplo);
     accion("#mExportJson", exportarJson);
@@ -3099,6 +3326,10 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
     accion("#mImport", function () { $("#fileInput").click(); });
     accion("#mBorrarMes", vaciarMes);
     accion("#mBorrarTodo", borrarTodo);
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "hidden" && guardado.estado === "pendiente") publicar(true);
+    });
 
     $("#fileInput").addEventListener("change", function (ev) {
       var f = ev.target.files && ev.target.files[0];
@@ -3118,8 +3349,20 @@ input.input.num { text-align: right; font-family: var(--font-mono); font-variant
   enlazaEventos();
   enlazaDonut();
   enlazaTooltips();
-  marcaGuardado(almacenaOk ? "ok" : "error");
+  pintaGuardado();
   aplicarVista();
   programar();
+
+  /* Publicar recarga la vista: se devuelve el scroll donde estaba. */
+  try {
+    var scrollPrevio = sessionStorage.getItem("cc-scroll");
+    if (scrollPrevio !== null) {
+      sessionStorage.removeItem("cc-scroll");
+      requestAnimationFrame(function () { window.scrollTo(0, parseInt(scrollPrevio, 10) || 0); });
+    }
+  } catch (e) {}
+
+  /* Datos traídos de localStorage que aún no están en el artefacto. */
+  if (guardado.estado === "pendiente") programarPublicacion();
 })();
 </script>

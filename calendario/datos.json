@@ -1,6 +1,17 @@
 {
   "version": 1,
   "zonaHoraria": "Europe/Madrid",
-  "actualizado": "2026-08-28T11:24:16.050Z",
-  "tareas": []
+  "actualizado": "2026-08-28T11:26:12.567Z",
+  "tareas": [
+    {
+      "id": "tmtcv8u9rvapgt",
+      "fecha": "2026-08-28",
+      "hora": "23:59",
+      "titulo": "Prueba de conexión (bórrala)",
+      "categoria": "otros",
+      "notas": "Si ves esto en el móvil, Claude escribe bien en la agenda.",
+      "hecha": false,
+      "creada": "2026-08-28T11:26:12.566Z"
+    }
+  ]
 }

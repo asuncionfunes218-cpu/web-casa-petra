@@ -1,0 +1,10 @@
+{
+  "url": "https://claude.ai/code/artifact/e7d3dcad-c904-4d91-83f9-e1158bc85993",
+  "titulo": "Agenda de Bolsillo",
+  "zonaHoraria": "Europe/Madrid",
+  "recordatorios": [
+    { "hora": "08:00", "cron_utc": "0 6 * * *",  "trigger": "trig_019xxVbKGkbgstHufqaGsvFz", "que": "todas las tareas del día" },
+    { "hora": "15:30", "cron_utc": "30 13 * * *", "trigger": "trig_01Gx9r9BukQUhkBCScuVhP9n", "que": "lo que queda por hacer" }
+  ],
+  "nota": "Los cron están en UTC y ahora corresponden al horario de verano (CEST, UTC+2). En el cambio a horario de invierno hay que pasarlos a '0 7 * * *' y '30 14 * * *'."
+}

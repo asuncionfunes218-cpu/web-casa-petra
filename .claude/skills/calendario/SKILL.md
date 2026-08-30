@@ -34,6 +34,23 @@ si lo haces, borrarás las tareas que el usuario haya añadido o marcado desde e
 
 ### 3. Aplicar el cambio con el CLI
 
+La vía rápida es `di`: le pasas la frase tal cual la dijo el usuario y él saca
+día, hora, categoría y título. Úsala siempre que la frase venga en lenguaje
+normal; las demás órdenes son para retoques.
+
+```bash
+node calendario/tarea.js di "cena con Javi el viernes a las nueve y media"
+node calendario/tarea.js di "dentista el martes a las 10" --seco   # solo enseña la lectura
+```
+
+Entiende `hoy`, `mañana`, `pasado mañana`, los días de la semana, `el 5 de
+septiembre`, `12/09`, `dentro de tres días`, `la semana que viene`, horas en
+letra (`a las nueve y media`, `las diez menos cuarto`) y franjas (`de la
+noche`). Deduce la categoría por las palabras. Cualquier bandera (`--fecha`,
+`--hora`, `--cat`, `--titulo`, `--notas`) manda sobre lo que él haya entendido.
+
+Si al usuario le pasas una frase con varias tareas, llama a `di` una vez por tarea.
+
 ```bash
 node calendario/tarea.js ls                       # todo
 node calendario/tarea.js ls hoy                   # también: manana, semana, pendientes, 2026-09-04
@@ -80,6 +97,13 @@ Para consultas ("qué tengo mañana") basta con los pasos 1, 2 y `ls`: no publiq
 hagas commit si no has cambiado nada.
 
 Si el usuario dice varias cosas de golpe, añádelas todas y resume al final.
+
+## Dictado desde la agenda
+
+La página tiene un botón **Dictar**: el usuario habla, la propia página interpreta
+la frase con `calendario/interpretar.js` (va incrustado en el HTML) y enseña la
+lectura antes de guardar. Es el mismo intérprete que usa `tarea.js di`, así que
+si mejoras uno, mejoras los dos: toca solo `interpretar.js` y reconstruye.
 
 ## Recordatorios diarios
 

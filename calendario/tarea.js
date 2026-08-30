@@ -2,6 +2,7 @@
 /**
  * CLI de la agenda. Trabaja sobre calendario/datos.json y regenera index.html.
  *
+ *   node calendario/tarea.js di "cena con Javi el viernes a las nueve y media"
  *   node calendario/tarea.js ls [hoy|manana|semana|AAAA-MM-DD]
  *   node calendario/tarea.js add "Cena con Javi" --fecha viernes --hora 21:00 --cat ocio --notas "..."
  *   node calendario/tarea.js done "cena"
@@ -15,6 +16,7 @@
 const fs = require('fs');
 const path = require('path');
 const { construir, CATEGORIAS } = require('./construir.js');
+const { interpretar } = require('./interpretar.js');
 
 const RUTA = path.join(__dirname, 'datos.json');
 const TZ = 'Europe/Madrid';
@@ -182,6 +184,38 @@ const ordenes = {
     console.log('Añadida:\n' + linea(t));
   },
 
+  /** Apunta una frase dicha en lenguaje normal. --seco solo enseña la lectura. */
+  di(args) {
+    const o = opciones(args);
+    const seco = o.seco !== undefined || args.includes('--seco');
+    const frase = o._.filter((x) => x !== '--seco').join(' ').trim();
+    if (!frase) throw new Error('Dime la frase entre comillas.');
+    const r = interpretar(frase, hoyISO());
+    if (!r || !r.titulo) throw new Error('No he sacado ninguna tarea de: ' + frase);
+
+    const t = {
+      id: nuevoId(),
+      fecha: o.fecha ? resolverFecha(o.fecha) : r.fecha,
+      hora: o.hora !== undefined ? validarHora(o.hora) : r.hora,
+      titulo: o.titulo || r.titulo,
+      categoria: (o.cat || o.categoria) ? validarCat(o.cat || o.categoria) : r.categoria,
+      notas: (o.notas || '').trim(),
+      hecha: false,
+      creada: new Date().toISOString()
+    };
+    if (seco) {
+      console.log('Lectura (sin guardar):');
+      console.log(linea(t));
+      r.supuestos.forEach((x) => console.log('  · ' + x));
+      return;
+    }
+    const datos = leer();
+    datos.tareas.push(t);
+    escribir(datos);
+    console.log('Añadida:\n' + linea(t));
+    r.supuestos.forEach((x) => console.log('  · ' + x));
+  },
+
   done(args)   { marcar(args, true); },
   undone(args) { marcar(args, false); },
 
@@ -231,7 +265,7 @@ function marcar(args, valor) {
 const [, , orden, ...resto] = process.argv;
 try {
   if (!orden || !ordenes[orden]) {
-    console.log('Órdenes: ls | add | done | undone | mv | edit | rm');
+    console.log('Órdenes: di | ls | add | done | undone | mv | edit | rm');
     console.log('Hoy en Madrid: ' + hoyISO());
     process.exit(orden ? 1 : 0);
   }

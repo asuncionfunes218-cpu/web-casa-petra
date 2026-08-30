@@ -12,6 +12,7 @@ const path = require('path');
 const dir = __dirname;
 const CATEGORIAS = ['trabajo', 'ocio', 'obligaciones', 'otros'];
 const MARCA = '__DATOS_CALENDARIO__';
+const MARCA_INT = '__INTERPRETE__';
 
 function nuevoId() {
   return 't' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
@@ -73,10 +74,13 @@ function normalizar(bruto) {
 function construir({ escribirDatos = true } = {}) {
   const plantilla = fs.readFileSync(path.join(dir, 'plantilla.html'), 'utf8');
   if (!plantilla.includes(MARCA)) throw new Error('plantilla.html no contiene ' + MARCA);
+  if (!plantilla.includes(MARCA_INT)) throw new Error('plantilla.html no contiene ' + MARCA_INT);
+  const interprete = fs.readFileSync(path.join(dir, 'interpretar.js'), 'utf8');
+  if (interprete.indexOf('</scr' + 'ipt') >= 0) throw new Error('interpretar.js no puede contener una etiqueta de cierre de script.');
   const datos = normalizar(JSON.parse(fs.readFileSync(path.join(dir, 'datos.json'), 'utf8')));
   // < evita que un "</script>" dentro de un texto rompa la página.
   const json = JSON.stringify(datos, null, 2).replace(/</g, '\\u003c');
-  const html = plantilla.replace(MARCA, () => json);
+  const html = plantilla.replace(MARCA, () => json).replace(MARCA_INT, () => interprete);
   fs.writeFileSync(path.join(dir, 'index.html'), html);
   if (escribirDatos) fs.writeFileSync(path.join(dir, 'datos.json'), JSON.stringify(datos, null, 2) + '\n');
   return datos;

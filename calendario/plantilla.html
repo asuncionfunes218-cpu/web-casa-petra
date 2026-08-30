@@ -260,6 +260,53 @@ body{
 .fab svg{width:17px;height:17px}
 .fab:hover{filter:brightness(1.08)}
 
+/* ---------- dictado ---------- */
+.flotantes{
+  position:fixed;right:max(18px,calc(50% - 330px + 18px));bottom:22px;z-index:40;
+  display:flex;align-items:center;gap:10px;
+}
+.fab--sec{
+  height:52px;width:52px;padding:0;border-radius:50%;cursor:pointer;
+  background:var(--superficie);color:var(--tinta-2);border:1px solid var(--linea);
+  display:grid;place-items:center;box-shadow:var(--sombra);
+}
+.fab--sec:hover{color:var(--tinta);border-color:var(--linea-fuerte)}
+.fab--sec svg{width:19px;height:19px}
+.micro{
+  position:relative;display:grid;place-items:center;margin:4px auto 12px;
+  width:94px;height:94px;border-radius:50%;cursor:pointer;border:0;
+  background:var(--acento);color:#fff;
+  box-shadow:0 8px 26px -8px rgba(59,91,219,.55);
+}
+.micro svg{width:33px;height:33px;position:relative;z-index:1}
+.micro__aro{position:absolute;inset:-3px;border-radius:50%;border:2px solid var(--acento);opacity:0}
+.micro[aria-pressed="true"]{background:var(--obligaciones);box-shadow:0 8px 26px -8px rgba(196,42,72,.55)}
+.micro[aria-pressed="true"] .micro__aro{border-color:var(--obligaciones);animation:latir 1.6s ease-out infinite}
+@keyframes latir{0%{transform:scale(1);opacity:.75}100%{transform:scale(1.5);opacity:0}}
+.micro__pie{text-align:center;font-size:13.5px;color:var(--tinta-2);margin:0 0 14px;min-height:20px;line-height:1.45}
+.previa{
+  position:relative;overflow:hidden;margin-top:14px;
+  border:1px solid var(--linea);background:var(--superficie);
+  border-radius:var(--r);padding:12px 14px 13px 17px;
+}
+.previa::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--tinta-3)}
+.previa[data-cat="trabajo"]::before{background:var(--trabajo)}
+.previa[data-cat="ocio"]::before{background:var(--ocio)}
+.previa[data-cat="obligaciones"]::before{background:var(--obligaciones)}
+.previa[data-cat="otros"]::before{background:var(--otros)}
+.previa__e{font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-3)}
+.previa__t{margin:5px 0 9px;font-size:17px;font-weight:700;line-height:1.3;word-break:break-word}
+.previa__meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;color:var(--tinta-2)}
+.previa__d{}
+.previa__h{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.previa__nota{margin:9px 0 0;font-size:12.5px;color:var(--tinta-3);line-height:1.45}
+.previa--vacia{
+  border-style:dashed;background:transparent;color:var(--tinta-3);
+  text-align:center;font-size:13.5px;padding:20px 16px;
+}
+.previa--vacia::before{display:none}
+@media (prefers-reduced-motion:reduce){.micro__aro{animation:none !important}}
+
 /* ---------- capa / formulario ---------- */
 .velo{
   position:fixed;inset:0;z-index:50;background:rgba(16,19,32,.55);
@@ -333,6 +380,7 @@ textarea.campo__c{resize:vertical;min-height:64px;line-height:1.5}
 <div id="capa"></div>
 <noscript><p style="padding:32px;font:16px/1.6 system-ui">Esta agenda necesita JavaScript para funcionar.</p></noscript>
 <script type="application/json" id="datos">__DATOS_CALENDARIO__</script>
+<script id="interprete">__INTERPRETE__</script>
 <script id="logica">
 (function(){
 'use strict';
@@ -358,6 +406,7 @@ var CORTE_TARDE = '14:00';
 var SVG_CHECK = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg>';
 var SVG_LAPIZ  = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11.2 2.3l2.5 2.5L5.4 13 2 14l1-3.4z"/></svg>';
 var SVG_MAS    = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg>';
+var SVG_MICRO  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 19v3"/></svg>';
 var SVG_IZQ    = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>';
 var SVG_DER    = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg>';
 
@@ -371,6 +420,8 @@ var api = null;
 var sucio = false;
 var estado = 'conectando';        /* conectando | guardado | pendiente | guardando | error | lectura */
 var reloj = null, publicando = false, reintentos = 0, confirmandoBorrado = null;
+var hayVoz = !!(window.SpeechRecognition || window.webkitSpeechRecognition);
+var reconocedor = null, escuchando = false;
 
 function leerDatos(){
   var d;
@@ -441,6 +492,7 @@ function porId(id){
 function documentoCompleto(d){
   var css = document.getElementById('estilos').textContent;
   var js  = document.getElementById('logica').textContent;
+  var interprete = document.getElementById('interprete').textContent;
   var json = JSON.stringify(d, null, 2).replace(/</g, '\\u003c');
   return [
     '<!doctype html>',
@@ -455,6 +507,7 @@ function documentoCompleto(d){
     '<body>',
     CUERPO,
     '<script type="application/json" id="datos">' + json + '<\/script>',
+    '<script id="interprete">' + interprete + '<\/script>',
     '<script id="logica">' + js + '<\/script>',
     '<\/body>',
     '<\/html>'
@@ -674,27 +727,31 @@ function render(){
   if (modo === 'lectura'){
     h += '<p class="aviso">Vista de solo lectura: los cambios que hagas aquí no se guardan. Pide a Claude que actualice la agenda.</p>';
   } else {
-    h += '<button class="fab" data-accion="nueva">' + SVG_MAS + ' Nueva tarea</button>';
+    h += '<div class="flotantes">';
+    h += '<button class="fab--sec" data-accion="nueva" aria-label="Escribir una tarea a mano">' + SVG_MAS + '</button>';
+    h += '<button class="fab" data-accion="dictar">' + SVG_MICRO + ' Dictar</button>';
+    h += '</div>';
   }
   document.getElementById('app').innerHTML = h;
   pintarEstado();
 }
 
 /* ====== hoja de formulario ====== */
-function cerrarHoja(){ document.getElementById('capa').innerHTML = ''; confirmandoBorrado = null; }
+function cerrarHoja(){ pararEscucha(); document.getElementById('capa').innerHTML = ''; confirmandoBorrado = null; }
 
-function abrirTarea(id){
+function abrirTarea(id, previo){
   var t = id ? porId(id) : null;
-  var cat = t ? t.categoria : 'otros';
+  var v = t || previo || {};
+  var cat = v.categoria || 'otros';
   var h = '<div class="velo" data-accion="velo"><div class="hoja" role="dialog" aria-modal="true" aria-label="' + (t ? 'Editar tarea' : 'Nueva tarea') + '">';
   h += '<div class="hoja__cab"><h2 class="hoja__t">' + (t ? 'Editar tarea' : 'Nueva tarea') + '</h2>';
   h += '<button class="icono-b" data-accion="cerrar" aria-label="Cerrar">✕</button></div>';
   h += '<label class="campo"><span class="campo__e">Qué hay que hacer</span>';
-  h += '<input class="campo__c" id="f-titulo" type="text" value="' + esc(t ? t.titulo : '') + '" placeholder="Comer con Marta" autocomplete="off"></label>';
+  h += '<input class="campo__c" id="f-titulo" type="text" value="' + esc(v.titulo || '') + '" placeholder="Comer con Marta" autocomplete="off"></label>';
   h += '<div class="dupla"><label class="campo"><span class="campo__e">Día</span>';
-  h += '<input class="campo__c" id="f-fecha" type="date" value="' + (t ? t.fecha : foco) + '"></label>';
+  h += '<input class="campo__c" id="f-fecha" type="date" value="' + (v.fecha || foco) + '"></label>';
   h += '<label class="campo"><span class="campo__e">Hora (opcional)</span>';
-  h += '<input class="campo__c" id="f-hora" type="time" value="' + (t ? t.hora : '') + '"></label></div>';
+  h += '<input class="campo__c" id="f-hora" type="time" value="' + (v.hora || '') + '"></label></div>';
   h += '<div class="campo"><span class="campo__e">Categoría</span><div class="cats">';
   CATS.forEach(function(c){
     h += '<button class="cat-b" data-accion="cat" data-cat="' + c.id + '" aria-pressed="' + (c.id === cat) + '">';
@@ -702,7 +759,7 @@ function abrirTarea(id){
   });
   h += '</div></div>';
   h += '<label class="campo"><span class="campo__e">Notas (opcional)</span>';
-  h += '<textarea class="campo__c" id="f-notas" placeholder="Detalles, dirección, con quién…">' + esc(t ? t.notas : '') + '</textarea></label>';
+  h += '<textarea class="campo__c" id="f-notas" placeholder="Detalles, dirección, con quién…">' + esc(v.notas || '') + '</textarea></label>';
   h += '<div class="hoja__pie">';
   if (t) h += '<button class="b b--peligro" data-accion="borrar" data-id="' + t.id + '">Borrar</button>';
   h += '<button class="b b--principal" data-accion="guardar" data-id="' + (t ? t.id : '') + '">' + (t ? 'Guardar cambios' : 'Añadir a la agenda') + '</button>';
@@ -710,6 +767,135 @@ function abrirTarea(id){
   document.getElementById('capa').innerHTML = h;
   var inp = document.getElementById('f-titulo');
   if (inp) inp.focus();
+}
+
+function etiquetaFecha(iso){
+  var hoy = hoyISO();
+  var t = iso === hoy ? 'hoy'
+        : iso === sumar(hoy, 1) ? 'mañana'
+        : iso === sumar(hoy, -1) ? 'ayer'
+        : fmt(iso, {weekday:'long', day:'numeric', month:'long'});
+  return t.charAt(0).toUpperCase() + t.slice(1);
+}
+
+function leerDictado(){
+  var el = document.getElementById('f-dictado');
+  var txt = el ? el.value.trim() : '';
+  if (!txt || !window.Interprete) return null;
+  try { return window.Interprete.interpretar(txt, hoyISO()); } catch(e){ return null; }
+}
+
+function pintarPrevia(){
+  var caja = document.getElementById('previa');
+  if (!caja) return;
+  var r = leerDictado();
+  if (!r || !r.titulo){
+    caja.innerHTML = '<div class="previa previa--vacia">Aquí verás cómo lo he entendido, antes de guardarlo.</div>';
+    return;
+  }
+  var h = '<div class="previa" data-cat="' + r.categoria + '">';
+  h += '<span class="previa__e">Lo que he entendido</span>';
+  h += '<p class="previa__t">' + esc(r.titulo) + '</p>';
+  h += '<div class="previa__meta">';
+  h += '<span class="etiqueta" data-cat="' + r.categoria + '">' + nombreCat(r.categoria) + '</span>';
+  h += '<span class="previa__d">' + esc(etiquetaFecha(r.fecha)) + '</span>';
+  h += '<span class="previa__h">' + (r.hora ? esc(r.hora) : 'sin hora') + '</span>';
+  h += '</div>';
+  if (r.supuestos && r.supuestos.length) h += '<p class="previa__nota">' + esc(r.supuestos.join(' ')) + '</p>';
+  h += '</div>';
+  caja.innerHTML = h;
+}
+
+function pie(t){ var p = document.getElementById('micro-pie'); if (p) p.textContent = t; }
+function marcarMicro(){ var b = document.querySelector('.micro'); if (b) b.setAttribute('aria-pressed', String(escuchando)); }
+
+function arrancarEscucha(){
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR){ pie('Este navegador no sabe dictar. Usa el micro de tu teclado.'); return; }
+  try { reconocedor = new SR(); }
+  catch(e){ pie('No he podido abrir el micrófono. Usa el micro de tu teclado.'); return; }
+  reconocedor.lang = 'es-ES';
+  reconocedor.interimResults = true;
+  reconocedor.continuous = false;
+  reconocedor.maxAlternatives = 1;
+  var base = (document.getElementById('f-dictado') || {}).value || '';
+  reconocedor.onstart = function(){ escuchando = true; marcarMicro(); pie('Te escucho…'); };
+  reconocedor.onresult = function(ev){
+    var txt = '';
+    for (var i = 0; i < ev.results.length; i++) txt += ev.results[i][0].transcript;
+    var el = document.getElementById('f-dictado');
+    if (el){ el.value = (base ? base + ' ' : '') + txt.replace(/^\s+/, ''); pintarPrevia(); }
+  };
+  reconocedor.onerror = function(ev){
+    var m = {
+      'not-allowed':'Aquí no puedo usar el micrófono. Toca el campo de abajo y usa el micro de tu teclado.',
+      'service-not-allowed':'Este navegador no me deja dictar. Usa el micro de tu teclado.',
+      'no-speech':'No he oído nada. Prueba otra vez.',
+      'audio-capture':'No encuentro ningún micrófono.',
+      'network':'Sin conexión para el dictado.',
+      'aborted':''
+    }[ev.error];
+    if (m === undefined) m = 'El dictado ha fallado. Escríbelo o usa el micro del teclado.';
+    escuchando = false; marcarMicro();
+    if (m) pie(m);
+    if (ev.error === 'not-allowed' || ev.error === 'service-not-allowed'){
+      var el = document.getElementById('f-dictado'); if (el) el.focus();
+    }
+  };
+  reconocedor.onend = function(){
+    escuchando = false; marcarMicro();
+    var p = document.getElementById('micro-pie');
+    if (p && p.textContent === 'Te escucho…'){
+      p.textContent = leerDictado() ? 'Revísalo y dale a Añadir.' : 'No he pillado nada. Toca el micro otra vez.';
+    }
+  };
+  try { reconocedor.start(); } catch(e){}
+}
+
+function pararEscucha(){
+  if (reconocedor){ try { reconocedor.abort(); } catch(e){} }
+  reconocedor = null; escuchando = false; marcarMicro();
+}
+
+function abrirDictado(){
+  var h = '<div class="velo" data-accion="velo"><div class="hoja" role="dialog" aria-modal="true" aria-label="Dictar una tarea">';
+  h += '<div class="hoja__cab"><h2 class="hoja__t">Dictar</h2>';
+  h += '<button class="icono-b" data-accion="cerrar" aria-label="Cerrar">✕</button></div>';
+  if (hayVoz){
+    h += '<button class="micro" data-accion="escuchar" aria-pressed="false" aria-label="Hablar">';
+    h += '<span class="micro__aro"></span>' + SVG_MICRO + '</button>';
+    h += '<p class="micro__pie" id="micro-pie">Dilo de corrido: qué, qué día y a qué hora.</p>';
+  }
+  h += '<label class="campo"><span class="campo__e">' + (hayVoz ? 'O escríbelo aquí' : 'Dilo con el micrófono de tu teclado') + '</span>';
+  h += '<textarea class="campo__c" id="f-dictado" rows="2" placeholder="cena con Javi el viernes a las nueve y media"></textarea></label>';
+  if (!hayVoz) h += '<p class="micro__pie" id="micro-pie">Toca el campo y pulsa el micrófono del teclado del móvil.</p>';
+  h += '<div id="previa"></div>';
+  h += '<div class="hoja__pie">';
+  h += '<button class="b" data-accion="corregir">Ajustar</button>';
+  h += '<button class="b b--principal" data-accion="guardar-dictado">Añadir</button></div>';
+  h += '</div></div>';
+  document.getElementById('capa').innerHTML = h;
+  pintarPrevia();
+  if (hayVoz) arrancarEscucha();
+  else { var el = document.getElementById('f-dictado'); if (el) el.focus(); }
+}
+
+function guardarDictado(){
+  var r = leerDictado();
+  if (!r || !r.titulo){
+    pie('Dime primero qué quieres apuntar.');
+    var el = document.getElementById('f-dictado'); if (el) el.focus();
+    return;
+  }
+  pararEscucha();
+  cerrarHoja();
+  mutar(function(){
+    datos.tareas.push({
+      id: nuevoId(), fecha: r.fecha, hora: r.hora, titulo: r.titulo,
+      categoria: r.categoria, notas: '', hecha: false, creada: new Date().toISOString()
+    });
+    foco = r.fecha;
+  });
 }
 
 function abrirAyuda(){
@@ -724,8 +910,11 @@ function abrirAyuda(){
   h += '<li><code>marca como hecha la reunión de hoy</code></li>';
   h += '<li><code>qué tengo mañana</code></li></ul>';
   h += '<p>Claude escribe aquí directamente y esta página se actualiza sola.</p>';
-  h += '<h3>Desde esta pantalla</h3>';
-  h += '<p>Pulsa <strong>Nueva tarea</strong>. Se guarda al instante para todos los dispositivos donde tengas abierta la agenda.</p>';
+  h += '<h3>Dictándolo</h3>';
+  h += '<p>Pulsa <strong>Dictar</strong> y dilo de corrido: <em>«cena con Javi el viernes a las nueve y media»</em>. Verás cómo lo he entendido antes de guardarlo.</p>';
+  h += '<p>Si tu navegador no me deja usar el micrófono, escribe en el campo y usa el <strong>micro de tu teclado</strong>: funciona igual.</p>';
+  h += '<h3>A mano</h3>';
+  h += '<p>El botón redondo con el <strong>+</strong> abre el formulario de siempre. Se guarda al instante en todos los dispositivos donde tengas abierta la agenda.</p>';
   h += '<h3>Recordatorios</h3>';
   h += '<p>Recibes un aviso a las <strong>8:00</strong> con todo lo del día y otro a las <strong>15:30</strong> con lo que aún quede por hacer esa tarde.</p>';
   h += '<h3>En la pantalla de inicio</h3>';
@@ -769,6 +958,16 @@ document.addEventListener('click', function(ev){
   if (a === 'cerrar'){ cerrarHoja(); return; }
   if (a === 'ayuda'){ abrirAyuda(); return; }
   if (a === 'nueva'){ abrirTarea(null); return; }
+  if (a === 'dictar'){ abrirDictado(); return; }
+  if (a === 'escuchar'){ if (escuchando) pararEscucha(); else arrancarEscucha(); return; }
+  if (a === 'guardar-dictado'){ guardarDictado(); return; }
+  if (a === 'corregir'){
+    var lec = leerDictado();
+    if (!lec || !lec.titulo){ pie('Dime primero qué quieres apuntar.'); return; }
+    pararEscucha();
+    abrirTarea(null, lec);
+    return;
+  }
   if (a === 'editar'){ abrirTarea(b.getAttribute('data-id')); return; }
   if (a === 'cat'){
     var padre = b.parentNode;
@@ -809,6 +1008,9 @@ document.addEventListener('click', function(ev){
     render();
     return;
   }
+});
+document.addEventListener('input', function(ev){
+  if (ev.target && ev.target.id === 'f-dictado') pintarPrevia();
 });
 document.addEventListener('keydown', function(ev){
   if (ev.key === 'Escape') cerrarHoja();
